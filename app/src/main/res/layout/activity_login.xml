@@ -33,6 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Username field: Input field for the user to enter their username or email -->
+    <!--Made use of hint feature so upon typing it will disapear-->
     <EditText
         android:id="@+id/username_input"
         android:layout_width="0dp"
