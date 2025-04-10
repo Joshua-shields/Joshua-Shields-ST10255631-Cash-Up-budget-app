@@ -3,120 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:padding="16dp"
-    >
+    android:layout_height="match_parent">
 
-
-
-    <!--"android:text="Password"-->
-
-    <!--comment-->
-    <!--comment-->
-    <!--comment-->
-    <!--comment-->
-
-
-
-    <!--LOGO-->
-    <!--
-    I have edited the logo which can be found in the research and planning document in microsoft word
-
-    -->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-
-
-    <!--Username field-->
     <EditText
-        android:id="@+id/username_input"
-        android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="32dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    android:background="@drawable/rounded_corner"
-    android:ems="10"
-    android:inputType="text"
-    android:padding="18dp"
-    android:hint="Username"
-    android:textColor="@color/white"
-    android:textColorHint="@color/white"
-    android:textSize="20sp"
-    app:layout_constraintTop_toBottomOf="@+id/imageView"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
-
-    <!--Password field-->
-    <!--
-    I used  android:hint="Password".How it works is, the " password which can be seen on the designer is a hint.
-    when the user starts typing, the password will change into a dots / astrix signs.This will help with security
-
-    I set the hint text to white for readability
-
-    youtube video reference: https://www.youtube.com/watch?v=H2potb8pGDQ
-    -->
-    <EditText
-        android:id="@+id/password_input"
-        android:layout_width="0dp"
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:inputType="textPassword"
-        android:padding="18dp"
-        android:hint="Password"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/username_input"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:inputType="text"
+        android:text="Username or Email"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="383dp" />
 
-
-
-    <!-- Forgot Password Button -->
     <Button
         android:id="@+id/forgotpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/transparent"
-    android:text="Forgot Password?"
-    android:textColor="@color/white"
-    android:textSize="14sp"
-    app:layout_constraintTop_toBottomOf="@+id/password_input"
-    app:layout_constraintEnd_toEndOf="parent" />
+        android:text="forgot password "
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="552dp" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="448dp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="314dp" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="56dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/login_button"
-        android:layout_width="0dp"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_button"
         android:text="Login"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:padding="18dp"
-        app:layout_constraintTop_toBottomOf="@+id/forgotpassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="494dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
