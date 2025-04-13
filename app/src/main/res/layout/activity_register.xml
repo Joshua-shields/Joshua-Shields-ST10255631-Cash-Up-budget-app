@@ -92,6 +92,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/email_input" />
 
+
     <!-- Confirm Password Field: Verifies password matches -->
     <EditText
         android:id="@+id/confirm_password_input"
