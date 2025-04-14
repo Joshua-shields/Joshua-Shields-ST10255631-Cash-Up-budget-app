@@ -9,6 +9,8 @@
     tools:context=".MainActivity">
 
 
+
+
     <!-- LOGO: Displays the app logo at the top of the screen, centered horizontally -->
     <ImageView
         android:id="@+id/imageView"
