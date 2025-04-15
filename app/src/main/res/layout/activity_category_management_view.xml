@@ -50,7 +50,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="29dp" />
+            android:layout_height="34dp" />
 
         <TextView
             android:id="@+id/title"
@@ -63,7 +63,18 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fruits"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Category1"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_gravity="center_vertical"
@@ -75,7 +86,18 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fruits"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Category2"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="#ADA4A3" />
@@ -84,11 +106,20 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fruits"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Category3"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="#ADA4A3" />
-
-
     </LinearLayout>
     </LinearLayout>
