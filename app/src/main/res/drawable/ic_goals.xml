@@ -1,0 +1,27 @@
+<!-- Reference used for this icon https://developer.android.com/develop/ui/views/graphics/vector-drawable-resources -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer ring (dark gray) -->
+    <path
+        android:fillColor="#2c3e50"
+        android:pathData="M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2Z"/>
+
+    <!-- Middle ring (slate gray) -->
+    <path
+        android:fillColor="#34495e"
+        android:pathData="M12,5.5A6.5,6.5 0 1,0 18.5,12A6.5,6.5 0 0,0 12,5.5Z"/>
+
+    <!-- Inner circle (white for contrast) -->
+    <path
+        android:fillColor="#ecf0f1"
+        android:pathData="M12,9.5A2.5,2.5 0 1,0 14.5,12A2.5,2.5 0 0,0 12,9.5Z"/>
+
+    <!-- Arrow (sleek cyan accent) -->
+    <path
+        android:fillColor="#00bcd4"
+        android:pathData="M19,5l-5,5l1,1l5,-5zM16.5,9.5l-1,-1l-1.5,1.5l1,1z"/>
+</vector>

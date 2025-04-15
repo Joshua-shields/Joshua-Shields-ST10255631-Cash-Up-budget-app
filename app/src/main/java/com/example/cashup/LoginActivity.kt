@@ -1,4 +1,17 @@
 package com.example.cashup
 
-class LoginActivity {
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+
+class LoginActivity : AppCompatActivity() { // Needs to inherit from AppCompatActivity
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        setContentView(R.layout.activity_login)
+
+
+    }
 }

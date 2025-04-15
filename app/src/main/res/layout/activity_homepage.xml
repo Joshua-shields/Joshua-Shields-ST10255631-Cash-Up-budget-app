@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Refernce https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout -->
+<!-- Root layout for the Main Activity screen -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <!-- Top Bar Section:
+         Contains the navigation icons (Menu, Stats, Gamify) and displays the current month and balance -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Menu Icon:
+             Tapping this opens the side menu -->
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Menu"
+            android:padding="12dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Month Title:
+             Displays the current month in italic text -->
+        <TextView
+            android:id="@+id/monthTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="March"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Balance Label:
+             Static text indicating this value represents the current balance -->
+        <TextView
+            android:id="@+id/balanceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Balance"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/monthTitle"
+            app:layout_constraintStart_toStartOf="@id/monthTitle"
+            app:layout_constraintTop_toBottomOf="@id/monthTitle" />
+
+        <!-- Balance Amount:
+             Displays the current balance as a bold text -->
+        <TextView
+            android:id="@+id/balanceAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R2800.40"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/balanceLabel"
+            app:layout_constraintStart_toStartOf="@id/balanceLabel"
+            app:layout_constraintTop_toBottomOf="@id/balanceLabel" />
+
+        <!-- Stats Icon:
+             Displays statistics; placed between menu and premium icons -->
+        <ImageButton
+            android:id="@+id/statsButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Statistics"
+            android:padding="12dp"
+            android:src="@drawable/ic_stats"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/premiumButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Gamify:
+             Represents gamefied features; placed at the right end of the bar -->
+        <ImageButton
+            android:id="@+id/premiumButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Premium"
+            android:padding="12dp"
+            android:src="@drawable/ic_crown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Income Button:
+         A MaterialCardView representing the "INCOME" action with an icon and label -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/incomeButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        app:cardBackgroundColor="#4CAF50"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Income Icon -->
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_arrow_up" />
+
+            <!-- Income Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INCOME"
+                android:textColor="@android:color/white"
+                android:textAppearance="?attr/textAppearanceButton" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Search Button:
+         Allows users to search for transactions or categories -->
+    <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Search"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@id/incomeButton"
+        app:layout_constraintEnd_toStartOf="@id/expenseButton"
+        app:layout_constraintStart_toEndOf="@id/incomeButton"
+        app:layout_constraintTop_toTopOf="@id/incomeButton" />
+
+    <!-- Expense Button:
+         A MaterialCardView representing the "EXPENSE" action with an icon and label -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/expenseButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#FF7043"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Expense Icon -->
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_arrow_down" />
+
+            <!-- Expense Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EXPENSE"
+                android:textColor="@android:color/white"
+                android:textAppearance="?attr/textAppearanceButton" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Monthly Filter Button:
+         Button to filter transactions by month -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/monthlyFilterButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Monthly"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/incomeButton" />
+
+    <!-- Bottom Navigation:
+         Provides quick access to other sections (Goals, Calendar, Profile) -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D0E3F3"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/goalsButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Goals"
+            android:src="@drawable/ic_goals" />
+
+        <ImageButton
+            android:id="@+id/calendarButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Calendar"
+            android:src="@drawable/ic_calendar" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:contentDescription="Profile"
+            android:src="@drawable/ic_profile" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
