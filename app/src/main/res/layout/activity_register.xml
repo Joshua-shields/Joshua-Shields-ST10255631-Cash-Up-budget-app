@@ -34,7 +34,7 @@
 
     <!-- Name Field: Input for user's full name -->
     <EditText
-        android:id="@+id/name_input"
+        android:id="@+id/streaknum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Enter your Email"
+        android:hint="Enter Your Email"
         android:inputType="textEmailAddress"
         android:padding="18dp"
         android:textColor="@color/white"
@@ -70,7 +70,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_input" />
+        app:layout_constraintTop_toBottomOf="@id/streaknum" />
 
     <!-- Password Field: Secure input for creating password -->
     <EditText
@@ -82,7 +82,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
         android:ems="10"
-        android:hint="Enter your password"
+        android:hint="Enter Your Password"
         android:inputType="textPassword"
         android:padding="18dp"
         android:textColor="@color/white"
