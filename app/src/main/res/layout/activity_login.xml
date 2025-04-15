@@ -7,8 +7,6 @@
     android:padding="16dp"
     >
 
-
-
     <!-- LOGO: Displays the app logo at the top of the screen, centered horizontally -->
 
     <Button
