@@ -10,6 +10,7 @@
     android:background="@drawable/background"
     tools:context=".HomepageActivity">
 
+
     <!-- Top Bar Section:
          Contains the navigation icons (Menu, Stats, Gamify) and displays the current month and balance -->
     <androidx.constraintlayout.widget.ConstraintLayout
