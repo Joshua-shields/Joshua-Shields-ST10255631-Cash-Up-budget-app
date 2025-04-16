@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".HomepageActivity">
 
     <!-- Top Bar Section:
          Contains the navigation icons (Menu, Stats, Gamify) and displays the current month and balance -->
