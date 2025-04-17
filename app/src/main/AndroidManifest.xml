@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CashUp"
         tools:targetApi="31">
         <activity
+            android:name=".editCategoriesView"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
