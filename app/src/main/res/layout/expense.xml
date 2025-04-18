@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
@@ -10,8 +11,8 @@
     <!-- Menu Icon -->
     <ImageButton
         android:id="@+id/menuButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/ic_menu_white"
         android:contentDescription="Menu"
@@ -19,29 +20,36 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Leaderboard Icon -->
-    <ImageButton
-        android:id="@+id/leaderboardButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_leaderboard"
-        android:contentDescription="Leaderboard"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/crownButton"
-        android:layout_marginEnd="8dp" />
 
     <!-- Crown Icon -->
-    <ImageButton
-        android:id="@+id/crownButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_crown"
-        android:contentDescription="Crown"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Heading -->
+
+    <ImageButton
+        android:id="@+id/leaderboardButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Leaderboard"
+        android:src="@drawable/ic_leaderboard"
+        app:layout_constraintEnd_toStartOf="@id/crownButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/crownButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Crown"
+        android:src="@drawable/ic_crown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.959"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/heading_text"
         android:layout_width="wrap_content"
@@ -120,23 +128,12 @@
         android:layout_marginTop="8dp" />
 
     <!-- Chart Image -->
-    <ImageView
-        android:id="@+id/chart_image"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/chart_example"
-        app:layout_constraintTop_toBottomOf="@id/item_gifts"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Add Expense Button -->
     <Button
         android:id="@+id/add_expense_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_red_button"
         android:backgroundTint="#F20707"
@@ -145,7 +142,17 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="350dp"
+        android:layout_height="230dp"
+        android:layout_marginBottom="92dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chart_image" />
+        app:srcCompat="@drawable/chart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
