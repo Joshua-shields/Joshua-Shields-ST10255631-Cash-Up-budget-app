@@ -18,4 +18,5 @@ class LoginActivity : AppCompatActivity() { // Needs to inherit from AppCompatAc
 
     }
 }
+
 //********************************** end of login backend code *****************************//
