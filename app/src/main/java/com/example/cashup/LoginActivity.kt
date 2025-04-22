@@ -4,19 +4,22 @@
 package com.example.cashup
 
 import android.os.Bundle
+
 import androidx.appcompat.app.AppCompatActivity
 
+import android.widget.Button // allows for cliable buttons to be coded
+
+import android.widget.EditText // allows for text to be eddited  (input fields )
+
+import android.widget.Toast // needed for pop up messages
 
 class LoginActivity : AppCompatActivity() { // Needs to inherit from AppCompatActivity
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
 
-        setContentView(R.layout.activity_login)
-
-
-    }
 }
+
+
+
 
 //********************************** end of login backend code *****************************//
