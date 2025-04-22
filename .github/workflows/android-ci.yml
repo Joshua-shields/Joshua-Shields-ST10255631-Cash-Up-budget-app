@@ -8,6 +8,7 @@ on:
   push:
     branches: [ "main" ]
 
+
   # Runs when called by main branch
   pull_request:
     branches: [ "main" ]
