@@ -10,6 +10,7 @@
     >
 
     <!-- Add salary field-->
+    <!-- Add amount field-->
     <EditText
         android:id="@+id/income_field"
         android:layout_width="0dp"
@@ -30,8 +31,9 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
-    <!-- Add amount field-->
+        app:layout_constraintVertical_bias="0.419" />
+
+    <!-- Add date field-->
     <EditText
         android:id="@+id/amount_view"
         android:layout_width="0dp"
@@ -52,8 +54,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565" />
-    <!-- Add date field-->
+        app:layout_constraintVertical_bias="0.53" />
+
     <EditText
         android:id="@+id/date_view"
         android:layout_width="0dp"
