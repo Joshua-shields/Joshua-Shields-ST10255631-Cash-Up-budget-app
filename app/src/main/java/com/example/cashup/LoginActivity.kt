@@ -1,3 +1,6 @@
+
+//***************************** start of login backend code **************************************//
+
 package com.example.cashup
 
 import android.os.Bundle
@@ -15,3 +18,5 @@ class LoginActivity : AppCompatActivity() { // Needs to inherit from AppCompatAc
 
     }
 }
+
+//********************************** end of login backend code *****************************//
