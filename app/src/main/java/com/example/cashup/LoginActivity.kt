@@ -15,6 +15,10 @@ import android.widget.Toast // needed for pop up messages
 
 class LoginActivity : AppCompatActivity() { // Needs to inherit from AppCompatActivity
 
+    private lateinit var usernameInput: EditText
+    private lateinit var passwordInput: EditText
+    private lateinit var loginButton: Button
+    private lateinit var forgotPasswordButton: Button
 
 
 }
