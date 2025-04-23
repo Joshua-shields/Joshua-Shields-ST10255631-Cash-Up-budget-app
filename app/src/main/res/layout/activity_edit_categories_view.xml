@@ -18,22 +18,24 @@
             android:layout_height="36dp" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/userProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#0F00D9"
             app:srcCompat="@drawable/ic_profile" />
 
         <ImageButton
             android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
+            android:layout_width="47dp"
             android:layout_height="wrap_content"
+            android:background="#0D00D8"
             app:srcCompat="?attr/actionModeCloseDrawable" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="223dp"
+            android:layout_width="179dp"
             android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:background="#050505"
             android:text="Edit categories"
             android:textColor="#FFFFFF"
