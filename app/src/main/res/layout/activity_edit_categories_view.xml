@@ -2,50 +2,422 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editCategoriesView">
+    android:background="#121218">
 
-    <LinearLayout
+    <!-- Top App Bar -->
+
+    <!-- Color Legend -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/background">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#121218"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
-        <Space
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="36dp" />
+            android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/userProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#0F00D9"
-            app:srcCompat="@drawable/ic_profile" />
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="47dp"
-            android:layout_height="wrap_content"
-            android:background="#0D00D8"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Edit Categories"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="179dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="#050505"
-            android:text="Edit categories"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
 
-        <ImageView
-            android:id="@+id/imageView7"
+    <TextView
+        android:id="@+id/tv_change_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change\ncolour"
+        android:textColor="#AAAAAA"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ScrollView for Categories -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_change_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="562dp"
-            app:srcCompat="@drawable/rounded_button_blue" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
 
-    </LinearLayout>
+            <!-- Existing Categories -->
+            <!-- Groceries and Market -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/groceries"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Groceries and Market"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_groceries"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_groceries"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_groceries"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#FF0000"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Home and Maintenance -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/Home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Home and Maintenance"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_home"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_home"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#00FF00"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Transport -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/Transport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Transport"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_car"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_transport"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_transport"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#00AAFF"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Gifts -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/Gifts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Gifts"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_gift"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_gifts"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_gifts"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#FF00FF"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Work -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/Work"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Work"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_work"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_work"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_work"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#FFCC00"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Fast food -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/fast_food"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fast food"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_fast_food"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_fast_food"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_fast_food"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#FF6600"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Entertainment -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/entertainment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Entertainment"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_entertainment"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_entertainment"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_entertainment"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#00FFFF"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Extra -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp">
+
+                <EditText
+                    android:id="@+id/extra"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Extra"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    android:drawableEnd="@drawable/ic_extra"
+                    android:textStyle="italic"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_extra"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_extra"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="#FF00FF"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Add New Category Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add new category"
+                android:textColor="#AAAAAA"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Name Field -->
+            <EditText
+                android:id="@+id/et_new_category_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:textColorHint="#888888"
+                android:textColor="@android:color/white"
+                android:background="@drawable/rounded_edittext_bg"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="12dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Color Selection -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp">
+
+                <EditText
+                    android:id="@+id/et_assign_color"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Assign colour"
+                    android:textColorHint="#888888"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="12dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_color_new"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_color_new"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@android:color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textColor="@android:color/white"
+                android:background="@drawable/rounded_button_bg"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
