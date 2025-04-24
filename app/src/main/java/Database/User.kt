@@ -1,4 +1,4 @@
-package Database
+package com.example.cashup.Database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

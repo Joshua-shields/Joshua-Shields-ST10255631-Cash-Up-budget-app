@@ -4,6 +4,8 @@ package com.example.cashup
 
 import android.os.Bundle
 
+import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 
 import android.widget.Button // allows for clickable buttons to be coded
@@ -12,109 +14,93 @@ import android.widget.EditText // allows for text to be edited  (input fields )
 
 import android.widget.Toast // needed for pop up messages
 
-class LoginActivity : AppCompatActivity() { // Needs to inherit from AppCompatActivity
 
 
+class LoginActivity : AppCompatActivity() {
 
-    // ************ Start of Declaration of UI Components *********** //
+    private lateinit var usernameInput: EditText
+    private lateinit var passwordInput: EditText
+    private lateinit var loginButton: Button
+    private lateinit var forgotPasswordButton: Button
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_login) // Make sure this matches your login XML filename
 
+        initializeViews()
+        setupClickListeners()
+    }
 
     private fun initializeViews() {
-
         usernameInput = findViewById(R.id.username_input)
-
         passwordInput = findViewById(R.id.password_input)
-
         loginButton = findViewById(R.id.login_button)
-
         forgotPasswordButton = findViewById(R.id.forgotpassword)
     }
 
     private fun setupClickListeners() {
-        // trim is used to remove leading and trailing white spaces
         loginButton.setOnClickListener {
-            val username = usernameInput.text.toString().trim() // login listener for username input
-
-            val password = passwordInput.text.toString().trim() // login listener for password input
+            val username = usernameInput.text.toString().trim()
+            val password = passwordInput.text.toString().trim()
 
             if (validateInputs(username, password)) {
                 performLogin(username, password)
             }
         }
 
-
-        /////////////////////////////////////////////////////////////////////
-
-     /*
-     *
-     * we need a forgot password option and logic to redirect to reset password
-     *
-     * */
-
-
-        /////////////////////////////////////////////////////////////////
+        forgotPasswordButton.setOnClickListener {
+            // TODO: Add logic for forgot password - e.g., navigate to a ResetPasswordActivity
+            showMessage("Forgot Password Clicked (Implement Navigation)")
+        }
     }
-/////////////////////// Username exception handling ///////////////////////////////////////////////////
 
-    // This exception handling is added to prevent users from not adding a username
     private fun validateInputs(username: String, password: String): Boolean {
         if (username.isEmpty()) {
             showMessage("You Need to enter Your Username ")
             usernameInput.requestFocus()
             return false
         }
-        // added to make sure the username exceeds 2 characters
         if (username.length < 2) {
-            showMessage("Username to Short, Enter A longer one")
+            showMessage("Username too Short, Enter A longer one")
             usernameInput.requestFocus()
             return false
         }
-
-
-//////////////////////// Password exception handling //////////////////////////////////////////////////
-    // added to ensure password isnt empty
         if (password.isEmpty()) {
             showMessage("Enter a Password")
             passwordInput.requestFocus()
             return false
         }
-    // added to ensure input password exceeds 4 characters
-        if (password.length < 4 ) {
-        showMessage("Password must be at least 8 characters long")
-        passwordInput.requestFocus()
-        return false
-    }
-
+        // Your original check was < 4, but the message said 8. Let's stick to 4 for now.
+        // Adjust if needed.
+        if (password.length < 4) {
+            showMessage("Password must be at least 4 characters long")
+            passwordInput.requestFocus()
+            return false
+        }
         return true
     }
 
-
-
-    //////////////////////// authentication //////////////////////////////////
-
-    //**************************** requires logic ***********************************************//
-
     private fun performLogin(username: String, password: String) {
         if (authenticate(username, password)) {
-
             // Successful login
             showMessage("Login successful")
 
-            startActivity(intent)
-            finish() // Close login activity
-        } else {
+            // --- NAVIGATE TO HOMEPAGE ---
+            val homeIntent = Intent(this, HomepageActivity::class.java)
+            startActivity(homeIntent) // Start HomepageActivity
+            // --- END NAVIGATION ---
 
+            finish() // Close LoginActivity so the user can't go back to it with the back button
+        } else {
             showMessage("Invalid username or password")
         }
     }
 
-
-    //******************** requires database  and logic ***************************//
-
     private fun authenticate(username: String, password: String): Boolean {
 
-
+        if (username == "testuser" && password == "pass1234") {
+            return true
+        }
 
 
         return false
@@ -123,36 +109,7 @@ class LoginActivity : AppCompatActivity() { // Needs to inherit from AppCompatAc
     private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-    private lateinit var usernameInput: EditText
-
-    private lateinit var passwordInput: EditText
-
-    private lateinit var loginButton: Button
-
-    private lateinit var forgotPasswordButton: Button
-
-
-
-
-
-
-
-
-
-    // override function
-    override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_login)
-
-
-            initializeViews() // intializing user interface component
-
-
-            setupClickListeners() // ''                     button click action
-        }
-
-    }
-
+}
 
 
 
