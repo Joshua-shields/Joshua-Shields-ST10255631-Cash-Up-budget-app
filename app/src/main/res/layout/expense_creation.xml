@@ -19,14 +19,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Groceries Input with icon -->
-    <EditText
+    <!-- Expenses Dropdown -->
+    <AutoCompleteTextView
         android:id="@+id/groceries_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_corner_white"
-        android:hint="Groceries and Market"
+        android:hint="Choose expense type"
         android:padding="16dp"
         android:drawableEnd="@drawable/ic_groceries"
         android:textColor="@android:color/black"
