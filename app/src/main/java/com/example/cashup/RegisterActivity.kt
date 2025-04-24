@@ -14,6 +14,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
+import android.widget.ImageButton // added import for back button
+
 //******************* End of imports ****************************//
 
 class RegisterActivity : AppCompatActivity() {
@@ -53,6 +56,15 @@ class RegisterActivity : AppCompatActivity() {
         confirmPasswordEditText =
             findViewById(R.id.confirm_password_input) // conformation
         registerButton = findViewById(R.id.register_button) // register clickable button
+
+
+        val backButton: ImageButton = findViewById(R.id.back_button)
+        backButton.setOnClickListener {
+            // Navigate back to login activity
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     // register new user
