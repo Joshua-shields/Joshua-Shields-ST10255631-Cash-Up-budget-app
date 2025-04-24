@@ -14,7 +14,6 @@ class add_income : AppCompatActivity() {
     private lateinit var amountView: EditText
     private lateinit var dateView: EditText
     private lateinit var descriptionView: EditText
-    private lateinit var attachDocView: EditText
     private lateinit var saveButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +27,6 @@ class add_income : AppCompatActivity() {
         amountView = findViewById(R.id.amount_view)
         dateView = findViewById(R.id.date_view)
         descriptionView = findViewById(R.id.description_view)
-        attachDocView = findViewById(R.id.attachDoc_view)
         saveButton = findViewById(R.id.Save_button)
 
         // Save button click listener
@@ -37,7 +35,7 @@ class add_income : AppCompatActivity() {
             val amount = amountView.text.toString()
             val date = dateView.text.toString()
             val description = descriptionView.text.toString()
-            val attachment = attachDocView.text.toString()
+
 
             // TODO:
         }
