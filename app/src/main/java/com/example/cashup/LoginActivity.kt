@@ -9,6 +9,9 @@ import android.widget.EditText // allows for text to be edited  (input fields )
 import android.widget.Toast // needed for pop up messages
 import androidx.appcompat.app.AppCompatActivity
 
+
+import android.widget.TextView
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var usernameInput: EditText
@@ -22,6 +25,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login) // Make sure this matches your login XML filename
+
+        val forgotPasswordText: TextView = findViewById(R.id.forgotpassword)
+
 
         initializeViews()
         setupClickListeners()
