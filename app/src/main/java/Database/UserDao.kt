@@ -3,26 +3,26 @@ package com.example.cashup.Database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.cashup.Database.User
+// No need to import User here if it's in the same package,
+// but it doesn't hurt if it is.
 
 @Dao
 interface UserDao {
 
+  // user login
     @Query("SELECT * FROM user_table WHERE email = :email AND password = :password LIMIT 1")
     suspend fun findUserByCredentials(email: String, password: String): User?
 
     @Insert
     suspend fun insertUser(user: User)
 
-    // Removed the invalid getUserByEmail function
+
+    @Query("SELECT * FROM user_table WHERE email = :email LIMIT 1")
+    suspend fun getUserByEmail(email: String): User? // Use suspend for coroutines
 
     /*
-    // If you wanted a query to get user by email:
-    @Query("SELECT * FROM user_table WHERE email = :email LIMIT 1")
-    suspend fun getUserByEmail(email: String): User?
-    */
 
-    /* @Insert
+     @Insert
      suspend fun insertEmail(email : Email)
      */
 
