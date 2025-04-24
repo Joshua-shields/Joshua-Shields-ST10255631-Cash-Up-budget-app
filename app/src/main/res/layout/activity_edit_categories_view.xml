@@ -12,8 +12,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="411dp"
-        android:layout_height="55dp"
+        android:layout_width="412dp"
+        android:layout_height="57dp"
         android:layout_marginTop="84dp"
         android:background="#121218"
         app:layout_constraintTop_toTopOf="parent"
@@ -67,12 +67,13 @@
 
             <!-- Existing Categories -->
             <!-- Groceries and Market -->
+
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="64dp"
+                android:layout_width="56dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="Change Colour"
+                android:layout_gravity="end"
+                android:text="Change colour"
                 android:textColor="#FFFFFF" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,15 +94,15 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_groceries"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_groceries"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_groceries"
+                    android:id="@+id/btn_colour_groceries"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:background="#FF0000"
+                    android:background="#FFCC00"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -126,12 +127,12 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_home"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_home"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_home"
+                    android:id="@+id/btn_colour_home"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:background="#00FF00"
@@ -160,12 +161,12 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_transport"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_transport"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_transport"
+                    android:id="@+id/btn_colour_transport"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:background="#00AAFF"
@@ -193,12 +194,12 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_gifts"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_gifts"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_gifts"
+                    android:id="@+id/btn_colour_gifts"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:background="#FF00FF"
@@ -227,12 +228,12 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_work"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_work"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_work"
+                    android:id="@+id/btn_colour_work"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:background="#FFCC00"
@@ -261,12 +262,12 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_fast_food"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_fast_food"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_fast_food"
+                    android:id="@+id/btn_colour_fast_food"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:background="#FF6600"
@@ -295,12 +296,12 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_entertainment"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_entertainment"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_entertainment"
+                    android:id="@+id/btn_colour_entertainment"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:background="#00FFFF"
@@ -329,12 +330,12 @@
                     android:textColor="@color/black"
                     android:textStyle="italic"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_extra"
+                    app:layout_constraintEnd_toStartOf="@id/btn_colour_extra"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_color_extra"
+                    android:id="@+id/btn_colour_extra"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:background="#FF00FF"
@@ -356,7 +357,7 @@
 
             <!-- Name Field -->
             <EditText
-                android:id="@+id/et_new_category_name"
+                android:id="@+id/new_category_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -376,7 +377,7 @@
                 android:layout_marginTop="8dp">
 
                 <EditText
-                    android:id="@+id/et_assign_color"
+                    android:id="@+id/assign_color"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -408,7 +409,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/rounded_button_background"
+                android:background="@color/design_default_color_primary_dark"
                 android:text="Save"
                 android:textColor="@color/black" />
         </LinearLayout>
@@ -416,9 +417,9 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="58dp"
-        android:layout_height="55dp"
-        android:background="#121218"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
+        android:background="#0F00DC"
         app:srcCompat="@drawable/ic_profile"
         tools:layout_editor_absoluteX="21dp"
         tools:layout_editor_absoluteY="13dp" />
