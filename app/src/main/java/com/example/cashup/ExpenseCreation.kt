@@ -27,7 +27,7 @@ class ExpenseCreation : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.expense_creation) // Ensure this layout exists
+        setContentView(R.layout.activity_expense_creation) // Ensure this layout exists
 
         // Find your views
         groceriesInput = findViewById(R.id.groceries_input)

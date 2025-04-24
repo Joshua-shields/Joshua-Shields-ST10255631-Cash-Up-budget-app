@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,14 +9,25 @@
     android:padding="16dp"
     tools:context=".ExpenseCreationActivity">
 
+    <!-- Back Button to take the users back to the expense screen -->
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="54dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- App Logo -->
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="App Logo"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -69,6 +81,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Categories Button -->
+    <Button
+        android:id="@+id/categories_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner"
+        android:text="Choose Category"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:padding="18dp"
+        android:gravity="start|center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/amount_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- Date Field -->
     <EditText
         android:id="@+id/date_input"
@@ -76,18 +104,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
-        android:hint="Date "
+        android:hint="Date"
         android:inputType="date"
         android:padding="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="18sp"
         android:importantForAutofill="no"
-        app:layout_constraintTop_toBottomOf="@id/amount_input"
+        app:layout_constraintTop_toBottomOf="@id/categories_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Note Field -->
+    <!-- Note Field can remain empty-->
     <EditText
         android:id="@+id/note_input"
         android:layout_width="0dp"
@@ -105,34 +133,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Attach File Button -->
+    <!-- Attach File Button only for png files -->
     <Button
         android:id="@+id/attach_file_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="449dp"
+        android:layout_height="65dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
+        android:padding="18dp"
         android:text="Attach Receipt"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:padding="18dp"
-        app:layout_constraintTop_toBottomOf="@id/note_input"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/note_input" />
 
-    <!-- Create Expense Button -->
+    <!-- Created the Expense Button -->
     <Button
         android:id="@+id/create_expense_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="453dp"
+        android:layout_height="67dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_button_blue"
+        android:padding="18dp"
         android:text="Create Expense"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:padding="18dp"
-        app:layout_constraintTop_toBottomOf="@id/attach_file_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/attach_file_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
