@@ -12,18 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CashUp"
         tools:targetApi="31">
+
+        <!-- Your existing editCategoriesView Activity -->
         <activity
             android:name=".editCategoriesView"
             android:exported="false" />
+
+        <!-- Your Login Activity (Launcher) -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Added Homepage Activity -->
+        <activity
+            android:name=".HomepageActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>

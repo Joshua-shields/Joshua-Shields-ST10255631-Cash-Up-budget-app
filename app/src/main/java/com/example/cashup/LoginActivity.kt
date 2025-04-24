@@ -2,19 +2,12 @@
 
 package com.example.cashup
 
-import android.os.Bundle
-
 import android.content.Intent
-
-import androidx.appcompat.app.AppCompatActivity
-
+import android.os.Bundle
 import android.widget.Button // allows for clickable buttons to be coded
-
 import android.widget.EditText // allows for text to be edited  (input fields )
-
 import android.widget.Toast // needed for pop up messages
-
-
+import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -102,7 +95,6 @@ class LoginActivity : AppCompatActivity() {
             return true
         }
 
-
         return false
     }
 
@@ -110,7 +102,5 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
-
-
 
 //********************************** end of login backend code *****************************//
