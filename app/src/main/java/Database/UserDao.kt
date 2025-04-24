@@ -3,8 +3,7 @@ package com.example.cashup.Database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-// No need to import User here if it's in the same package,
-// but it doesn't hurt if it is.
+
 
 @Dao
 interface UserDao {
