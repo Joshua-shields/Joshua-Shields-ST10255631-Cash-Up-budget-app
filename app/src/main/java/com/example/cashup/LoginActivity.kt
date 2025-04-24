@@ -16,6 +16,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var forgotPasswordButton: Button
 
+
+    private lateinit var registerLinkButton: Button // button variable to be used to redirect "register now " feature
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login) // Make sure this matches your login XML filename
@@ -29,9 +32,12 @@ class LoginActivity : AppCompatActivity() {
         passwordInput = findViewById(R.id.password_input)
         loginButton = findViewById(R.id.login_button)
         forgotPasswordButton = findViewById(R.id.forgotpassword)
+
+        registerLinkButton = findViewById(R.id.register_link_button) // initialization of new button "register now"
     }
 
     private fun setupClickListeners() {
+
         loginButton.setOnClickListener {
             val username = usernameInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
@@ -41,9 +47,14 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        forgotPasswordButton.setOnClickListener {
-            // TODO: Add logic for forgot password - e.g., navigate to a ResetPasswordActivity
+        forgotPasswordButton.setOnClickListener {  // requires logic
+
             showMessage("Forgot Password Clicked (Implement Navigation)")
+        }
+
+        registerLinkButton.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -63,8 +74,7 @@ class LoginActivity : AppCompatActivity() {
             passwordInput.requestFocus()
             return false
         }
-        // Your original check was < 4, but the message said 8. Let's stick to 4 for now.
-        // Adjust if needed.
+
         if (password.length < 4) {
             showMessage("Password must be at least 4 characters long")
             passwordInput.requestFocus()
