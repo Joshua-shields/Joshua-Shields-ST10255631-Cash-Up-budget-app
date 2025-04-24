@@ -20,11 +20,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Leaderboard Icon -->
-
-    <!-- Crown Icon -->
-
-    <!-- Heading -->
-
     <ImageButton
         android:id="@+id/leaderboardButton"
         android:layout_width="48dp"
@@ -37,6 +32,7 @@
         app:layout_constraintEnd_toStartOf="@id/crownButton"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Crown Icon -->
     <ImageButton
         android:id="@+id/crownButton"
         android:layout_width="48dp"
@@ -50,6 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Heading -->
     <TextView
         android:id="@+id/heading_text"
         android:layout_width="wrap_content"
@@ -100,7 +97,7 @@
         android:id="@+id/item_travel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_transport"
+        android:drawableStart="@drawable/ic_car"
         android:background="@drawable/rounded_corner_white"
         android:padding="16dp"
         android:text="Transport and Travel        R1000,01"
@@ -116,7 +113,6 @@
         android:id="@+id/item_gifts"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_gift"
         android:background="@drawable/rounded_corner_white"
         android:padding="16dp"
         android:text="Gifts                                 R150,50"
@@ -128,6 +124,7 @@
         android:layout_marginTop="8dp" />
 
     <!-- Chart Image -->
+    <!-- Note: There was no chart image element here before, assuming it's still intended to be added later -->
 
     <!-- Add Expense Button -->
     <Button

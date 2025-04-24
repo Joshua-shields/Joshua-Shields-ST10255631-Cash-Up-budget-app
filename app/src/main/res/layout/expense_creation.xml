@@ -122,13 +122,14 @@
         android:id="@+id/contact_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="292dp"
+        android:gravity="center"
         android:text="📞 Phone: 082 382 7173\n✉️ Email: 231@gmail.co.com"
         android:textColor="@android:color/white"
         android:textSize="14sp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/create_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/create_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
