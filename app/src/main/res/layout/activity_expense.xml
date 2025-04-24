@@ -7,7 +7,7 @@
     android:background="@drawable/background"
     android:padding="16dp">
 
-    <!-- Leaderboard Icon -->
+
     <ImageButton
         android:id="@+id/back_button"
         android:layout_width="54dp"
@@ -19,22 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Crown Icon -->
-
-    <!-- Heading -->
-
-    <!-- Expense Item 1 -->
-
-    <!-- Expense Item 2 -->
-
-    <!-- Expense Item 3 -->
-
-    <!-- Expense Item 4 -->
-
-    <!-- Chart Image -->
-    <!-- Note: There was no chart image element here before, assuming it's still intended to be added later -->
-
-    <!-- Add Expense Button -->
 
     <TextView
         android:id="@+id/heading_text"
@@ -56,7 +40,7 @@
         android:layout_marginTop="88dp"
         android:background="@drawable/rounded_corner_white"
         android:padding="16dp"
-        android:text="Groceries and Market        R500,95"
+        android:text="Groceries and Market                              R500,95"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +55,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_corner_white"
         android:padding="16dp"
-        android:text="Home and Maintenance   R2500,00"
+        android:text="Home and Maintenance                         R2500,00"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +70,7 @@
         android:layout_marginTop="28dp"
         android:background="@drawable/rounded_corner_white"
         android:padding="16dp"
-        android:text="Transport and Travel        R1000,01"
+        android:text="Transport and Travel                              R1000,01"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +85,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_corner_white"
         android:padding="16dp"
-        android:text="Gifts                                 R150,50"
+        android:text="Gifts                                                             R150,50"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
