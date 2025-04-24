@@ -134,6 +134,7 @@ class ExpenseCreation : AppCompatActivity() {
 
     }
 
+
     private fun updateDateInView(cal: Calendar) {
         val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         dateInput.setText(sdf.format(cal.time))
