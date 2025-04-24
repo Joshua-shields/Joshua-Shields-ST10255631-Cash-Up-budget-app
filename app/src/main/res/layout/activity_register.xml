@@ -5,20 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".RegisterActivity">
 
-    <!-- Logo: App logo displayed at the top of registration screen -->
+    <!-- App Logo -->
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="App Logo"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <!-- Registration Title: Shows "Register" heading below the logo -->
+    <!-- Register Title -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -28,108 +30,95 @@
         android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Name Field: Input for user's full name -->
+    <!-- Name Field -->
     <EditText
-        android:id="@+id/streaknum"
+        android:id="@+id/name_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
-        android:ems="10"
         android:hint="Enter Your Name"
         android:inputType="textPersonName"
         android:padding="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAutofill="no"
+        app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Email Field: Input for user's email address -->
+    <!-- Email Field -->
     <EditText
         android:id="@+id/email_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
-        android:ems="10"
         android:hint="Enter Your Email"
         android:inputType="textEmailAddress"
         android:padding="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAutofill="no"
+        app:layout_constraintTop_toBottomOf="@id/name_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/streaknum" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Password Field: Secure input for creating password -->
+    <!-- Password Field -->
     <EditText
         android:id="@+id/password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
-        android:ems="10"
         android:hint="Enter Your Password"
         android:inputType="textPassword"
         android:padding="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAutofill="no"
+        app:layout_constraintTop_toBottomOf="@id/email_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email_input" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!-- Confirm Password Field: Verifies password matches -->
+    <!-- Confirm Password Field -->
     <EditText
         android:id="@+id/confirm_password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_corner"
-        android:ems="10"
         android:hint="Confirm Your Password"
         android:inputType="textPassword"
         android:padding="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:importantForAutofill="no"
+        app:layout_constraintTop_toBottomOf="@id/password_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_input" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!-- Register Button: Blue button to submit registration -->
+    <!-- Register Button -->
     <Button
         android:id="@+id/register_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_button_blue"
-        android:padding="18dp"
         android:text="Register"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="18dp"
+        app:layout_constraintTop_toBottomOf="@id/confirm_password_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm_password_input" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
