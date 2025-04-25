@@ -12,3 +12,4 @@ A mobile budgeting application designed to help users reach financial goals, tra
 - Financial goal setting and tracking
 - Detailed analytics with visual representations
 - Gamification with streaks, badges, and leaderboards
+
