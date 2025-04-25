@@ -10,14 +10,14 @@
     <!-- Back Button -->
     <ImageButton
         android:id="@+id/backButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="60dp"
+        android:layout_height="54dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_arrow_back"
         android:contentDescription="@string/back"
         android:onClick="onBackButtonClick"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Weekly Goals Spinner -->
 
