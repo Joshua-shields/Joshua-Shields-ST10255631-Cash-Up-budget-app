@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Cash Up!</string>
+
+    <!-- Content descriptions -->
+    <string name="back">Back</string>
+    <string name="app_logo">App Logo</string>
+
+    <!-- Spinner prompt (dialog title) -->
+    <string name="expense_type_prompt">Choose expense</string>
+
+    <!-- Predefined options for the Spinner -->
+    <string-array name="expense_type_options">
+        <item>Choose expense</item>
+        <item>Groceries and Market</item>
+        <item>Home and Maintenance</item>
+        <item>Transport and Travel</item>
+        <item>Gifts</item>
+    </string-array>
 </resources>
