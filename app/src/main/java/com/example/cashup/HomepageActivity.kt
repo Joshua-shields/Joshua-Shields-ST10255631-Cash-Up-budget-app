@@ -8,8 +8,12 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cashup.com.example.cashup.CalendarActivity
+import com.example.cashup.com.example.cashup.ProfileActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView // Import for the CardView
+
+
 
 class HomepageActivity : AppCompatActivity() {
 
@@ -52,85 +56,18 @@ class HomepageActivity : AppCompatActivity() {
 
         // Top Bar Buttons
         menuButton.setOnClickListener {
-            // TODO: Implement menu functionality
             showToast("Menu button clicked")
         }
 
         statsButton.setOnClickListener {
-            // TODO: Navigate to Statistics Activity
-            // val intent = Intent(this, StatsActivity::class.java)
-            // startActivity(intent)
             showToast("Stats button clicked")
+            // TODO: Navigate to Statistics Activity if needed
         }
 
-        premiumButton.setOnClickListener {
-            // TODO: Implement premium feature action
-            showToast("Premium button clicked")
-        }
-
-        // Main Action Buttons (Listeners on the CardViews)
-        incomeButton.setOnClickListener {
-            // TODO: Navigate to Add Income Activity
-            // Example: Assuming you have an AddIncomeActivity.kt
-            // try {
-            //     val intent = Intent(this, AddIncomeActivity::class.java)
-            //     startActivity(intent)
-            // } catch (e: ActivityNotFoundException) {
-            //     showToast("AddIncomeActivity not found!")
-            //     Log.e("HomepageActivity", "Error starting AddIncomeActivity", e)
-            // } catch (e: Exception) {
-            //     showToast("Error opening income screen: ${e.localizedMessage}")
-            //     Log.e("HomepageActivity", "Error starting AddIncomeActivity", e)
-            // }
-            showToast("Income button clicked")
-        }
-
-        searchButton.setOnClickListener {
-            // TODO: Implement search functionality or navigate to Search Activity
-            // val intent = Intent(this, SearchActivity::class.java)
-            // startActivity(intent)
-            showToast("Search button clicked")
-        }
-
-        expenseButton.setOnClickListener {
-            // Navigate to ExpenseCreationActivity
-            // Make sure ExpenseCreationActivity.kt exists and is declared in AndroidManifest.xml
-            try {
-                // *** CORRECTED LINE ***
-                // Use the Kotlin Activity class name, NOT the XML layout name
-                val intent = Intent(this, ExpenseCreationActivity::class.java)
-                startActivity(intent)
-            } catch (e: ActivityNotFoundException) {
-                // Handle case where the Activity class isn't found
-                showToast("ExpenseCreationActivity not found!")
-                Log.e(
-                    "HomepageActivity",
-                    "Ensure ExpenseCreationActivity exists and is in AndroidManifest.xml",
-                    e
-                )
-            } catch (e: Exception) {
-                // Handle other potential errors
-                showToast("Error opening expense screen: ${e.localizedMessage}")
-                Log.e("HomepageActivity", "Error starting ExpenseCreationActivity", e)
-            }
-        }
-
-        // Inside HomepageActivity.kt -> onCreate() method
-
-// ... (other initializations like menuButton, incomeButton, etc.) ...
-
-        premiumButton = findViewById(R.id.premiumButton) // Make sure this line exists
-
-// --- Setup Click Listeners ---
-
-// ... (other listeners like menuButton.setOnClickListener, etc.) ...
-
-// PREMIUM / CROWN Button Listener
+        // PREMIUM / CROWN Button Listener
         premiumButton.setOnClickListener {
             // Navigate to GamifyActivity
-            // ** Ensure GamifyActivity.kt exists and is in AndroidManifest.xml **
             try {
-                // Use the Kotlin Activity class name for gamification
                 val intent = Intent(this, GamifyActivity::class.java)
                 startActivity(intent)
             } catch (e: ActivityNotFoundException) {
@@ -146,46 +83,34 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
 
+        // --- Main Action Buttons ---
 
-
-        // Monthly Filter Button
-        monthlyFilterButton.setOnClickListener {
-            // TODO: Implement month selection
-            showToast("Monthly filter clicked")
+        // INCOME Button Listener
+        incomeButton.setOnClickListener {
+            // Navigate to AddIncomeActivity
+            // ** Ensure AddIncomeActivity.kt exists and is in AndroidManifest.xml **
+            try {
+                val intent = Intent(this, AddIncomeActivity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("AddIncomeActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure AddIncomeActivity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening income screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting AddIncomeActivity", e)
+            }
         }
 
-        // Bottom Navigation Buttons
-        goalsButton.setOnClickListener {
-            // TODO: Navigate to Goals Activity/Fragment
-            // val intent = Intent(this, GoalsActivity::class.java)
-            // startActivity(intent)
-            showToast("Goals button clicked")
+        searchButton.setOnClickListener {
+            showToast("Search button clicked")
+            // TODO: Navigate to Search Activity if needed
         }
 
-        calendarButton.setOnClickListener {
-            // TODO: Navigate to Calendar Activity/Fragment
-            // val intent = Intent(this, CalendarActivity::class.java)
-            // startActivity(intent)
-            showToast("Calendar button clicked")
-        }
-
-        profileButton.setOnClickListener {
-            // TODO: Navigate to Profile Activity/Fragment (Maybe Login?)
-            // val intent = Intent(this, ProfileActivity::class.java) // Or LoginActivity
-            // startActivity(intent)
-            showToast("Profile button clicked")
-        }
-        // Inside HomepageActivity.kt -> onCreate() method
-
-// ... (other initializations) ...
-
-        expenseButton = findViewById(R.id.expenseButton) // Make sure this line exists
-
-// --- Setup Click Listeners ---
-
-// ... (other listeners) ...
-
-// EXPENSE Button Listener
+        // EXPENSE Button Listener
         expenseButton.setOnClickListener {
             // Navigate to AddExpenseActivity
             // ** Ensure AddExpenseActivity.kt exists and is in AndroidManifest.xml **
@@ -206,9 +131,66 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
 
+        // Monthly Filter Button
+        monthlyFilterButton.setOnClickListener {
+            showToast("Monthly filter clicked")
+            // TODO: Implement month selection logic
+        }
 
+        // --- Bottom Navigation Buttons ---
+        goalsButton.setOnClickListener {
+            // Navigate to GoalsActivity
+            try {
+                val intent = Intent(this, GoalsActivity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("GoalsActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure GoalsActivity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening goals screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting GoalsActivity", e)
+            }
+        }
 
+        calendarButton.setOnClickListener {
+            // Navigate to CalendarActivity
+            try {
+                val intent = Intent(this, CalendarActivity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("CalendarActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure CalendarActivity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening calendar screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting CalendarActivity", e)
+            }
+        }
 
+        profileButton.setOnClickListener {
+            // Navigate to ProfileActivity
+            try {
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("ProfileActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure ProfileActivity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening profile screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting ProfileActivity", e)
+            }
+        }
     }
 
     // Helper function for showing placeholder messages (optional)
@@ -216,7 +198,3 @@ class HomepageActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
-
-
-// }
-
