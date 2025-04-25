@@ -1,4 +1,4 @@
-package com.example.cashup
+package com.example.cashup.com.example.cashup
 
 
 
@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cashup.R
 
 //*************************** end of imports *************************//
 
