@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cashup.com.example.cashup.CalendarActivity
-import com.example.cashup.com.example.cashup.ProfileActivity
+import com.example.cashup.ProfileActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView // Import for the CardView
 
@@ -130,6 +130,35 @@ class HomepageActivity : AppCompatActivity() {
                 Log.e("HomepageActivity", "Error starting AddExpenseActivity", e)
             }
         }
+
+        // Inside HomepageActivity.kt -> onCreate() method
+
+// ... (other initializations) ...
+
+        profileButton = findViewById(R.id.profileButton) // Make sure this line exists
+
+// --- Bottom Navigation Buttons ---
+
+// ... (goalsButton, calendarButton listeners) ...
+
+        profileButton.setOnClickListener {
+            // Navigate to ProfileActivity
+            try {
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("ProfileActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure ProfileActivity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening profile screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting ProfileActivity", e)
+            }
+        }
+
 
         // Monthly Filter Button
         monthlyFilterButton.setOnClickListener {
