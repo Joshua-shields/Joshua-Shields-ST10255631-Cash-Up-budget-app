@@ -39,14 +39,14 @@ class EditCategoriesView : AppCompatActivity() {
         }
 
         //set up back button, change so that it redirects to the add expense view
-        findViewById<View>(R.id.btn_back).setOnClickListener { onBackPressed() }
+        findViewById<View>(R.id.back_arrow).setOnClickListener { onBackPressed() }
 
         //setup colour selector for new category
         btnColourNew.setOnClickListener {
             showColourPicker(btnColourNew)
         }
     }
-//-----------------------setup of colour buttons---------------------------//
+    //-----------------------setup of colour buttons---------------------------//
     private fun setupColourButtons() {
         //add all category colour buttons to a list
         colourButtons.add(findViewById(R.id.btn_colour_groceries))
@@ -75,7 +75,7 @@ class EditCategoriesView : AppCompatActivity() {
         categoryColours["entertainment"] = Color.CYAN
         categoryColours["extra"] = Color.MAGENTA
     }
-//-----------------------------colour selection method---------------------//
+    //-----------------------------colour selection method---------------------//
     private fun showColourPicker(button: Button) {
         //define available colors available to choose from
         val colors = arrayOf(
@@ -123,7 +123,7 @@ class EditCategoriesView : AppCompatActivity() {
 
             }
     }
-//-----------------------------addNewCatName method---------------------------//
+    //-----------------------------addNewCatName method---------------------------//
     private fun saveCategories() {
         //declare the new category name
         val newCategoryName: String = newCatName.text.toString().trim()
