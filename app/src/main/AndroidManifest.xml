@@ -67,7 +67,7 @@
             android:exported="false" />
         <!-- ADDED: Profile Activity -->
         <activity
-            android:name=".com.example.cashup.ProfileActivity"
+            android:name="com.example.cashup.ProfileActivity"
             android:exported="false" />
 
         <!-- ADDED: Add Expense -->

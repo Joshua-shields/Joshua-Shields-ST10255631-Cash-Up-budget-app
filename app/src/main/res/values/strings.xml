@@ -4,9 +4,16 @@
     <!-- Content descriptions -->
     <string name="back">Back</string>
     <string name="app_logo">App Logo</string>
+    <string name="add_goal">Add Goal</string>
+
 
     <!-- Spinner prompt (dialog title) -->
     <string name="expense_type_prompt">Choose expense</string>
+
+    <!-- Spinner prompts -->
+    <string name="weekly_goals_prompt">Select a weekly category</string>
+    <string name="monthly_goals_prompt">Select a monthly category</string>
+    <string name="yearly_goals_prompt">Select a yearly category</string>
 
     <!-- Predefined options for the Spinner -->
     <string-array name="expense_type_options">
@@ -15,5 +22,29 @@
         <item>Home and Maintenance</item>
         <item>Transport and Travel</item>
         <item>Gifts</item>
+    </string-array>
+
+    <!-- Weekly Goals entries -->
+    <string-array name="weekly_goals_items">
+        <item>&gt; Bills     Assigned: R1 000,02     Available: R4 000,00</item>
+        <item>&gt; Needs     Assigned: R1 000,02     Available: R4 000,00</item>
+        <item>&gt; Wants     Assigned: R1 000,02     Available: R4 000,00</item>
+        <item>&gt; Gifts     Assigned: R1 000,02     Available: R4 000,00</item>
+    </string-array>
+
+    <!-- Monthly Goals entries -->
+    <string-array name="monthly_goals_items">
+        <item>&gt; Bills     Assigned: R4 000,00     Available: R16 000,00</item>
+        <item>&gt; Needs     Assigned: R4 000,00     Available: R16 000,00</item>
+        <item>&gt; Wants     Assigned: R4 000,00     Available: R16 000,00</item>
+        <item>&gt; Gifts     Assigned: R4 000,00     Available: R16 000,00</item>
+    </string-array>
+
+    <!-- Yearly Goals entries -->
+    <string-array name="yearly_goals_items">
+        <item>&gt; Bills     Assigned: R48 000,00     Available: R192 000,00</item>
+        <item>&gt; Needs     Assigned: R48 000,00     Available: R192 000,00</item>
+        <item>&gt; Wants     Assigned: R48 000,00     Available: R192 000,00</item>
+        <item>&gt; Gifts     Assigned: R48 000,00     Available: R192 000,00</item>
     </string-array>
 </resources>
