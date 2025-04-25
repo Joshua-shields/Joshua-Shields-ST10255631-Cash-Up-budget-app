@@ -152,4 +152,5 @@ class EditCategoriesView : AppCompatActivity() {
         finish()
     }
 }
+
 //------------------------------------------END OF FILE-------------------------------//
