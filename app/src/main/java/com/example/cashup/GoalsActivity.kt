@@ -6,67 +6,51 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log // Optional: for logging errors
-
-
+import android.widget.Spinner
 
 class GoalsActivity : AppCompatActivity() {
 
-    // Declare view variables
+    // Declare views if you need to interact with them later (like spinners)
     private lateinit var backButton: ImageButton
-    private lateinit var leaderboardButton: ImageButton
-    private lateinit var crownButton: ImageButton
+    private lateinit var weeklySpinner: Spinner
+    private lateinit var monthlySpinner: Spinner
+    private lateinit var yearlySpinner: Spinner
     private lateinit var addGoalButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Set the content view to your goals XML layout
+        // RENAME your XML file to "activity_goals.xml" if it's not already named that
+        setContentView(R.layout.goals) // Make sure layout file is named activity_goals.xml
 
-        setContentView(R.layout.goals)
-
-        // Initialize views using findViewById and the IDs from your XML
-        backButton = findViewById(R.id.backButton)
-        crownButton = findViewById(R.id.crownButton)
+        // Initialize views
+        backButton = findViewById(R.id.backButton) // Use the ID from your XML
+        weeklySpinner = findViewById(R.id.spinner_weekly)
+        monthlySpinner = findViewById(R.id.spinner_monthly)
+        yearlySpinner = findViewById(R.id.spinner_yearly)
         addGoalButton = findViewById(R.id.add_goal_button)
 
-
-        // Back Button: Finish this activity and return to the previous one (Homepage)
+        // Set click listener for the back button (alternative to android:onClick)
         backButton.setOnClickListener {
-            finish()
+            finish() // Go back to the previous activity (Homepage)
         }
 
-        // Leaderboard Button: Navigate to GamifyActivity (or a specific leaderboard screen)
-        leaderboardButton.setOnClickListener {
-
-            try {
-                val intent = Intent(this, GamifyActivity::class.java)
-                startActivity(intent)
-            } catch (e: Exception) { // Catch ActivityNotFoundException specifically if needed
-                showToast("Leaderboard screen not found!")
-                Log.e("GoalsActivity", "Error starting GamifyActivity for leaderboard", e)
-            }
-
-        }
-
-        // Crown Button: Navigate to GamifyActivity (or a specific premium/streak screen)
-        crownButton.setOnClickListener {
-
-            try {
-                val intent = Intent(this, GamifyActivity::class.java)
-                startActivity(intent)
-            } catch (e: Exception) { // Catch ActivityNotFoundException specifically if needed
-                showToast("Gamification screen not found!")
-                Log.e("GoalsActivity", "Error starting GamifyActivity for crown", e)
-            }
-            // showToast("Crown button clicked") // Placeholder
-        }
-
-        // Add Goal Button: Navigate to a screen for creating/editing goals
+        // Set click listener for the add button
         addGoalButton.setOnClickListener {
-
-            showToast("Add Goal button clicked") // Placeholder
+            // TODO: Implement logic to add a new goal (e.g., open a dialog or new activity)
+            showToast("Add Goal button clicked")
         }
 
+        // TODO: Add logic here to populate your Spinners (weekly, monthly, yearly)
+        // You'll likely need ArrayAdapter and data sources (e.g., lists of goals)
     }
+
+    // This function is needed if you use android:onClick="onBackButtonClick" in XML
+    // If you set the listener in onCreate (as shown above), you don't need this
+    // fun onBackButtonClick(view: View) {
+    //     finish()
+    // }
 
     // Helper function for showing Toast messages
     private fun showToast(message: String) {
