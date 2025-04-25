@@ -1,4 +1,4 @@
-package com.example.cashup // Make sure this matches your package name
+package com.example.cashup
 
 import android.content.ActivityNotFoundException // Import specific exception
 import android.content.Intent
@@ -8,15 +8,13 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope // Import lifecycleScope
+import com.example.cashup.Database.AppDatabase // Import your AppDatabase
 import com.example.cashup.com.example.cashup.CalendarActivity
-
-
-
-//import com.example.cashup.com.ProfileActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView // Import for the CardView
-
-
+import kotlinx.coroutines.Dispatchers // Import Dispatchers
+import kotlinx.coroutines.launch // Import launch
 
 class HomepageActivity : AppCompatActivity() {
 
@@ -37,7 +35,7 @@ class HomepageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Set the content view using the layout resource ID
+
         setContentView(R.layout.activity_homepage)
 
         // Initialize Views using findViewById
@@ -55,6 +53,24 @@ class HomepageActivity : AppCompatActivity() {
         calendarButton = findViewById(R.id.calendarButton)
         profileButton = findViewById(R.id.profileButton)
 
+        // --- Initialize Database Here ---
+        val db = AppDatabase.getDatabase(applicationContext)
+        Log.d("DB_INIT", "Database instance requested from HomepageActivity.")
+
+        // Optional: You can add a small operation to ensure it's working
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                // Example: try reading a user or goal (won't crash if table/data doesn't exist yet)
+                db.userDao().getUserByEmail("test@test.com")
+                db.goalDao().getGoalById(0) // Try accessing GoalDao
+                Log.d("DB_INIT", "Database accessed successfully.")
+            } catch (e: Exception) {
+                // This catch block is important, especially during initial setup
+                Log.e("DB_INIT", "Error accessing database during initial check", e)
+            }
+        }
+        // --- End Database Initialization ---
+
         // --- Setup Click Listeners ---
 
         // Top Bar Buttons
@@ -64,13 +80,6 @@ class HomepageActivity : AppCompatActivity() {
 
         statsButton.setOnClickListener {
             showToast("Stats button clicked")
-            // TODO: Navigate to Statistics Activity if needed
-        }
-
-        calendarButton.setOnClickListener {
-
-            val intent = Intent(this, CalendarActivity::class.java)
-            startActivity(intent)
         }
 
         // PREMIUM / CROWN Button Listener
@@ -97,7 +106,6 @@ class HomepageActivity : AppCompatActivity() {
         // INCOME Button Listener
         incomeButton.setOnClickListener {
             // Navigate to AddIncomeActivity
-            // ** Ensure AddIncomeActivity.kt exists and is in AndroidManifest.xml **
             try {
                 val intent = Intent(this, AddIncomeActivity::class.java)
                 startActivity(intent)
@@ -116,13 +124,12 @@ class HomepageActivity : AppCompatActivity() {
 
         searchButton.setOnClickListener {
             showToast("Search button clicked")
-            // TODO: Navigate to Search Activity if needed
+
         }
 
         // EXPENSE Button Listener
         expenseButton.setOnClickListener {
             // Navigate to AddExpenseActivity
-            // ** Ensure AddExpenseActivity.kt exists and is in AndroidManifest.xml **
             try {
                 // Use the AddExpenseActivity class name
                 val intent = Intent(this, AddExpenseActivity::class.java)
@@ -143,7 +150,7 @@ class HomepageActivity : AppCompatActivity() {
         // Monthly Filter Button
         monthlyFilterButton.setOnClickListener {
             showToast("Monthly filter clicked")
-            // TODO: Implement month selection logic
+
         }
 
         // --- Bottom Navigation Buttons ---
@@ -182,6 +189,24 @@ class HomepageActivity : AppCompatActivity() {
                 Log.e("HomepageActivity", "Error starting CalendarActivity", e)
             }
         }
+        statsButton.setOnClickListener {
+            // Navigate to PoePart3Activity (Statistics screen)
+            try {
+                val intent = Intent(this, PoePart3Activity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("Statistics screen not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure PoePart3Activity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening statistics screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting PoePart3Activity", e)
+            }
+        }
+
 
         profileButton.setOnClickListener {
             // Navigate to ProfileActivity
@@ -202,7 +227,7 @@ class HomepageActivity : AppCompatActivity() {
         }
     }
 
-    // Helper function for showing placeholder messages (optional)
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }

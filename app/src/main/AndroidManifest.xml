@@ -70,6 +70,12 @@
             android:name="com.example.cashup.ProfileActivity"
             android:exported="false" />
 
+        <!-- ADDED: POE Part 3 Activity (Statistics) -->
+        <activity
+            android:name=".PoePart3Activity"
+            android:exported="false" />
+
+
         <!-- ADDED: Add Expense -->
         <activity
             android:name=".AddExpenseActivity"
