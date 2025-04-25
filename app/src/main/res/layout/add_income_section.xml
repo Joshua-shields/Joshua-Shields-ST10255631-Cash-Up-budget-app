@@ -1,142 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Add background image-->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:padding="16dp"
-    >
+    tools:context=".AddIncomeActivity">
 
-    <!-- Add salary field-->
-    <!-- Add amount field-->
-
-    <!-- Add date field-->
-
-    <EditText
-        android:id="@+id/income_field"
-        android:layout_width="345dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="18dp"
-        android:text="Salary"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/back_button_poe"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Back"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:tint="@color/white" />
 
-    <!-- Add description field-->
-    <!-- Add documents field-->
-    <!-- Add profile image  field-->
-
-    <EditText
-        android:id="@+id/amount_view"
-        android:layout_width="341dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="18dp"
-        android:text="amount"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.504" />
-
-    <EditText
-        android:id="@+id/date_view"
-        android:layout_width="345dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="18dp"
-        android:text="Date"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614" />
-
-    <EditText
-        android:id="@+id/description_view"
-        android:layout_width="337dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="18dp"
-        android:text="Enter Discription"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743" />
-
-    <!-- Add save button  field-->
-
+    <!-- Placeholder Icon (e.g., a construction or settings icon) -->
+    <!-- Replace 'ic_settings' with a more relevant icon if you have one -->
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/poe_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="64dp"
+        android:src="@android:drawable/ic_menu_manage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_profile" />
+        app:layout_constraintTop_toBottomOf="@id/back_button_poe"
+        app:tint="@color/white"
+        android:contentDescription="Placeholder Icon"/>
 
-    <Button
-        android:id="@+id/Save_button"
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/poe_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="POE Part 3"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/poe_icon" />
+
+    <!-- Description Text inside a rounded background -->
+    <TextView
+        android:id="@+id/poe_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="86dp"
-
-        android:background="@drawable/rounded_button_blue"
-        android:padding="18dp"
-        android:text="Save"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="coming soon..."
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/poe_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
