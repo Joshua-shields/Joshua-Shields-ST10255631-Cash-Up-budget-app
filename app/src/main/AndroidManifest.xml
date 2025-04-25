@@ -61,12 +61,11 @@
 
         <!-- ADDED: Calendar Activity -->
         <activity
-            android:name=".CalendarActivity"
+            android:name=".com.example.cashup.CalendarActivity"
             android:exported="false" />
-
         <!-- ADDED: Profile Activity -->
         <activity
-            android:name=".ProfileActivity"
+            android:name=".com.example.cashup.ProfileActivity"
             android:exported="false" />
 
         <!-- ADDED: Add Expense -->

@@ -9,6 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cashup.com.example.cashup.CalendarActivity
+
+
+
 import com.example.cashup.com.example.cashup.ProfileActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView // Import for the CardView
@@ -62,6 +65,12 @@ class HomepageActivity : AppCompatActivity() {
         statsButton.setOnClickListener {
             showToast("Stats button clicked")
             // TODO: Navigate to Statistics Activity if needed
+        }
+
+        calendarButton.setOnClickListener {
+
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
         }
 
         // PREMIUM / CROWN Button Listener
