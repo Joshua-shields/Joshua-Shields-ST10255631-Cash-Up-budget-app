@@ -19,10 +19,9 @@ interface UserDao {
     @Query("SELECT * FROM user_table WHERE email = :email LIMIT 1")
     suspend fun getUserByEmail(email: String): User? // Use suspend for coroutines
 
-    /*
 
-     @Insert
-     suspend fun insertEmail(email : Email)
-     */
+
+
+
 
 }

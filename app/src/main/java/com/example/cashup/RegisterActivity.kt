@@ -188,3 +188,6 @@ class RegisterActivity : AppCompatActivity() {
         finish() // Finish RegisterActivity so user can't navigate back to it
     }
 }
+
+
+

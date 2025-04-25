@@ -18,6 +18,23 @@ import android.text.method.PasswordTransformationMethod // added to allow for sw
 
 import android.widget.ImageButton // added to allow for "hidden eye" icon to be used
 
+
+///////////////////////////////////////////////////////////////////////
+
+
+import com.example.cashup.Database.AppDatabase
+
+import kotlinx.coroutines.CoroutineScope
+
+import kotlinx.coroutines.Dispatchers
+
+import kotlinx.coroutines.launch
+
+import kotlinx.coroutines.withContext
+
+//////////////////////////////////////////////////////////////////////
+
+
 //************************* End of imports ***************************//
 
 
@@ -42,6 +59,13 @@ class LoginActivity : AppCompatActivity() {
 
     private var passwordVisible = false
 
+
+    /////////////////////////////////////////////////
+
+    private lateinit var database: AppDatabase
+
+    /////////////////////////////////////////////////
+
     //--------------- GLOBAL VARIABLES DECLARATION END ---------//
 
 
@@ -53,6 +77,13 @@ class LoginActivity : AppCompatActivity() {
         initializeViews() // SET UP VIEW ON CREATE
 
         setupClickListeners() // SET UP LISTENER
+
+
+        /////////////////////////////////////
+
+        database = AppDatabase.getDatabase(this)
+
+        /////////////////////////////////////
     }
 
     private fun initializeViews() {
@@ -126,6 +157,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (username.isEmpty()) {
             showMessage("You Need to enter Your Username") // error message
+
             usernameInput.requestFocus()
             return false
         }
@@ -148,27 +180,56 @@ class LoginActivity : AppCompatActivity() {
         return true
     }
 
+
     private fun performLogin(username: String, password: String) {
-        if (authenticate(username, password)) {
-            // Successful login
-            showMessage("Login successful")
 
+        CoroutineScope(Dispatchers.Main).launch {
 
-            val homeIntent = Intent(this, HomepageActivity::class.java)
+            val user = withContext(Dispatchers.IO) {
 
-            startActivity(homeIntent) // Start HomepageActivity
+                database.userDao().getUserByEmail(username)
+            }
 
+            if (user != null && user.password == password) {
+                // Successful login
+                showMessage("Login successful")
 
-            finish() // Close LoginActivity so the user can't go back to it with the back button
-        } else {
-            showMessage("Invalid username or password")
+                val homeIntent = Intent(this@LoginActivity, HomepageActivity::class.java)
+
+                startActivity(homeIntent)
+
+                finish()
+
+            }
+            else {
+                showMessage("Invalid email or password")
+            }
         }
     }
-/*
-* the below hard coded data is used for testing purposes while development is underway. it will be removed before submission
-* */
+
     private fun authenticate(username: String, password: String): Boolean {
-        return username == "testuser" && password == "pass1234"
+        var isValid = false
+
+
+        CoroutineScope(Dispatchers.Main).launch {
+            val user = withContext(Dispatchers.IO) {
+
+
+                database.userDao().getUserByEmail(username)  // this shall be changed if we want to use email or username for the login
+            }
+
+            if (user != null && user.password == password) {
+                // User found and password matches
+                showMessage("Login successful")
+                val homeIntent = Intent(this@LoginActivity, HomepageActivity::class.java)
+                startActivity(homeIntent)
+                finish()
+            } else {
+                showMessage("Invalid email or password")
+            }
+        }
+
+        return isValid
     }
 
     private fun showMessage(message: String) {
