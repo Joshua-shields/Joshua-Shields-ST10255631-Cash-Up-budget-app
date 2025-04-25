@@ -9,17 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView // Import for the CardView
 
-// Make sure you have this Activity created in your project
-// import com.example.cashup.AddExpenseActivity // <-- Uncomment and adjust if needed
-
-// You might need activities for these too:
-// import com.example.cashup.AddIncomeActivity
-// import com.example.cashup.StatsActivity
-// import com.example.cashup.GoalsActivity
-// import com.example.cashup.CalendarActivity
-// import com.example.cashup.ProfileActivity
-// import com.example.cashup.SearchActivity
-// import com.example.cashup.LoginActivity // If profile button goes to login
 
 class HomepageActivity : AppCompatActivity() {
 
