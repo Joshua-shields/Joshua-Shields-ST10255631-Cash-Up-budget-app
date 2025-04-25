@@ -28,6 +28,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".AddExpenseActivity"
+            android:exported="false" />
+        <!-- Add other attributes like theme or screenOrientation if needed -->
+
+
         <!-- Added Homepage Activity -->
         <activity
             android:name=".HomepageActivity"

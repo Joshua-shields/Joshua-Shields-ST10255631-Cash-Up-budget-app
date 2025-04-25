@@ -1,14 +1,15 @@
 package com.example.cashup // Make sure this matches your package name
 
+import android.content.ActivityNotFoundException // Import specific exception
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log // Import Log for better error reporting
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView // Import for the CardView
-
 
 class HomepageActivity : AppCompatActivity() {
 
@@ -70,8 +71,17 @@ class HomepageActivity : AppCompatActivity() {
         // Main Action Buttons (Listeners on the CardViews)
         incomeButton.setOnClickListener {
             // TODO: Navigate to Add Income Activity
-            // val intent = Intent(this, AddIncomeActivity::class.java)
-            // startActivity(intent)
+            // Example: Assuming you have an AddIncomeActivity.kt
+            // try {
+            //     val intent = Intent(this, AddIncomeActivity::class.java)
+            //     startActivity(intent)
+            // } catch (e: ActivityNotFoundException) {
+            //     showToast("AddIncomeActivity not found!")
+            //     Log.e("HomepageActivity", "Error starting AddIncomeActivity", e)
+            // } catch (e: Exception) {
+            //     showToast("Error opening income screen: ${e.localizedMessage}")
+            //     Log.e("HomepageActivity", "Error starting AddIncomeActivity", e)
+            // }
             showToast("Income button clicked")
         }
 
@@ -83,20 +93,27 @@ class HomepageActivity : AppCompatActivity() {
         }
 
         expenseButton.setOnClickListener {
-            // Navigate to AddExpenseActivity
-            // Make sure AddExpenseActivity exists and is imported correctly
+            // Navigate to ExpenseCreationActivity
+            // Make sure ExpenseCreationActivity.kt exists and is declared in AndroidManifest.xml
             try {
-                val intent = Intent(this, activity_add_expense::class.java)
+                // *** CORRECTED LINE ***
+                // Use the Kotlin Activity class name, NOT the XML layout name
+                val intent = Intent(this, ExpenseCreationActivity::class.java)
                 startActivity(intent)
-            } catch (e: ClassNotFoundException) {
-                showToast("AddExpenseActivity not found!")
-                // Log the error or handle it appropriately
+            } catch (e: ActivityNotFoundException) {
+                // Handle case where the Activity class isn't found
+                showToast("ExpenseCreationActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure ExpenseCreationActivity exists and is in AndroidManifest.xml",
+                    e
+                )
             } catch (e: Exception) {
-                showToast("Error opening expense screen")
-                // Log the error
+                // Handle other potential errors
+                showToast("Error opening expense screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting ExpenseCreationActivity", e)
             }
         }
-
 
         // Monthly Filter Button
         monthlyFilterButton.setOnClickListener {
@@ -136,15 +153,8 @@ class HomepageActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
-    // Example placeholder functions (replace with your actual logic)
-    // private fun getCurrentMonth(): String {
-    //     // Logic to get the current month name
-    //     return "April"
-    // }
-    //
-    // private fun getCurrentBalance(): String {
-    //     // Logic to get the current balance from data source (e.g., Room DB)
-    //     return "3000.00"
-    // }
 }
+
+
+// }
+
