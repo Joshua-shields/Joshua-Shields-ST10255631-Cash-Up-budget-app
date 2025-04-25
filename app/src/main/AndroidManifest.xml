@@ -69,6 +69,10 @@
             android:name=".ProfileActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".AddExpenseActivity"
+            android:exported="false" />
+
         <!-- ADDED: Gamification Activity -->
         <activity
             android:name=".GamifyActivity"
