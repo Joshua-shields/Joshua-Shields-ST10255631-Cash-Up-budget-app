@@ -35,7 +35,7 @@
 
         <!-- Forgot Password Activity -->
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".com.example.cashup.ForgotPasswordActivity"
             android:exported="false" />
 
         <!-- Expense Creation Activity -->
