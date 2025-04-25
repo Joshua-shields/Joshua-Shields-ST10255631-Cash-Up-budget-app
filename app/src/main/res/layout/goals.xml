@@ -108,6 +108,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/label_yearly" />
 
+
     <ImageButton
         android:id="@+id/add_goal_button"
         android:layout_width="56dp"
