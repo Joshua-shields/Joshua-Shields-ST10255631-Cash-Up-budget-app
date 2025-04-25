@@ -105,19 +105,21 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Create Button -->
+
+    <!-- Footer Contact Info -->
+
     <Button
         android:id="@+id/create_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/rounded_button_blue"
         android:text="Create"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/attach_file_input"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/attach_file_input" />
 
-    <!-- Footer Contact Info -->
     <TextView
         android:id="@+id/contact_info"
         android:layout_width="wrap_content"
