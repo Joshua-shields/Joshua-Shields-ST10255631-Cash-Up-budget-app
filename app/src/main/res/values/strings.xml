@@ -24,6 +24,14 @@
         <item>Gifts</item>
     </string-array>
 
+    <!--This is for the goals creation entry-->
+    <string-array name="duration_options">
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string name="duration_prompt">Select duration</string>
+
     <!-- Weekly Goals entries -->
     <string-array name="weekly_goals_items">
         <item>&gt; Bills     Assigned: R1 000,02     Available: R4 000,00</item>
