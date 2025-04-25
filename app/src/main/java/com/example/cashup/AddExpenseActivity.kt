@@ -44,6 +44,8 @@ class AddExpenseActivity : AppCompatActivity() {
         // The XML layout
         setContentView(R.layout.activity_add_expense)
 
+
+
         // Find every view by its ID
         backButton          = findViewById(R.id.back_button)
         expenseTypeSpinner  = findViewById(R.id.expense_type_spinner)
