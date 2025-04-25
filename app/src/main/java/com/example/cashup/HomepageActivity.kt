@@ -175,11 +175,40 @@ class HomepageActivity : AppCompatActivity() {
             // startActivity(intent)
             showToast("Profile button clicked")
         }
+        // Inside HomepageActivity.kt -> onCreate() method
 
-        // --- You can also update UI elements dynamically ---
-        // Example: Set the month title dynamically if needed
-        // monthTitle.text = getCurrentMonth()
-        // balanceAmount.text = "R${getCurrentBalance()}" // Format appropriately
+// ... (other initializations) ...
+
+        expenseButton = findViewById(R.id.expenseButton) // Make sure this line exists
+
+// --- Setup Click Listeners ---
+
+// ... (other listeners) ...
+
+// EXPENSE Button Listener
+        expenseButton.setOnClickListener {
+            // Navigate to AddExpenseActivity
+            // ** Ensure AddExpenseActivity.kt exists and is in AndroidManifest.xml **
+            try {
+                // Use the AddExpenseActivity class name
+                val intent = Intent(this, AddExpenseActivity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("AddExpenseActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure AddExpenseActivity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening expense screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting AddExpenseActivity", e)
+            }
+        }
+
+
+
+
     }
 
     // Helper function for showing placeholder messages (optional)
