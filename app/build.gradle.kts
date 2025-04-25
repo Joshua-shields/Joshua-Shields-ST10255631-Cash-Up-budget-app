@@ -34,7 +34,14 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-}
+
+    // --- Add this block ---
+    buildFeatures {
+        viewBinding = true // Or viewBinding true
+    }
+    // ----------------------
+
+} // End of android block
 
 dependencies {
     implementation(libs.androidx.core.ktx)
@@ -42,7 +49,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.room.common.jvm)
+    implementation(libs.androidx.room.common.jvm) // Note: Usually you just need room-runtime and room-ktx here
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -53,4 +60,3 @@ dependencies {
     implementation("androidx.room:room-ktx:2.7.0")
     ksp("androidx.room:room-compiler:2.7.0")
 }
-

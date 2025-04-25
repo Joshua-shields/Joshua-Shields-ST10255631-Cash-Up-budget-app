@@ -33,6 +33,13 @@
             android:name=".HomepageActivity"
             android:exported="false" />
 
+        <!-- ********** ADDED AddExpenseActivity DECLARATION ********** -->
+        <activity
+            android:name="activity_add_expense"
+            android:exported="false"
+            android:label="Add Expense" />
+        <!-- ********************************************************** -->
+
 
     </application>
 
