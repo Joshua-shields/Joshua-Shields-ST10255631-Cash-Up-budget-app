@@ -12,7 +12,7 @@ import com.example.cashup.com.example.cashup.CalendarActivity
 
 
 
-import com.example.cashup.com.example.cashup.ProfileActivity
+import com.example.cashup.ProfileActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView // Import for the CardView
 
