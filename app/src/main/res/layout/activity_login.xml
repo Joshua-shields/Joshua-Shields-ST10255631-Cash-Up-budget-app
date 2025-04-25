@@ -57,6 +57,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+
+
+    <!-- password input has been updated to be a white eye shape -->
     <EditText
         android:id="@+id/password_input"
         android:layout_width="0dp"
@@ -76,6 +79,28 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username_input" />
+
+
+    <!-- toggle has been implemented to choose between visibility and encryption -->
+    <ImageButton
+        android:id="@+id/password_toggle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_visibility_off"
+        android:contentDescription="Toggle password visibility"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/password_input"
+        app:layout_constraintEnd_toEndOf="@+id/password_input"
+        app:layout_constraintTop_toTopOf="@+id/password_input"
+        android:layout_marginEnd="8dp"/>
+
+
+
+
+
+
+
 
     <!-- the bellow code is to implement a button for a shortcut to "register now, which will be used to redirect a user to the register page " -->
 
