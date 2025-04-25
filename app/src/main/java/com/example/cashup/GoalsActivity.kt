@@ -25,7 +25,6 @@ class GoalsActivity : AppCompatActivity() {
 
         // Initialize views using findViewById and the IDs from your XML
         backButton = findViewById(R.id.backButton)
-        leaderboardButton = findViewById(R.id.leaderboardButton)
         crownButton = findViewById(R.id.crownButton)
         addGoalButton = findViewById(R.id.add_goal_button)
 
