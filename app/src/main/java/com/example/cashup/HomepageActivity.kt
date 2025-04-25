@@ -115,6 +115,39 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
 
+        // Inside HomepageActivity.kt -> onCreate() method
+
+// ... (other initializations like menuButton, incomeButton, etc.) ...
+
+        premiumButton = findViewById(R.id.premiumButton) // Make sure this line exists
+
+// --- Setup Click Listeners ---
+
+// ... (other listeners like menuButton.setOnClickListener, etc.) ...
+
+// PREMIUM / CROWN Button Listener
+        premiumButton.setOnClickListener {
+            // Navigate to GamifyActivity
+            // ** Ensure GamifyActivity.kt exists and is in AndroidManifest.xml **
+            try {
+                // Use the Kotlin Activity class name for gamification
+                val intent = Intent(this, GamifyActivity::class.java)
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                showToast("GamifyActivity not found!")
+                Log.e(
+                    "HomepageActivity",
+                    "Ensure GamifyActivity exists and is in AndroidManifest.xml",
+                    e
+                )
+            } catch (e: Exception) {
+                showToast("Error opening gamification screen: ${e.localizedMessage}")
+                Log.e("HomepageActivity", "Error starting GamifyActivity", e)
+            }
+        }
+
+
+
         // Monthly Filter Button
         monthlyFilterButton.setOnClickListener {
             // TODO: Implement month selection
