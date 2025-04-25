@@ -1,4 +1,4 @@
 package com.example.cashup
 
-class gamifyActivity {
+class GamifyActivity {
 }

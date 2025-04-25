@@ -38,7 +38,8 @@
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
 
-
+        <!-- Expense Creation Activity -->
+        <!-- Make sure this name matches your actual Kotlin class -->
         <activity
             android:name=".ExpenseCreationActivity"
             android:exported="false" />
@@ -48,6 +49,32 @@
             android:name=".editCategoriesView"
             android:exported="false" />
 
+        <!-- ADDED: Income Activity -->
+        <activity
+            android:name=".AddIncomeActivity"
+            android:exported="false" />
+
+        <!-- ADDED: Goals Activity -->
+        <activity
+            android:name=".GoalsActivity"
+            android:exported="false" />
+
+        <!-- ADDED: Calendar Activity -->
+        <activity
+            android:name=".CalendarActivity"
+            android:exported="false" />
+
+        <!-- ADDED: Profile Activity -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <!-- ADDED: Gamification Activity -->
+        <activity
+            android:name=".GamifyActivity"
+            android:exported="false" />
+
+        <!-- Add any other Activities you create here -->
 
     </application>
 
