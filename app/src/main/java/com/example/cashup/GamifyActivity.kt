@@ -1,4 +1,4 @@
-package com.example.cashup
+package com.example.cashup // Make sure this matches your project's package
 
 import android.os.Bundle
 import android.widget.ImageButton
@@ -6,24 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 
 class GamifyActivity : AppCompatActivity() {
 
-    // Declare view variable for the back button
-    private lateinit var backButton: ImageButton
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Set the content view to the XML layout you created
+        setContentView(R.layout.gamifyactivity)
 
+        // Find the back button by its ID
+        val backButton: ImageButton = findViewById(R.id.back_button_poe)
 
-        setContentView(R.layout.gamify_streak_leaderboard)
-
-        // Initialize the back button using its ID from the XML
-        backButton = findViewById(R.id.back_button)
-
-        // --- Setup Click Listener for the Back Button ---
+        // Set an OnClickListener for the back button
         backButton.setOnClickListener {
-
+            // Finish the current activity and go back to the previous one
             finish()
         }
-
-        // You can add listeners for tabs or other elements here later if needed
     }
 }
