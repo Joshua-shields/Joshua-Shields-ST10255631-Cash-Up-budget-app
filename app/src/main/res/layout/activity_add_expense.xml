@@ -8,19 +8,19 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:padding="16dp"
-    tools:context=".ExpenseCreationActivity">
+    tools:context=".AddExpenseActivity">
 
     <!-- Back Button -->
     <ImageButton
         android:id="@+id/back_button"
         android:layout_width="54dp"
         android:layout_height="48dp"
-        android:layout_marginTop="36dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/back"
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <!-- App Logo -->
     <ImageView
         android:id="@+id/imageView3"
@@ -47,20 +47,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Expense Type Spinner -->
-    <Spinner
-        android:id="@+id/expense_type_spinner"
+    <!-- Expense Type Field -->
+    <EditText
+        android:id="@+id/expense_type_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_corner"
-        android:prompt="@string/expense_type_prompt"
-        android:spinnerMode="dropdown"
+        android:hint="@string/expense_type_hint"
         android:padding="18dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="18sp"
+        android:importantForAutofill="no"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Amount Field -->
     <EditText
@@ -69,14 +71,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
-        android:hint="Enter Amount (R)"
+        android:hint="@string/amount_hint"
         android:inputType="numberDecimal"
         android:padding="18dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="18sp"
         android:importantForAutofill="no"
-        app:layout_constraintTop_toBottomOf="@id/expense_type_spinner"
+        app:layout_constraintTop_toBottomOf="@id/expense_type_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -103,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
-        android:hint="Date"
+        android:hint="@string/date_hint"
         android:inputType="date"
         android:padding="18dp"
         android:textColor="@color/white"
@@ -121,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
-        android:hint="Add Note"
+        android:hint="@string/note_hint"
         android:inputType="textMultiLine"
         android:padding="18dp"
         android:textColor="@color/white"

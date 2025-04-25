@@ -1,3 +1,4 @@
+// START OF FILE: AddExpenseActivity.kt
 package com.example.cashup
 
 import android.app.DatePickerDialog
@@ -5,7 +6,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
-import android.view.View
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts.GetContent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,8 +14,9 @@ import java.util.*
 
 class AddExpenseActivity : AppCompatActivity() {
 
+    // --- View references ---
     private lateinit var backButton: ImageButton
-    private lateinit var expenseTypeSpinner: Spinner
+    private lateinit var expenseTypeInput: EditText
     private lateinit var amountInput: EditText
     private lateinit var categoriesButton: Button
     private lateinit var dateInput: EditText
@@ -23,7 +24,7 @@ class AddExpenseActivity : AppCompatActivity() {
     private lateinit var attachReceiptButton: Button
     private lateinit var createExpenseButton: Button
 
-    //  chosen receipt (PNG only)
+    // Holds the URI of the chosen receipt (PNG only)
     private var receiptUri: Uri? = null
 
     // Launcher for “Pick a PNG file”
@@ -39,71 +40,52 @@ class AddExpenseActivity : AppCompatActivity() {
         }
     }
 
+    // ------------------------------
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // The XML layout
+        // Inflate layout
         setContentView(R.layout.activity_add_expense)
 
-        // Find every view by its ID
-        backButton          = findViewById(R.id.back_button)
-        expenseTypeSpinner  = findViewById(R.id.expense_type_spinner)
-        amountInput         = findViewById(R.id.amount_input)
-        categoriesButton    = findViewById(R.id.categories_button)
-        dateInput           = findViewById(R.id.date_input)
-        noteInput           = findViewById(R.id.note_input)
+        //  Bind views
+        backButton = findViewById(R.id.back_button)
+        expenseTypeInput = findViewById(R.id.expense_type_input)
+        amountInput = findViewById(R.id.amount_input)
+        categoriesButton = findViewById(R.id.categories_button)
+        dateInput = findViewById(R.id.date_input)
+        noteInput = findViewById(R.id.note_input)
         attachReceiptButton = findViewById(R.id.attach_file_button)
         createExpenseButton = findViewById(R.id.create_expense_button)
 
-        //  Configures the Spinner with adapter for custom white‐text layouts.
-        val expenseOptions = resources.getStringArray(R.array.expense_type_options)
-        val spinnerAdapter = ArrayAdapter(
-            this,
-            R.layout.spinner_item,               // closed (selected) view
-            expenseOptions
-        ).also {
-            it.setDropDownViewResource(R.layout.spinner_dropdown_item)  // dropdown items
-        }
-        expenseTypeSpinner.adapter = spinnerAdapter
-        expenseTypeSpinner.setSelection(0)  // show “Choose expense” initially
-
-        // Optional react whenever the user picks an option
-        expenseTypeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
-                // val selectedType = parent.getItemAtPosition(pos).toString()
-            }
-            override fun onNothingSelected(parent: AdapterView<*>) { /* no-op */ }
-        }
-
-        //  Back button: close this Activity
+        // Back button closes activity
         backButton.setOnClickListener { finish() }
 
-        //  Amount field: numbers + decimal only
+        // Amount field: numbers + decimal
         amountInput.inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
 
-        // Date picker defaulting to today
+        // Date picker setup
         val today = Calendar.getInstance()
         updateDateInView(today)
         dateInput.setOnClickListener { showDatePicker(today) }
 
-        // Choose Category navigation
+        // Category navigation stub
         categoriesButton.setOnClickListener {
-            // TODO: launch your CategoryManagementActivity
+            // TODO: launch your category screen
         }
 
-        // Attach receipt (PNG only)
+        // Attach receipt button handling
         attachReceiptButton.setOnClickListener {
             pickPngLauncher.launch("image/png")
         }
 
-        // Creates expense: validate & log
+        // Create expense: validation + log
         createExpenseButton.setOnClickListener {
             if (validateInputs()) {
                 val expense = Expense(
-                    type       = expenseTypeSpinner.selectedItem.toString(),
-                    amount     = amountInput.text.toString().toDouble(),
-                    date       = dateInput.text.toString(),
-                    note       = noteInput.text.toString().takeIf { it.isNotBlank() },
+                    type = expenseTypeInput.text.toString(),
+                    amount = amountInput.text.toString().toDouble(),
+                    date = dateInput.text.toString(),
+                    note = noteInput.text.toString().takeIf { it.isNotBlank() },
                     receiptUri = receiptUri
                 )
                 Log.d("AddExpenseActivity", "Saving expense: $expense")
@@ -112,11 +94,16 @@ class AddExpenseActivity : AppCompatActivity() {
         }
     }
 
-    /** Checks the Amount and Date are fields filled out correctly. */
+    // ------------------------------
+    /** Validates form the users inputs before saving */
     private fun validateInputs(): Boolean {
         var ok = true
-        val amtText = amountInput.text.toString()
-        if (amtText.isBlank() || amtText.toDoubleOrNull()?.let { it <= 0.0 } == true) {
+        if (expenseTypeInput.text.isBlank()) {
+            expenseTypeInput.error = "Enter an expense type"
+            ok = false
+        }
+        val amt = amountInput.text.toString().toDoubleOrNull()
+        if (amt == null || amt <= 0.0) {
             amountInput.error = "Enter a valid amount"
             ok = false
         }
@@ -127,7 +114,7 @@ class AddExpenseActivity : AppCompatActivity() {
         return ok
     }
 
-    /** Show a date picker and update the date field. */
+    /** Show a date picker dialog */
     private fun showDatePicker(calendar: Calendar) {
         DatePickerDialog(
             this,
@@ -141,13 +128,14 @@ class AddExpenseActivity : AppCompatActivity() {
         ).show()
     }
 
-    /** Format the Calendar as dd/MM/yyyy into dateInput. */
+    /** Update date field in dd/MM/yyyy format */
     private fun updateDateInView(cal: Calendar) {
         val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
         dateInput.setText(sdf.format(cal.time))
     }
 
-    /** Simple data class for your expense object. */
+
+    /** Data class representing an Expense */
     data class Expense(
         val type: String,
         val amount: Double,
@@ -155,5 +143,7 @@ class AddExpenseActivity : AppCompatActivity() {
         val note: String?,
         val receiptUri: Uri?
     )
-}
-//------------------------------------------END OF FILE-------------------------------//
+
+} // --------------------END OF CLASS-------------------------------
+
+

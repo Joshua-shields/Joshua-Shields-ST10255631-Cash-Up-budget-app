@@ -15,14 +15,11 @@
     <string name="monthly_goals_prompt">Select a monthly category</string>
     <string name="yearly_goals_prompt">Select a yearly category</string>
 
-    <!-- Predefined options for the Spinner -->
-    <string-array name="expense_type_options">
-        <item>Choose expense</item>
-        <item>Groceries and Market</item>
-        <item>Home and Maintenance</item>
-        <item>Transport and Travel</item>
-        <item>Gifts</item>
-    </string-array>
+    <!-- text field for the add expense -->
+    <string name="expense_type_hint">Expense Type</string>
+    <string name="amount_hint">Enter Amount (R)</string>
+    <string name="date_hint">Date</string>
+    <string name="note_hint">Add Note</string>
 
     <!--This is for the goals creation entry-->
     <string-array name="duration_options">
