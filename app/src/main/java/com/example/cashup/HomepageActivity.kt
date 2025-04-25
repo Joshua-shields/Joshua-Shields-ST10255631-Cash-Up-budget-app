@@ -108,6 +108,7 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
 
+
         // Monthly Filter Button
         monthlyFilterButton.setOnClickListener {
             // TODO: Implement month selection
