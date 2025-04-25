@@ -10,53 +10,24 @@
 
     <!-- ScrollView for Categories -->
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="412dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="84dp"
-        android:background="#121218"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/btn_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Back"
-                android:src="@drawable/ic_arrow_back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Edit categories"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/btn_back"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/category_Title"
+        android:layout_width="177dp"
+        android:layout_height="48dp"
+        android:background="#0E00DD"
+        android:text="Edit categories"
+        android:textColor="#E9DFDF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="81dp" />
 
     <ScrollView
         android:layout_width="414dp"
         android:layout_height="603dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -423,4 +394,13 @@
         app:srcCompat="@drawable/ic_profile"
         tools:layout_editor_absoluteX="21dp"
         tools:layout_editor_absoluteY="13dp" />
+
+    <ImageButton
+        android:id="@+id/back_arrow"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
+        android:background="#0F00DB"
+        app:srcCompat="@drawable/ic_arrow_back"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="84dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

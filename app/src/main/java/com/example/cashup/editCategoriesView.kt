@@ -39,7 +39,7 @@ class EditCategoriesView : AppCompatActivity() {
         }
 
         //set up back button, change so that it redirects to the add expense view
-        findViewById<View>(R.id.btn_back).setOnClickListener { onBackPressed() }
+        findViewById<View>(R.id.back_arrow).setOnClickListener { onBackPressed() }
 
         //setup colour selector for new category
         btnColourNew.setOnClickListener {
