@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import java.util.Date
 
 @Dao
 interface ExpenseDao {
@@ -12,25 +13,28 @@ interface ExpenseDao {
     suspend fun insertExpense(expense: Expense)
 
     //get all expenses for a specific user
-    @Query("SELECT * FROM expense_table WHERE userId = :userId")
+    @Query("SELECT * FROM expense_table WHERE userId = :userId ORDER BY startDate DESC")
     suspend fun getUserExpenses(userId: Int): List<Expense>
 
-    //get all expenses
-    @Query("SELECT * FROM expense_table")
+    //get all the expenses
+    @Query("SELECT * FROM expense_table ORDER BY startDate DESC")
     suspend fun getExpenses(): List<Expense>
 
-    //get expense by type
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :expenseType")
+    //get the expense by its type
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :expenseType ORDER BY startDate DESC")
     suspend fun getExpensesByType(userId: Int, expenseType: String): List<Expense>
 
     //get expenses within a specified date-range
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate >= :fromDate AND endDate <= :toDate")
-    suspend fun getExpensesByDateRange(
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate >= :fromDate AND endDate <= :toDate ORDER BY startDate DESC")
+    suspend fun getExpensesByDateRange(userId: Int, fromDate: Date, toDate: Date): List<Expense>
 
-        userId: Int,
-        fromDate: java.util.Date,
-        toDate: java.util.Date
-    ): List<Expense>
+    //get expenses that start within a specific month needed for search function
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate >= :monthStart AND startDate < :monthEnd ORDER BY startDate")
+    suspend fun getExpensesByMonth(userId: Int, monthStart: Date, monthEnd: Date): List<Expense>
+
+    //get expenses that start within a specific week
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate >= :weekStart AND startDate < :weekEnd ORDER BY startDate")
+    suspend fun getExpensesByWeek(userId: Int, weekStart: Date, weekEnd: Date): List<Expense>
 
     //get a specific expense by ID
     @Query("SELECT * FROM expense_table WHERE id = :expenseId")
@@ -40,27 +44,31 @@ interface ExpenseDao {
     @Update
     suspend fun updateExpense(expense: Expense)
 
-    //deleting an expense (check with group if desired)
+    //delete an expense (check with group if desired)
     @Delete
     suspend fun deleteExpense(expense: Expense)
 
-    //retrieve total expense amount for a user
+    //retrieve total expenses  for a user
     @Query("SELECT SUM(amount) FROM expense_table WHERE userId = :userId")
-    suspend fun getExpenseAmount(userId: Int): Double?
+    suspend fun getTotalExpenseAmount(userId: Int): Double?
+
+    //get the expenses within a date range
+    @Query("SELECT SUM(amount) FROM expense_table WHERE userId = :userId AND startDate >= :fromDate AND endDate <= :toDate")
+    suspend fun getTotalExpenseAmountInRange(userId: Int, fromDate: Date, toDate: Date): Double?
 
     //get expenses with notes
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND notes != ''")
-    suspend fun getExpensesNotes(userId: Int): List<Expense>
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND notes IS NOT NULL AND notes != '' ORDER BY startDate DESC")
+    suspend fun getExpensesWithNotes(userId: Int): List<Expense>
 
     //get expenses without notes
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND (notes IS NULL OR notes = '')")
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND (notes IS NULL OR notes = '') ORDER BY startDate DESC")
     suspend fun getExpensesWithoutNotes(userId: Int): List<Expense>
 
+    //get expenses with receipt attachments
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND receiptUri IS NOT NULL ORDER BY startDate DESC")
+    suspend fun getExpensesWithReceipts(userId: Int): List<Expense>
 
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND documentation IS NOT NULL")
-    suspend fun getExpenseDocumentation(userId: Int): List<Expense>
-
-    //delete all expenses for a user
+    //delete all expenses for a user (check with group)
     @Query("DELETE FROM expense_table WHERE userId = :userId")
     suspend fun deleteExpensesForUser(userId: Int)
 }
