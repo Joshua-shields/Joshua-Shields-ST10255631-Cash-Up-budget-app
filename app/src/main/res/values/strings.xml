@@ -23,9 +23,9 @@
 
     <!--This is for the goals creation entry-->
     <string-array name="duration_options">
-        <item>Week</item>
-        <item>Month</item>
-        <item>Year</item>
+        <item>WEEK</item>
+        <item>MONTH</item>
+        <item>YEAR</item>
     </string-array>
     <string name="duration_prompt">Select duration</string>
 
