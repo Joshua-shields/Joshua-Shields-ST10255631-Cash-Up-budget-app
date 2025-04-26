@@ -2,6 +2,7 @@ package com.example.cashup
 
 //***************** Start of imports *****************************//
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -39,14 +40,25 @@ class CreateGoalActivity : AppCompatActivity() {
         database = AppDatabase.getDatabase(this)
 
         // Initialize UI elements
-        backButton       = findViewById(R.id.back_button)          // back button
-        nameInput        = findViewById(R.id.goal_name_input)      // goal name
-        categoryInput    = findViewById(R.id.goal_category_input)  // category
-        minSpendInput    = findViewById(R.id.min_spend_input)      // minimum spend
-        maxSpendInput    = findViewById(R.id.max_spend_input)      // maximum spend (optional)
-        durationSpinner  = findViewById(R.id.goal_duration_spinner)// duration selector
-        notesInput       = findViewById(R.id.notes_input)          // additional notes
-        createButton     = findViewById(R.id.create_goal_button)   // create goal button
+        backButton       = findViewById(R.id.back_button)           // back button
+        nameInput        = findViewById(R.id.goal_name_input)       // goal name
+        categoryInput    = findViewById(R.id.goal_category_input)   // category
+        minSpendInput    = findViewById(R.id.min_spend_input)       // minimum spend
+        maxSpendInput    = findViewById(R.id.max_spend_input)       // maximum spend (optional)
+        durationSpinner  = findViewById(R.id.goal_duration_spinner) // duration selector
+        notesInput       = findViewById(R.id.notes_input)           // additional notes
+        createButton     = findViewById(R.id.create_goal_button)    // create goal button
+
+        // Set up duration spinner adapter for white while its closed text and black for when dropdown items
+        val spinnerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.duration_options,
+            R.layout.spinner_item_white          // closed state shows white text
+        )
+        spinnerAdapter.setDropDownViewResource(
+            R.layout.spinner_dropdown_item       // dropdown items show black text
+        )
+        durationSpinner.adapter = spinnerAdapter
 
         // Set click listeners
         backButton.setOnClickListener {
@@ -69,7 +81,8 @@ class CreateGoalActivity : AppCompatActivity() {
 
         // Input validation
         if (title.isEmpty() || minSpend == null || duration.isEmpty()) {
-            Toast.makeText(this,
+            Toast.makeText(
+                this,
                 "Please fill in Name, Min Spend & Duration",
                 Toast.LENGTH_SHORT
             ).show()
