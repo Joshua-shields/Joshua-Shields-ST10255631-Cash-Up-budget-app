@@ -83,8 +83,10 @@
             android:name=".GamifyActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".GoalsActivity"
+            android:exported="false" />
 
-        <!-- Add any other Activities you create here -->
 
     </application>
 
