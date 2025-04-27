@@ -92,6 +92,9 @@
             android:name=".ImageViewerActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".EditCategoriesView"
+            android:exported="false" />
 
     </application>
 
