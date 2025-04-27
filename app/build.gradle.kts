@@ -49,7 +49,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.room.common.jvm) // Note: Usually you just need room-runtime and room-ktx here
+    implementation(libs.androidx.room.common.jvm)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -59,4 +59,8 @@ dependencies {
     implementation("androidx.room:room-runtime:2.7.0")
     implementation("androidx.room:room-ktx:2.7.0")
     ksp("androidx.room:room-compiler:2.7.0")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
+
+

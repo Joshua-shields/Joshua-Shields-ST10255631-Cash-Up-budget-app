@@ -47,9 +47,7 @@
             android:exported="false" />
 
         <!-- Edit Categories View Activity -->
-        <activity
-            android:name=".editCategoriesView"
-            android:exported="false" />
+        <!-- Edit Categories View Activity -->
 
         <!-- ADDED: Income Activity -->
         <activity
@@ -89,6 +87,9 @@
 
         <activity
             android:name=".CreateGoalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImageViewerActivity"
             android:exported="false" />
 
 

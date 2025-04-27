@@ -32,8 +32,8 @@
         android:text="                       Goals"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="98dp" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="154dp" />
 
     <Spinner
         android:id="@+id/spinner_weekly"
