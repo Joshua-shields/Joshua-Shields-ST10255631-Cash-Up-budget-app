@@ -27,7 +27,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_forgot_password)
 
         initializeViews()
 
@@ -37,11 +36,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
     private fun initializeViews() {
         usernameInput = findViewById(R.id.username_input)
 
-        newPasswordInput = findViewById(R.id.new_password_input1)
 
         confirmPasswordInput = findViewById(R.id.confirm_password_input)
-
-        resetButton = findViewById(R.id.reset_button1)
 
         backButton = findViewById(R.id.back_button)
     }
