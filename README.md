@@ -63,3 +63,9 @@ This project includes automated tests to ensure core functionality works as expe
 A video demonstrating the app's features and functionality is available here:
 
 []
+
+## References
+* Joshua (st10255631) 
+https://www.youtube.com/watch?v=fis26HvvDII
+https://source.android.com/docs
+https://www.geeksforgeeks.org/android-studio-tutorial/
