@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Title -->
+    <!-- Screen Title -->
     <TextView
         android:id="@+id/goal_title"
         android:layout_width="wrap_content"
@@ -108,13 +108,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_corner"
+        android:entries="@array/duration_options"
+        android:prompt="@string/duration_prompt"
         android:spinnerMode="dropdown"
+        android:background="@drawable/rounded_corner"
+        android:padding="12dp"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:layout_constraintTop_toBottomOf="@id/max_spend_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
 
     <!-- Additional Notes -->
     <EditText

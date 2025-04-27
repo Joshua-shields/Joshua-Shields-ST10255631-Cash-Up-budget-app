@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:padding="16dp">
+    android:padding="24dp">
 
     <!-- Back Button -->
-
-    <!-- Weekly Goals Spinner -->
-
-    <!-- Monthly Goals Spinner -->
-
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="60dp"
@@ -20,102 +15,117 @@
         android:layout_marginTop="24dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/back"
-        android:onClick="onBackButtonClick"
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Goals Title -->
     <TextView
-        android:id="@+id/label_weekly"
-        android:layout_width="379dp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="                       Goals"
+        android:text="Goals"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="154dp" />
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
 
+    <!-- Weekly Label -->
+    <TextView
+        android:id="@+id/label_weekly"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Weekly Goal"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Weekly Spinner -->
     <Spinner
         android:id="@+id/spinner_weekly"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:prompt="@string/weekly_goals_prompt"
         android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/label_weekly"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_weekly" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Yearly Goals Spinner -->
-
-    <!-- Add (+) Button -->
-
+    <!-- Monthly Label -->
     <TextView
         android:id="@+id/label_monthly"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Monthly Goals"
+        android:text="Monthly Goal"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/spinner_weekly"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_weekly" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
 
+    <!-- Monthly Spinner -->
     <Spinner
         android:id="@+id/spinner_monthly"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:prompt="@string/monthly_goals_prompt"
         android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/label_monthly"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_monthly" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Yearly Label -->
     <TextView
         android:id="@+id/label_yearly"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Yearly Goals"
+        android:text="Yearly Goal"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/spinner_monthly"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_monthly" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
 
+    <!-- Yearly Spinner-->
     <Spinner
         android:id="@+id/spinner_yearly"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:prompt="@string/yearly_goals_prompt"
         android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/label_yearly"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_yearly" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
+    <!-- Add (+)-->
     <ImageButton
         android:id="@+id/add_goal_button"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_margin="16dp"
         android:background="@drawable/rounded_fab_white"
         android:contentDescription="@string/add_goal"
         android:src="@drawable/ic_add"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

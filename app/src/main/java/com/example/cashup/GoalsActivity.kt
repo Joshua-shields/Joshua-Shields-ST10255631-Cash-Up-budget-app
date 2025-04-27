@@ -1,67 +1,141 @@
+// Start of file: GoalsActivity.kt
 package com.example.cashup
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log // <-- Make sure this import is present
+import android.widget.ArrayAdapter
 import android.widget.ImageButton
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Spinner
+import androidx.lifecycle.lifecycleScope
+import com.example.cashup.Database.AppDatabase
+import com.example.cashup.Database.GoalDao
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
+/**
+ * Displays the user’s goals in three dropdowns (weekly, monthly, yearly)
+ * and provides a button to add a new goal.
+ */
 class GoalsActivity : AppCompatActivity() {
 
-    // ... (other variables if you have them)
+    // UI elements
+    private lateinit var backButton: ImageButton
+    private lateinit var addGoalButton: ImageButton
+    private lateinit var weeklySpinner: Spinner
+    private lateinit var monthlySpinner: Spinner
+    private lateinit var yearlySpinner: Spinner
+
+    // Data access
+    private lateinit var goalDao: GoalDao
+
+    // TODO: Replace with real authenticated user ID
+    private val currentUserId: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.goals)
 
-        val backButton: ImageButton = findViewById(R.id.backButton)
-        val weeklySpinner: Spinner = findViewById(R.id.spinner_weekly)
-        val monthlySpinner: Spinner = findViewById(R.id.spinner_monthly)
-        val yearlySpinner: Spinner = findViewById(R.id.spinner_yearly)
-        val addGoalButton: ImageButton = findViewById(R.id.add_goal_button)
+        // Bind views
+        backButton = findViewById(R.id.backButton)
+        addGoalButton = findViewById(R.id.add_goal_button)
+        weeklySpinner = findViewById(R.id.spinner_weekly)
+        monthlySpinner = findViewById(R.id.spinner_monthly)
+        yearlySpinner = findViewById(R.id.spinner_yearly)
 
-        Log.d("GoalsActivity", "Activity created. Setting up listeners.") // Log activity start
+        // Initialize DAO
+        goalDao = AppDatabase.getDatabase(this).goalDao()
 
-        backButton.setOnClickListener {
-            Log.d("GoalsActivity", "Back button clicked.") // Log back button click
-            finish()
-        }
+        // Back navigation
+        backButton.setOnClickListener { finish() }
 
+        // Open CreateGoalActivity when + button clicked
         addGoalButton.setOnClickListener {
-            Log.d("GoalsActivity", "Add Goal Button Clicked!") // check if button works
-
-            try {
-                val targetClass = CreateGoalActivity::class.java
-                Log.d("GoalsActivity", "CreateGoalActivity class found: ${targetClass.name}") // check class reference
-            } catch (e: NoClassDefFoundError) {
-                Log.e("GoalsActivity", "ERROR: CreateGoalActivity class NOT found!", e)
-                showToast("Error: CreateGoalActivity class missing")
-                return@setOnClickListener // Stop here if class is missing
-            } catch (e: Exception) {
-                Log.e("GoalsActivity", "ERROR: Could not reference CreateGoalActivity class", e)
-                showToast("Error referencing CreateGoalActivity")
-                return@setOnClickListener
-            }
-
-            val intent = Intent(this, CreateGoalActivity::class.java)
-            Log.d("GoalsActivity", "Intent created for CreateGoalActivity")
-
-            try {
-                startActivity(intent)
-                Log.d("GoalsActivity", "startActivity(intent) called successfully.")
-            } catch (e: Exception) {
-                // Log any exception during startActivity
-                Log.e("GoalsActivity", "ERROR starting CreateGoalActivity!", e) // Check for errors
-                showToast("Error opening Create Goal screen: ${e.message}")
-            }
-
+            startActivity(Intent(this, CreateGoalActivity::class.java))
         }
-
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Refresh dropdowns whenever the screen comes back into view
+        loadWeeklyGoals()
+        loadMonthlyGoals()
+        loadYearlyGoals()
+    }
+
+    /**
+     * Loads weekly goals from the database and populates the spinner.
+     */
+    private fun loadWeeklyGoals() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val goals = goalDao.getWeeklyGoals(currentUserId)
+            val items = goals.map {
+                "${it.title} — Min: R${"%,.2f".format(it.currentAmount)}  Max: R${"%,.2f".format(it.targetAmount)}"
+            }
+            withContext(Dispatchers.Main) {
+                weeklySpinner.adapter = ArrayAdapter(
+                    this@GoalsActivity,
+                    R.layout.spinner_item_white,               // closed: white text
+                    items
+                ).apply {
+                    setDropDownViewResource(R.layout.spinner_dropdown_item_black) // open: black text
+                }
+                if (items.isEmpty()) showToast("No weekly goals found")
+            }
+        }
+    }
+
+    /**
+     * Loads monthly goals from the database and populates the spinner.
+     */
+    private fun loadMonthlyGoals() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val goals = goalDao.getMonthlyGoals(currentUserId)
+            val items = goals.map {
+                "${it.title} — Min: R${"%,.2f".format(it.currentAmount)}  Max: R${"%,.2f".format(it.targetAmount)}"
+            }
+            withContext(Dispatchers.Main) {
+                monthlySpinner.adapter = ArrayAdapter(
+                    this@GoalsActivity,
+                    R.layout.spinner_item_white,
+                    items
+                ).apply {
+                    setDropDownViewResource(R.layout.spinner_dropdown_item_black)
+                }
+                if (items.isEmpty()) showToast("No monthly goals found")
+            }
+        }
+    }
+
+    /**
+     * Loads yearly goals from the database and populates the spinner.
+     */
+    private fun loadYearlyGoals() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val goals = goalDao.getYearlyGoals(currentUserId)
+            val items = goals.map {
+                "${it.title} — Min: R${"%,.2f".format(it.currentAmount)}  Max: R${"%,.2f".format(it.targetAmount)}"
+            }
+            withContext(Dispatchers.Main) {
+                yearlySpinner.adapter = ArrayAdapter(
+                    this@GoalsActivity,
+                    R.layout.spinner_item_white,
+                    items
+                ).apply {
+                    setDropDownViewResource(R.layout.spinner_dropdown_item_black)
+                }
+                if (items.isEmpty()) showToast("No yearly goals found")
+            }
+        }
+    }
+
+    /**
+     * Helper to show toast messages.
+     */
     private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+// End of file: GoalsActivity.kt
