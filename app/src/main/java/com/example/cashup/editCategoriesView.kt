@@ -69,7 +69,7 @@ class EditCategoriesView : AppCompatActivity() {
 
         // Back button listener
         backArrow.setOnClickListener {
-            Toast.makeText(this, "Button clicked", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
         // Color selector for new category
@@ -83,7 +83,7 @@ class EditCategoriesView : AppCompatActivity() {
 
         categoryColours["groceries"] = "#FFCC00".toColorInt()
         categoryColours["home"] = "#00FF00".toColorInt()
-        categoryColours["transport"] = "#00AAF".toColorInt()
+        categoryColours["transport"] = "#00AAFF".toColorInt()
         categoryColours["gifts"] = "#FF00FF".toColorInt()
         categoryColours["work"] = "#FFCC00".toColorInt()
         categoryColours["fast_food"] = "#FF6600".toColorInt()
