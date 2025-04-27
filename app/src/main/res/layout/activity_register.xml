@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
-        android:hint="Enter Your Email"
+        android:hint="Enter Your Username"
         android:inputType="textEmailAddress"
         android:padding="18dp"
         android:textColor="@color/white"
@@ -88,6 +88,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Password Toggle Button -->
+    <ImageButton
+        android:id="@+id/password_toggle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_visibility_off"
+        android:contentDescription="Toggle password visibility"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/password_input"
+        app:layout_constraintEnd_toEndOf="@id/password_input"
+        app:layout_constraintTop_toTopOf="@id/password_input"
+        android:layout_marginEnd="8dp" />
+
     <!-- Confirm Password Field -->
     <EditText
         android:id="@+id/confirm_password_input"
@@ -106,6 +120,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Confirm Password Toggle Button -->
+    <ImageButton
+        android:id="@+id/confirm_password_toggle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_visibility_off"
+        android:contentDescription="Toggle confirm password visibility"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/confirm_password_input"
+        app:layout_constraintEnd_toEndOf="@id/confirm_password_input"
+        app:layout_constraintTop_toTopOf="@id/confirm_password_input"
+        android:layout_marginEnd="8dp" />
+
     <!-- Register Button -->
     <Button
         android:id="@+id/register_button"
@@ -121,8 +149,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <!-- back to login button -->
+    <!-- Back to Login Button -->
     <ImageButton
         android:id="@+id/back_button"
         android:layout_width="48dp"
@@ -135,6 +162,5 @@
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

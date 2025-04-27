@@ -61,7 +61,11 @@ class HomepageActivity : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 // Example: try reading a user or goal (won't crash if table/data doesn't exist yet)
-                db.userDao().getUserByEmail("test@test.com")
+
+                //db.userDao().getUserByUsername("test@test.com")
+
+
+                 db.userDao().getUserByEmail("test@test.com")
                 db.goalDao().getGoalById(0) // Try accessing GoalDao
                 Log.d("DB_INIT", "Database accessed successfully.")
             } catch (e: Exception) {

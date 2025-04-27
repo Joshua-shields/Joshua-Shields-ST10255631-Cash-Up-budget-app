@@ -8,8 +8,14 @@ import androidx.room.Query
 @Dao
 interface UserDao {
 
+
+
+
+
+
+
   // user login
-    @Query("SELECT * FROM user_table WHERE email = :email AND password = :password LIMIT 1")
+   @Query("SELECT * FROM user_table WHERE email = :email AND password = :password LIMIT 1")
     suspend fun findUserByCredentials(email: String, password: String): User?
 
     @Insert
