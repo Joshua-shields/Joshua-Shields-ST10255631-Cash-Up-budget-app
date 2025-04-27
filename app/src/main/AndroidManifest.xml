@@ -48,6 +48,9 @@
 
         <!-- Edit Categories View Activity -->
         <!-- Edit Categories View Activity -->
+<activity
+    android:name=".EditCategoriesView"
+    android:exported="false" />
 
         <!-- ADDED: Income Activity -->
         <activity
