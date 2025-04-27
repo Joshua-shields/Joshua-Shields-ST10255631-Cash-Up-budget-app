@@ -41,7 +41,7 @@ To get a copy up and running, follow these simple steps:
     * start an Android Virtual Device (AVD) using the AVD Manager in Android Studio go to Tools > AVD Manager for the demo we used Pixel 9 pro.
 
 2.  **Build and Run:**
-    *   Click the Run 'app button (the green play icon) in the toolbar.
+    *   Click the Run app button (the green play icon) in the toolbar.
     *   Android Studio will build the project and launch the application.
 
 ## Running Tests
