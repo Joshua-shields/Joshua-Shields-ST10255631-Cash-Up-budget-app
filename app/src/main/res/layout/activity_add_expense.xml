@@ -116,22 +116,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <EditText
+        android:id="@+id/note_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="@string/note_hint"
+        android:inputType="textMultiLine"
+        android:padding="18dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="18sp"
+        android:importantForAutofill="no"
+        app:layout_constraintTop_toBottomOf="@id/date_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
     <!-- Attach File Button -->
+
+    <!-- Create Expense Button -->
+
     <Button
         android:id="@+id/attach_file_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:text="Attach Receipt"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/date_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/date_input" />
 
-    <!-- Create Expense Button -->
     <Button
         android:id="@+id/create_expense_button"
         android:layout_width="0dp"

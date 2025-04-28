@@ -106,6 +106,7 @@ class AddExpenseActivity : AppCompatActivity() {
         amountInput = findViewById(R.id.amount_input)
         categoriesButton = findViewById(R.id.categories_button)
         dateInput = findViewById(R.id.date_input)
+        noteInput = findViewById(R.id.note_input)
         attachReceiptButton = findViewById(R.id.attach_file_button)
         createExpenseButton = findViewById(R.id.create_expense_button)
 
