@@ -20,13 +20,14 @@ interface ExpenseDao {
     @Query("SELECT * FROM expense_table ORDER BY startDate DESC")
     suspend fun getExpenses(): List<Expense>
 
-    //get the expense by its type
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :categoryName AND startDate >= :fromDate AND endDate <= :toDate ORDER BY startDate DESC")
-    suspend fun getExpensesByCategoryAndDateRange(userId: Int, categoryName: String, fromDate: Date, toDate: Date): List<Expense>
 
-    //get expenses within a specified date-range
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate >= :fromDate AND endDate <= :toDate ORDER BY startDate DESC")
-    suspend fun getExpensesByDateRange(userId: Int, fromDate: Date, toDate: Date): List<Expense>
+    // Get expenses by category within a specified date-range (using BETWEEN for startDate)
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND category = :category AND startDate BETWEEN :startDate AND :endDate ORDER BY startDate DESC") // <-- FIXED: Changed 'type' to 'category'
+    suspend fun getExpensesByCategoryAndDateRange(userId: Int, category: String, startDate: Date, endDate: Date): List<Expense>
+
+    // Get expenses within a specified date-range (using BETWEEN for startDate)
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate BETWEEN :startDate AND :endDate ORDER BY startDate DESC")
+    suspend fun getExpensesByDateRange(userId: Int, startDate: Date, endDate: Date): List<Expense> // Renamed params
 
     //get expenses that start within a specific month needed for search function
     @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate >= :monthStart AND startDate < :monthEnd ORDER BY startDate")
@@ -41,8 +42,9 @@ interface ExpenseDao {
     suspend fun getExpenseID(expenseId: Int): Expense?
 
     //filter attempt by matching the type to the category name
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :categoryName ORDER BY startDate DESC")
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :categoryName ORDER BY startDate DESC") // <-- PROBLEM HERE
     suspend fun getExpensesCategoryName(userId: Int, categoryName: String): List<Expense>
+
 
     //update expense
     @Update
@@ -56,9 +58,10 @@ interface ExpenseDao {
     @Query("SELECT SUM(amount) FROM expense_table WHERE userId = :userId")
     suspend fun getTotalExpenseAmount(userId: Int): Double?
 
-    //get the expenses within a date range
-    @Query("SELECT SUM(amount) FROM expense_table WHERE userId = :userId AND startDate >= :fromDate AND endDate <= :toDate")
-    suspend fun getTotalExpenseAmountInRange(userId: Int, fromDate: Date, toDate: Date): Double?
+    // --- MODIFIED QUERY --- (Optional but recommended for consistency)
+    // Get total expense amount within a date range (using BETWEEN for startDate)
+    @Query("SELECT SUM(amount) FROM expense_table WHERE userId = :userId AND startDate BETWEEN :startDate AND :endDate")
+    suspend fun getTotalExpenseAmountInRange(userId: Int, startDate: Date, endDate: Date): Double? // Renamed params
 
     //get expenses with notes
     @Query("SELECT * FROM expense_table WHERE userId = :userId AND notes IS NOT NULL AND notes != '' ORDER BY startDate DESC")

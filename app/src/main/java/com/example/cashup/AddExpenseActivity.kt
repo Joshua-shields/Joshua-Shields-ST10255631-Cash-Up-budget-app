@@ -2,6 +2,7 @@ package com.example.cashup
 
 //---------------------------------- START OF IMPORTS ---------------------------------------//
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
@@ -9,7 +10,8 @@ import android.os.Bundle
 import android.text.InputType
 import android.util.Log
 import android.widget.*
-import androidx.activity.result.contract.ActivityResultContracts.GetContent
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.*
@@ -33,7 +35,7 @@ class AddExpenseActivity : AppCompatActivity() {
     private lateinit var backButton: ImageButton
     private lateinit var expenseTypeInput: EditText
     private lateinit var amountInput: EditText
-    private lateinit var categoriesButton: Button
+    private lateinit var categoriesButton: Button // This button displays the chosen category
     private lateinit var dateInput: EditText
     private lateinit var noteInput: EditText
     private lateinit var attachReceiptButton: Button
@@ -42,101 +44,148 @@ class AddExpenseActivity : AppCompatActivity() {
     ////////////////////////////////////////////////////////
 
     private var receiptUri: Uri? = null // IMAGE VARIABLE
+    private var selectedCategoryName: String? = null // Variable to store the chosen category
 
     // **************************** DATABASE VARIABLES *********************************//
 
     private lateinit var expenseDatabase: ExpenseDatabase
 
+    // --- Activity Result Launcher for Category Selection ---
+    private lateinit var categoryLauncher: ActivityResultLauncher<Intent>
+
     //--------------------------- END OF GLOBAL VARIABLES -------------------------//
 
-    // Improved image picker launcher with better error handling
-    private val pickImageLauncher = registerForActivityResult(GetContent()) { uri: Uri? ->
+    // Image picker launcher
+    private val pickImageLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
         uri?.let {
             try {
                 Log.d("AddExpenseActivity", "Selected image URI: $it")
-
-                // Check if we already have permission for this URI
-                val persistedUriPermissions = contentResolver.persistedUriPermissions
-                val alreadyHasPermission = persistedUriPermissions.any { perm -> perm.uri == it }
-
-                if (!alreadyHasPermission) {
-                    // Take persistent permission for future access
-                    contentResolver.takePersistableUriPermission(
-                        it,
-                        Intent.FLAG_GRANT_READ_URI_PERMISSION
-                    )
-                    Log.d("AddExpenseActivity", "Successfully took persistent permission")
-                } else {
-                    Log.d("AddExpenseActivity", "Already had permission for this URI")
-                }
-
+                val takeFlags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                contentResolver.takePersistableUriPermission(it, takeFlags)
+                Log.d(
+                    "AddExpenseActivity",
+                    "Successfully took persistent permission"
+                )
                 receiptUri = it
-                Toast.makeText(this, "Receipt attached successfully", Toast.LENGTH_SHORT).show()
-
-                // Verify we can access the content (good for debugging)
+                Toast.makeText(
+                    this,
+                    "Receipt attached successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
                 contentResolver.openInputStream(it)?.use { stream ->
-                    Log.d("AddExpenseActivity", "Successfully verified content access")
+                    Log.d(
+                        "AddExpenseActivity",
+                        "Successfully verified content access"
+                    )
                 }
-
             } catch (e: SecurityException) {
-                Log.e("AddExpenseActivity", "Permission error: ${e.message}", e)
-                Toast.makeText(this, "Error securing image access: ${e.message}", Toast.LENGTH_SHORT).show()
-                // Still save the URI, but warn the user
-                receiptUri = it
-                Toast.makeText(this, "Image might not be accessible later", Toast.LENGTH_SHORT).show()
+                Log.e(
+                    "AddExpenseActivity",
+                    "Permission error: ${e.message}",
+                    e
+                )
+                Toast.makeText(
+                    this,
+                    "Error securing image access: ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                receiptUri = it // Still save URI
             } catch (e: Exception) {
-                Log.e("AddExpenseActivity", "Error handling image: ${e.message}", e)
-                Toast.makeText(this, "Error handling image: ${e.message}", Toast.LENGTH_SHORT).show()
+                Log.e(
+                    "AddExpenseActivity",
+                    "Error handling image: ${e.message}",
+                    e
+                )
+                Toast.makeText(
+                    this,
+                    "Error handling image: ${e.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_add_expense) // Ensure this layout name is correct
 
-        setContentView(R.layout.activity_add_expense)
-
-        //  SETUP
         expenseDatabase = ExpenseDatabase.getDatabase(this)
 
-        ///////////////////////////////////////////////// BINDING /////////////////////////////////////////
+        // --- Initialize Activity Result Launcher ---
+        categoryLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                // Get the selected category name back from EditCategoriesView
+                val data: Intent? = result.data
+                val category =
+                    data?.getStringExtra(EditCategoriesView.EXTRA_SELECTED_CATEGORY)
+                if (category != null) {
+                    selectedCategoryName = category
+                    categoriesButton.text = selectedCategoryName
+                    categoriesButton.error = null // Clear potential error on button
+                } else {
+                    Log.w(
+                        "AddExpenseActivity",
+                        "Received RESULT_OK but no category data"
+                    )
+                }
+            } else {
+                Log.d(
+                    "AddExpenseActivity",
+                    "Category selection cancelled or failed"
+                )
+            }
+        }
+        // --- End of Launcher Initialization ---
 
+        ///////////////////////////////////////////////// BINDING /////////////////////////////////////////
         backButton = findViewById(R.id.back_button)
         expenseTypeInput = findViewById(R.id.expense_type_input)
         amountInput = findViewById(R.id.amount_input)
-        categoriesButton = findViewById(R.id.categories_button)
+        categoriesButton = findViewById(R.id.categories_button) // This button triggers selection
         dateInput = findViewById(R.id.date_input)
         noteInput = findViewById(R.id.note_input)
         attachReceiptButton = findViewById(R.id.attach_file_button)
         createExpenseButton = findViewById(R.id.create_expense_button)
-
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         backButton.setOnClickListener { finish() }
 
-        amountInput.inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
+        amountInput.inputType =
+            InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
 
         val today = Calendar.getInstance()
         updateDateInView(today)
+        dateInput.isFocusable = false // Prevent keyboard, allow click
+        dateInput.isClickable = true
         dateInput.setOnClickListener { showDatePicker(today) }
 
+        // Launch EditCategoriesView for result
         categoriesButton.setOnClickListener {
-            // Navigate to categories screen
             val intent = Intent(this, EditCategoriesView::class.java)
-            startActivity(intent)
+            categoryLauncher.launch(intent) // Use the launcher
         }
 
-        // Improved image picker handling
         attachReceiptButton.setOnClickListener {
             try {
                 pickImageLauncher.launch("image/*")
             } catch (e: Exception) {
-                Log.e("AddExpenseActivity", "Error launching image picker: ${e.message}", e)
-                Toast.makeText(this, "Error launching image picker", Toast.LENGTH_SHORT).show()
+                Log.e(
+                    "AddExpenseActivity",
+                    "Error launching image picker: ${e.message}",
+                    e
+                )
+                Toast.makeText(
+                    this,
+                    "Error launching image picker",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
-        // Create expense: validation + log
         createExpenseButton.setOnClickListener {
             if (validateInputs()) {
                 saveExpense()
@@ -144,23 +193,43 @@ class AddExpenseActivity : AppCompatActivity() {
         }
     }
 
+    // --- Validate category selection and type input separately ---
     private fun validateInputs(): Boolean {
         var ok = true
-        if (expenseTypeInput.text.isBlank()) {
-            expenseTypeInput.error = "Enter an expense type"
+
+        // Validate category selection via the button
+        if (selectedCategoryName.isNullOrBlank()) {
+            categoriesButton.error = "Please choose a category"
             ok = false
+        } else {
+            categoriesButton.error = null // Clear error if selected
         }
+
+        // Validate the separate expense type/description field
+        if (expenseTypeInput.text.isBlank()) {
+            expenseTypeInput.error = "Expense description missing" // Adjusted error message
+            ok = false
+        } else {
+            expenseTypeInput.error = null // Clear error if text is entered
+        }
+
         val amt = amountInput.text.toString().toDoubleOrNull()
         if (amt == null || amt <= 0.0) {
             amountInput.error = "Enter a valid amount"
             ok = false
+        } else {
+            amountInput.error = null
         }
+
         if (dateInput.text.isBlank()) {
             dateInput.error = "Pick a date"
             ok = false
+        } else {
+            dateInput.error = null
         }
         return ok
     }
+
 
     private fun showDatePicker(calendar: Calendar) {
         DatePickerDialog(
@@ -168,6 +237,7 @@ class AddExpenseActivity : AppCompatActivity() {
             { _, year, month, day ->
                 calendar.set(year, month, day)
                 updateDateInView(calendar)
+                dateInput.error = null // Clear error after picking date
             },
             calendar.get(Calendar.YEAR),
             calendar.get(Calendar.MONTH),
@@ -181,52 +251,109 @@ class AddExpenseActivity : AppCompatActivity() {
     }
 
     private fun parseDate(dateString: String): Date {
-        val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-        return sdf.parse(dateString) ?: Date()
+        return try {
+            val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            // Set lenient to false to avoid parsing invalid dates like 31/02/2024
+            sdf.isLenient = false
+            sdf.parse(dateString) ?: Date() // Use current date as fallback
+        } catch (e: Exception) {
+            Log.e("AddExpenseActivity", "Error parsing date: $dateString", e)
+            Date() // Return current date on parsing error
+        }
     }
 
+    // --- Uses selectedCategoryName for category and input text for type ---
     private fun saveExpense() {
+        // Ensure category is selected (double check, though validateInputs should catch it)
+        if (selectedCategoryName.isNullOrBlank()) {
+            Toast.makeText(
+                this,
+                "Cannot save without a category",
+                Toast.LENGTH_SHORT
+            ).show()
+            if (expenseTypeInput.text.isBlank()) {
+                Toast.makeText(
+                    this,
+                    "Cannot save without expense description", // Adjusted message
+                    Toast.LENGTH_SHORT
+                ).show()
+                return
+            }
+            return // Return if category is missing
+        }
+        // Ensure type field is not blank (double check)
+        if (expenseTypeInput.text.isBlank()) {
+            Toast.makeText(
+                this,
+                "Cannot save without expense description", // Adjusted message
+                Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
+
+
         val userId = getCurrentUserId()
         val expenseDate = parseDate(dateInput.text.toString())
+        val expenseAmountText = amountInput.text.toString()
+        val expenseNotes = noteInput.text.toString().takeIf { it.isNotBlank() }
 
-        // Improved URI permission handling
+        // Ensure amount is valid before creating Expense object
+        val expenseAmount = expenseAmountText.toDoubleOrNull()
+        if (expenseAmount == null) {
+            amountInput.error = "Invalid amount format"
+            Toast.makeText(this, "Invalid amount format", Toast.LENGTH_SHORT)
+                .show()
+            return
+        }
+
         receiptUri?.let { uri ->
             try {
-                // Check if we already have permission for this URI
-                val persistedUriPermissions = contentResolver.persistedUriPermissions
-                val alreadyHasPermission = persistedUriPermissions.any { it.uri == uri }
-
+                val persistedUriPermissions =
+                    contentResolver.persistedUriPermissions
+                val alreadyHasPermission =
+                    persistedUriPermissions.any { it.uri == uri }
                 if (!alreadyHasPermission) {
-                    // Take persistent permission for future access
                     contentResolver.takePersistableUriPermission(
                         uri,
                         Intent.FLAG_GRANT_READ_URI_PERMISSION
                     )
-                    Log.d("AddExpenseActivity", "Successfully took persistent permission in saveExpense")
+                    Log.d(
+                        "AddExpenseActivity",
+                        "Successfully took persistent permission in saveExpense"
+                    )
                 }
-
-                // Verify we can still access the content
                 contentResolver.openInputStream(uri)?.use {
-                    Log.d("AddExpenseActivity", "Verified URI is accessible before saving")
+                    Log.d(
+                        "AddExpenseActivity",
+                        "Verified URI is accessible before saving"
+                    )
                 }
-
             } catch (e: Exception) {
-                Log.e("AddExpenseActivity", "Error with URI permission before saving: ${e.message}", e)
-                Toast.makeText(this, "Warning: Receipt may not be viewable later", Toast.LENGTH_SHORT).show()
-                // Continue with saving - the URI might still work
+                Log.e(
+                    "AddExpenseActivity",
+                    "Error with URI permission before saving: ${e.message}",
+                    e
+                )
+                Toast.makeText(
+                    this,
+                    "Warning: Receipt may not be viewable later",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
-        // Database expense object
         val expense = Expense(
             userId = userId,
+            // Use the text manually entered by the user for 'type'
             type = expenseTypeInput.text.toString(),
-            amount = amountInput.text.toString().toDouble(),
-            notes = noteInput.text.toString().takeIf { it.isNotBlank() },
+            amount = expenseAmount,
+            notes = expenseNotes,
             receiptUri = receiptUri?.toString(),
             startDate = expenseDate,
-            endDate = expenseDate, // For single-day expenses, start and end are the same
-            createdAt = Date() // Current timestamp
+            endDate = expenseDate,
+            createdAt = Date(),
+            // Use the category selected via the button for 'category'
+            category = selectedCategoryName
         )
 
         // Save to database using coroutine
@@ -235,16 +362,23 @@ class AddExpenseActivity : AppCompatActivity() {
                 withContext(Dispatchers.IO) {
                     expenseDatabase.expenseDao().insertExpense(expense)
                 }
-                Log.d("AddExpenseActivity", "Saved expense to database: $expense")
-                Toast.makeText(this@AddExpenseActivity, "Expense saved successfully", Toast.LENGTH_SHORT).show()
-                finish()
+                Log.d(
+                    "AddExpenseActivity",
+                    "Saved expense to database: $expense"
+                )
+                Toast.makeText(
+                    this@AddExpenseActivity,
+                    "Expense saved successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
+                finish() // Close activity after successful save
             } catch (e: Exception) {
                 Log.e("AddExpenseActivity", "Error saving expense", e)
                 withContext(Dispatchers.Main) {
                     Toast.makeText(
                         this@AddExpenseActivity,
                         "Error saving expense: ${e.message}",
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_LONG
                     ).show()
                 }
             }
@@ -252,11 +386,7 @@ class AddExpenseActivity : AppCompatActivity() {
     }
 
     private fun getCurrentUserId(): Int {
-        // TODO: Implement proper user ID retrieval
-        return 1 // Currently hardcoded to user ID 1
+        return 1
     }
 }
 //***************************************************** END OF CODE ***********************************************************//
-
-
-

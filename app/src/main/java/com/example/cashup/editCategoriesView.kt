@@ -7,11 +7,12 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.cashup.Database.Category
 import com.example.cashup.Database.ExpenseDatabase
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 //-----------------------------------------START OF FILE--------------------------------//
 class EditCategoriesView : AppCompatActivity() {
@@ -32,9 +33,14 @@ class EditCategoriesView : AppCompatActivity() {
 
     private lateinit var expenseDatabase: ExpenseDatabase
 
+    // Companion object for the result key
+    companion object {
+        const val EXTRA_SELECTED_CATEGORY = "SELECTED_CATEGORY"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_categories_view)
+        setContentView(R.layout.activity_edit_categories_view) // Ensure this layout name is correct
 
         expenseDatabase = ExpenseDatabase.getDatabase(this)
 
@@ -52,7 +58,6 @@ class EditCategoriesView : AppCompatActivity() {
         workButton = findViewById(R.id.workButton)
         foodButton = findViewById(R.id.foodButton)
         entertainmentButton = findViewById(R.id.entertainmentButton)
-        newCategoryEditText = findViewById(R.id.newCategoryEditText)
 
         setupCategoryButton(groceriesButton)
         setupCategoryButton(homeButton)
@@ -64,6 +69,7 @@ class EditCategoriesView : AppCompatActivity() {
 
 
         backButton.setOnClickListener {
+            setResult(RESULT_CANCELED)
             finish()
         }
 
@@ -77,14 +83,14 @@ class EditCategoriesView : AppCompatActivity() {
             }
         }
     }
-//unknown if working check if works, if not delete
+    /*
     private fun loadCategories() {
-        GlobalScope.launch(Dispatchers.IO) {
+        lifecycleScope.launch(Dispatchers.IO) { // Use lifecycleScope
             try {
                 expenseDatabase.categoryDao().getAllCategories()
-
+                // If you need to update UI with categories, switch back to Main thread
             } catch (e: Exception) {
-                runOnUiThread {
+                 withContext(Dispatchers.Main) { // Use withContext for single switch
                     Toast.makeText(
                         this@EditCategoriesView,
                         "Error loading categories: ${e.message}",
@@ -94,32 +100,40 @@ class EditCategoriesView : AppCompatActivity() {
             }
         }
     }
+    */
 
     private fun setupCategoryButton(button: Button) {
         button.setOnClickListener {
             val categoryName = button.text.toString()
 
-            GlobalScope.launch(Dispatchers.IO) {
+            lifecycleScope.launch {
                 try {
-                    val exists = expenseDatabase.categoryDao().categoryExists(categoryName)
+                    val exists = withContext(Dispatchers.IO) { // Switch to IO for DB access
+                        expenseDatabase.categoryDao().categoryExists(categoryName)
+                    }
 
                     if (exists <= 0) {
-                        expenseDatabase.categoryDao().insertCategory(
-                            Category(
-                                name = categoryName,
-                                isDefault = true
+                        // Add the default category if it doesn't exist
+                        withContext(Dispatchers.IO) {
+                            expenseDatabase.categoryDao().insertCategory(
+                                Category(
+                                    name = categoryName,
+                                    isDefault = true
+                                )
                             )
-                        )
+                        }
                     }
 
-                    runOnUiThread {
-                        val resultIntent = Intent()
-                        resultIntent.putExtra("SELECTED_CATEGORY", categoryName)
-                        setResult(RESULT_OK, resultIntent)
-                        finish()
-                    }
+                    // Return the selected category name to the calling activity
+                    val resultIntent = Intent()
+                    // Use the constant key
+                    resultIntent.putExtra(EXTRA_SELECTED_CATEGORY, categoryName)
+                    setResult(RESULT_OK, resultIntent)
+                    finish() // Close this activity
+
                 } catch (e: Exception) {
-                    runOnUiThread {
+                    // Show error on the main thread
+                    withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@EditCategoriesView,
                             "Error selecting category: ${e.message}",
@@ -132,12 +146,16 @@ class EditCategoriesView : AppCompatActivity() {
     }
 
     private fun addNewCategory(categoryName: String) {
-        GlobalScope.launch(Dispatchers.IO) {
+        // Use lifecycleScope
+        lifecycleScope.launch {
             try {
-                val exists = expenseDatabase.categoryDao().categoryExists(categoryName)
+                val exists = withContext(Dispatchers.IO) { // Switch to IO for DB check
+                    expenseDatabase.categoryDao().categoryExists(categoryName)
+                }
 
                 if (exists > 0) {
-                    runOnUiThread {
+                    // Show message on Main thread
+                    withContext(Dispatchers.Main) {
                         Toast.makeText(
                             this@EditCategoriesView,
                             "Category '$categoryName' already exists",
@@ -145,16 +163,21 @@ class EditCategoriesView : AppCompatActivity() {
                         ).show()
                     }
                 } else {
-                    expenseDatabase.categoryDao().insertCategory(
-                        Category(
-                            name = categoryName,
-                            isDefault = false
+                    // Insert on IO thread
+                    withContext(Dispatchers.IO) {
+                        expenseDatabase.categoryDao().insertCategory(
+                            Category(
+                                name = categoryName,
+                                isDefault = false // Newly added are not default
+                            )
                         )
-                    )
+                    }
 
-                    runOnUiThread {
+                    // Return result and show success message on Main thread
+                    withContext(Dispatchers.Main) {
                         val resultIntent = Intent()
-                        resultIntent.putExtra("SELECTED_CATEGORY", categoryName)
+                        // Use the constant key
+                        resultIntent.putExtra(EXTRA_SELECTED_CATEGORY, categoryName)
                         setResult(RESULT_OK, resultIntent)
 
                         Toast.makeText(
@@ -162,11 +185,12 @@ class EditCategoriesView : AppCompatActivity() {
                             "Category '$categoryName' added successfully",
                             Toast.LENGTH_SHORT
                         ).show()
-                        finish()
+                        finish() // Close this activity
                     }
                 }
             } catch (e: Exception) {
-                runOnUiThread {
+                // Show error on Main thread
+                withContext(Dispatchers.Main) {
                     Toast.makeText(
                         this@EditCategoriesView,
                         "Error adding category: ${e.message}",
