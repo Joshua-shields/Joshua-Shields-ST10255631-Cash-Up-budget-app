@@ -22,18 +22,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- App Logo -->
+
+    <!-- Expense Creation Title -->
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/app_logo"
-        app:layout_constraintTop_toBottomOf="@id/back_button"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
         app:srcCompat="@drawable/logo" />
 
-    <!-- Expense Creation Title -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -117,39 +119,24 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Note Field -->
-    <EditText
-        android:id="@+id/note_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_corner"
-        android:hint="@string/note_hint"
-        android:inputType="textMultiLine"
-        android:padding="18dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="18sp"
-        android:importantForAutofill="no"
-        app:layout_constraintTop_toBottomOf="@id/date_input"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Attach File Button -->
+
+    <!-- Create Expense Button -->
     <Button
         android:id="@+id/attach_file_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:text="Attach Receipt"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/note_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:layout_editor_absoluteY="611dp" />
 
-    <!-- Create Expense Button -->
     <Button
         android:id="@+id/create_expense_button"
         android:layout_width="0dp"
