@@ -21,8 +21,8 @@ interface ExpenseDao {
     suspend fun getExpenses(): List<Expense>
 
     //get the expense by its type
-    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :expenseType ORDER BY startDate DESC")
-    suspend fun getExpensesByType(userId: Int, expenseType: String): List<Expense>
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :categoryName AND startDate >= :fromDate AND endDate <= :toDate ORDER BY startDate DESC")
+    suspend fun getExpensesByCategoryAndDateRange(userId: Int, categoryName: String, fromDate: Date, toDate: Date): List<Expense>
 
     //get expenses within a specified date-range
     @Query("SELECT * FROM expense_table WHERE userId = :userId AND startDate >= :fromDate AND endDate <= :toDate ORDER BY startDate DESC")

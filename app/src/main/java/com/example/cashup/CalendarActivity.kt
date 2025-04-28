@@ -43,6 +43,7 @@ class CalendarActivity : AppCompatActivity() {
     private lateinit var expensesRecyclerView: RecyclerView
     private lateinit var noExpensesText: TextView
     private lateinit var backButton: ImageButton // <-- Add back button variable
+    private lateinit var categorySearchButton: MaterialButton
 
     //////////////////////////// DATABASE VARIABLES ///////////////////////////
     private lateinit var database: ExpenseDatabase
@@ -51,6 +52,8 @@ class CalendarActivity : AppCompatActivity() {
     private var startDate: Date = Calendar.getInstance().time
     private var endDate: Date = Calendar.getInstance().time
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+    private var selectedCategory: String? = null
+
 
     private val currentUserId = 1
     //------------------- END OF GLOBAL VARIABLES ----------------------//
@@ -77,6 +80,7 @@ class CalendarActivity : AppCompatActivity() {
         expensesRecyclerView = findViewById(R.id.expensesRecyclerView)
         noExpensesText = findViewById(R.id.noExpensesText)
         backButton = findViewById(R.id.back_button_poe) // <-- Initialize back button
+        categorySearchButton = findViewById(R.id.categorySearchButton)
 
         expensesRecyclerView.layoutManager = LinearLayoutManager(this)
     }
@@ -93,6 +97,10 @@ class CalendarActivity : AppCompatActivity() {
 
         endDateButton.setOnClickListener {
             showDatePickerDialog(false)
+        }
+
+        categorySearchButton.setOnClickListener {
+            showCategorySelectionDialog()
         }
 
         // Search button
@@ -135,6 +143,43 @@ class CalendarActivity : AppCompatActivity() {
     private fun updateDateButtonsText() {
         startDateButton.text = dateFormat.format(startDate)
         endDateButton.text = dateFormat.format(endDate)
+    }
+
+    private fun showCategorySelectionDialog() {
+        lifecycleScope.launch {
+            val categories = withContext(Dispatchers.IO) {
+                database.categoryDao().getAllCategories()
+            }
+
+            if (categories.isEmpty()) {
+                Toast.makeText(this@CalendarActivity, "No categories available", Toast.LENGTH_SHORT).show()
+                return@launch
+            }
+
+            val categoryNames = categories.map { it.name }.toTypedArray()
+
+            val dialog = androidx.appcompat.app.AlertDialog.Builder(this@CalendarActivity)
+                .setTitle("Select Category")
+                .setSingleChoiceItems(categoryNames, -1) { dialog, which ->
+                    selectedCategory = categoryNames[which]
+                    dialog.dismiss()
+
+                    // Update the button text to show selected category
+                    categorySearchButton.text = "Category: $selectedCategory"
+
+                    // Reload expenses with the new category filter
+                    loadExpensesForSelectedPeriod()
+                }
+                .setNeutralButton("Clear Filter") { _, _ ->
+                    selectedCategory = null
+                    categorySearchButton.text = "Search Categories"
+                    loadExpensesForSelectedPeriod()
+                }
+                .setNegativeButton("Cancel", null)
+                .create()
+
+            dialog.show()
+        }
     }
 
     private fun showDatePickerDialog(isStartDate: Boolean) {
