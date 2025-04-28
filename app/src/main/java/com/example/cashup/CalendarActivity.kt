@@ -115,7 +115,6 @@ class CalendarActivity : AppCompatActivity() {
         }
     }
 
-    // ... (rest of your CalendarActivity code remains the same)
 
 
     private fun setDefaultDateRange() {
