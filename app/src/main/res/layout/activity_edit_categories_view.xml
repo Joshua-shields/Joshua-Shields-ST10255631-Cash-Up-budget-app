@@ -1,442 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:background="@drawable/background">
 
-    <!-- Top App Bar -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
 
-    <!-- ScrollView for Categories -->
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back" />
 
+    <!-- Category Buttons - Static Layout -->
     <TextView
-        android:id="@+id/category_Title"
-        android:layout_width="177dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="1dp"
-        android:background="#0E00DD"
-        android:text="Edit categories"
-        android:textColor="#E9DFDF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/back_arrow"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/titleTextView"
+        android:layout_width="396dp"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:padding="12dp"
+        android:text="Category"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="414dp"
-        android:layout_height="603dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <Button
+            android:id="@+id/groceriesButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#121218"
-            android:orientation="vertical"
-            android:paddingBottom="24dp">
+            android:layout_marginBottom="8dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Groceries"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#050505" />
 
-            <!-- Existing Categories -->
-            <!-- Groceries and Market -->
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Home and Maintenance"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="56dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:text="Change colour"
-                android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/transportButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Transport"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="62dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                tools:layout_editor_absoluteY="37dp">
+        <Button
+            android:id="@+id/giftsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Gifts"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/groceries"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Groceries and Market"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_groceries"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
+        <Button
+            android:id="@+id/workButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Work"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
 
-                <Button
-                    android:id="@+id/btn_colour_groceries"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#FFCC00"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/foodButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Fast food"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
 
-            <!-- Home and Maintenance -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp">
+        <Button
+            android:id="@+id/entertainmentButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#FFFFFF"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Entertainment"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
 
-                <EditText
-                    android:id="@+id/et_home"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Home and Maintenance"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_home"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
 
-                <Button
-                    android:id="@+id/btn_colour_home"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#00FF00"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Transport -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp">
-
-                <EditText
-                    android:id="@+id/transport"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Transport"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_transport"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_colour_transport"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#00AAFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Gifts -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp">
-
-                <EditText
-                    android:id="@+id/gifts"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Gifts"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_gifts"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_colour_gifts"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#FF00FF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Work -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp">
-
-                <EditText
-                    android:id="@+id/work"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Work"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_work"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_colour_work"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#FFCC00"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Fast food -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp">
-
-                <EditText
-                    android:id="@+id/food"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Fast food"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_fast_food"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_colour_fast_food"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#FF6600"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Entertainment -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp">
-
-                <EditText
-                    android:id="@+id/entertainment"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Entertainment"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_entertainment"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_colour_entertainment"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#00FFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Extra -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp">
-
-                <EditText
-                    android:id="@+id/extra"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:text="Extra"
-                    android:textColor="@color/black"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_colour_extra"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/btn_colour_extra"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="#FF00FF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Add New Category Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
-                android:text="Add new category"
-                android:textColor="#AAAAAA"
-                android:textSize="14sp" />
-
-            <!-- Name Field -->
-            <EditText
-                android:id="@+id/new_category_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/rounded_corner_white"
-                android:hint="Name"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="8dp"
-                android:textColor="@color/black"
-                android:textColorHint="#888888"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <!-- Color Selection -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp">
-
-                <EditText
-                    android:id="@+id/assign_color"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/rounded_corner_white"
-                    android:hint="Assign colour"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="8dp"
-                    android:textColor="@color/black"
-                    android:textColorHint="#888888"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_color_new"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/btn_color_new"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:background="@android:color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Save Button -->
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="187dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/design_default_color_primary_dark"
-                android:text="Save"
-                android:textColor="@color/black" />
-        </LinearLayout>
-    </ScrollView>
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="45dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="30dp"
+    <!-- Add New Category Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="345dp"
-        android:layout_marginBottom="32dp"
-        android:background="#0F00DC"
-        app:layout_constraintBottom_toTopOf="@+id/back_arrow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_profile"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        android:layout_marginBottom="8dp"
+        android:background="#000000"
+        android:text="Add new category"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-    <ImageButton
-        android:id="@+id/back_arrow"
-        android:layout_width="66dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="32dp"
-        android:background="#0F00DB"
-        app:layout_constraintEnd_toStartOf="@+id/category_Title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        app:srcCompat="@drawable/ic_arrow_back"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/newCategoryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:hint="Name"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="#13459A"
+        android:text="Save"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

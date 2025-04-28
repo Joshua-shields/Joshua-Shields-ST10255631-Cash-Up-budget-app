@@ -6,11 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [Expense::class], version = 1, exportSchema = false)
+@Database(entities = [Expense::class, Category:: class], version = 1, exportSchema = false)
 @TypeConverters(DateConverter::class)
 abstract class ExpenseDatabase : RoomDatabase() {
 
     abstract fun expenseDao(): ExpenseDao
+    abstract fun categoryDao(): CategoryDao //added the category entity to access the dao
 
     companion object {
         @Volatile
