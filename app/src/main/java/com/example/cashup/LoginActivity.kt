@@ -235,5 +235,5 @@ class LoginActivity : AppCompatActivity() {
     private fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-    //------------------------- End of Code ----------------------------//
 }
+//***************************************************** END OF CODE ***********************************************************//

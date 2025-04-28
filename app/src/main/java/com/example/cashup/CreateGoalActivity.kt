@@ -109,7 +109,7 @@ class CreateGoalActivity : AppCompatActivity() {
 
         // Build Goal entity
         val goal = Goal(
-            userId = 1,                             // TODO: replace with real user ID
+            userId = 1,
             title = title,
             description = if (notes.isNotEmpty()) notes else category,
             targetAmount = maxSpend ?: minSpend,          // use max if provided, else min
@@ -130,4 +130,4 @@ class CreateGoalActivity : AppCompatActivity() {
         }
     }
 }
-// End of file: CreateGoalActivity.kt
+//***************************************************** END OF CODE ***********************************************************//

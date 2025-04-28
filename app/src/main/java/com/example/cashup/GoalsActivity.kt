@@ -138,4 +138,4 @@ class GoalsActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
-// End of file: GoalsActivity.kt
+//***************************************************** END OF CODE ***********************************************************//

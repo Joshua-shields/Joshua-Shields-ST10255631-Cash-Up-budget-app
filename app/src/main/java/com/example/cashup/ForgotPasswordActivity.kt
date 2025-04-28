@@ -127,3 +127,4 @@ class ForgotPasswordActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+//***************************************************** END OF CODE ***********************************************************//
