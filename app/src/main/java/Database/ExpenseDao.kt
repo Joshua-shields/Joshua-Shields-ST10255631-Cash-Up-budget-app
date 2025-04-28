@@ -40,6 +40,10 @@ interface ExpenseDao {
     @Query("SELECT * FROM expense_table WHERE id = :expenseId")
     suspend fun getExpenseID(expenseId: Int): Expense?
 
+    //filter attempt by matching the type to the category name
+    @Query("SELECT * FROM expense_table WHERE userId = :userId AND type = :categoryName ORDER BY startDate DESC")
+    suspend fun getExpensesCategoryName(userId: Int, categoryName: String): List<Expense>
+
     //update expense
     @Update
     suspend fun updateExpense(expense: Expense)

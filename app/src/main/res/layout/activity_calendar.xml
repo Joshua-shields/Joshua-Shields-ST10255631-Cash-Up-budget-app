@@ -9,21 +9,22 @@
     android:padding="16dp">
 
     <!-- Title -->
+
+    <!-- Back Button -->
     <TextView
         android:id="@+id/calendarTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="20dp"
         android:text="Expense Calendar"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Back Button -->
     <ImageButton
         android:id="@+id/back_button_poe"
         android:layout_width="48dp"
@@ -89,6 +90,17 @@
             android:backgroundTint="#FF7043" />
     </LinearLayout>
 
+    <!-- Search Category Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/categorySearchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Categories"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/ic_search"
+        app:layout_constraintTop_toBottomOf="@id/dateSelectionLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Search Expense Button -->
     <com.google.android.material.button.MaterialButton
@@ -98,7 +110,7 @@
         android:text="Search Expenses"
         android:layout_marginTop="8dp"
         app:icon="@drawable/ic_search"
-        app:layout_constraintTop_toBottomOf="@id/dateSelectionLayout"
+        app:layout_constraintTop_toBottomOf="@id/categorySearchButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
