@@ -74,5 +74,7 @@ A video demonstrating the app's features and functionality is available here:
 * https://www.youtube.com/watch?v=X7Xz5ixKVhs&t=110s
 * https://www.youtube.com/watch?v=73Cs_UbCmqk
 * https://stackoverflow.com/questions/49799757/implementing-the-room-database-android
+* https://stackoverflow.com/questions/42666987/redirect-to-activity-after-clicking-a-button-android
+* https://www.geeksforgeeks.org/a-complete-guide-to-learn-xml-for-android-app-development/
 * ChatGPT 04-mini-high
 * https://chatgpt.com/share/68108327-5f60-800c-8d94-c548a9af8e38
