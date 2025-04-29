@@ -8,25 +8,25 @@ import android.content.Intent // ALLOWS DATA TO BE SENT BETWEEN COMPONENTS
 
 import android.os.Bundle // STORES DATA
 
-import android.util.Log
+import android.util.Log // SENDING MESSAGES TO THE LOGCAT
 
-import android.view.LayoutInflater
+import android.view.LayoutInflater // LINK UI TO VIEW OBJECT
 
-import android.view.View
+import android.view.View // UI COMPONENT
 
 import android.view.ViewGroup
 
-import android.widget.Button
+import android.widget.Button // CLICKABLE BUTTON ACCESS
 
-import android.widget.CalendarView
+import android.widget.CalendarView // CALENDAR INTERFACE
 
-import android.widget.ImageButton
+import android.widget.ImageButton // ALLLOWS FOR IMAGES TO BE USED AS A BUTTON AS PER TEXT
 
-import android.widget.TextView
+import android.widget.TextView // OUTPUT TEXT TO USER
 
-import android.widget.Toast
+import android.widget.Toast // DISPLAY MESSAGES AND NOTIFICATIONS
 
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AlertDialog // USED TO SEND ERROR MESSAGES TO USER
 
 import androidx.appcompat.app.AppCompatActivity
 
