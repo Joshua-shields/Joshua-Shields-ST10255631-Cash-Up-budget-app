@@ -35,7 +35,7 @@ import com.example.cashup.ImageViewerActivity
 class CalendarActivity : AppCompatActivity() {
 
     //------------------- START OF GLOBAL VARIABLES ----------------------//
-    //*************************** UI VARIABLES **************************//
+    //***************** UI VARIABLES ***********//
     private lateinit var calendarView: CalendarView
     private lateinit var startDateButton: Button
     private lateinit var endDateButton: Button
@@ -54,7 +54,8 @@ class CalendarActivity : AppCompatActivity() {
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     private var selectedCategory: String? = null // Stores the selected category name
 
-    private val currentUserId = 1
+    // --- Hardcoded User ID (Replace with actual login mechanism later) --- //
+    private val currentUserId = 1 // Make sure this is the correct way you get the user ID
     //------------------- END OF GLOBAL VARIABLES ----------------------//
 
     override fun onCreate(savedInstanceState: Bundle?) {
