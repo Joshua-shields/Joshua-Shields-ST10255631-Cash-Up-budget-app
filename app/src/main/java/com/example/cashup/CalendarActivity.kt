@@ -62,6 +62,9 @@ import com.example.cashup.ImageViewerActivity // ALLOW FOR VIEWING OF IMAGES
 
 //---------------------------------------- END OF IMPORTS -------------------------------------//
 
+
+
+//***************************************************** START OF CODE ***********************************************************//
 class CalendarActivity : AppCompatActivity() {
 
     //------------------- START OF GLOBAL VARIABLES ----------------------//
@@ -96,7 +99,7 @@ class CalendarActivity : AppCompatActivity() {
 
     private var selectedCategory: String? = null // Stores the selected category name
 
-    // --- Hardcoded User ID , WILL IMPLEMENT ICREMENTAL INDEXING IN PART 3  --- //
+    // --- Hardcoded User ID , WILL IMPLEMENT INCREMENTAL INDEXING IN PART 3  --- //
 
     private val currentUserId = 1
 
@@ -237,7 +240,7 @@ class CalendarActivity : AppCompatActivity() {
                 }
             }
 
-            // Ensure UI operations run on the Main thread
+            // Ensure UI operations run
             withContext(Dispatchers.Main) {
                 if (categories.isEmpty()) {
                     Toast.makeText(
@@ -298,9 +301,9 @@ class CalendarActivity : AppCompatActivity() {
                     calendar.set(Calendar.MILLISECOND, 0)
                     startDate = calendar.time
 
-                    // Ensure start date is not after end date
-                    if (startDate.after(endDate)) {
-                        endDate = startDate // Adjust end date if needed (or show error)
+
+                    if (startDate.after(endDate)) { // THIS IS TO SET THE START DATE TO BE FOLLOWED BY THE END DATE. IF THE END DATE IS BEFORE THE START DATE, IT WILL BE SWITCHED.
+                        endDate = startDate
                     }
                 } else {
                     // Set time to end of the day
@@ -324,13 +327,15 @@ class CalendarActivity : AppCompatActivity() {
         ).show()
     }
 
-    // --- UPDATED FUNCTION ---
+  /*
+  * BELOW CODE IS TO LOAD UP EXXPENSES FROM THE DATABASE AND DISPLAY THEM. THIS WILL ALLOW US TO SEARCH BY CATEGORY OR EXPENSE.
+  * */
     private fun loadExpensesForSelectedPeriod() {
         lifecycleScope.launch {
             try {
-                // Fetch expenses based on whether a category is selected
+                // Fetch expenses based on which category is selected
                 val expenses = withContext(Dispatchers.IO) {
-                    val category = selectedCategory // Local copy for background thread
+                    val category = selectedCategory // Local copy for background
                     if (category != null) {
                         // Use the corrected DAO method with category filter
                         database.expenseDao().getExpensesByCategoryAndDateRange(
@@ -394,12 +399,12 @@ class CalendarActivity : AppCompatActivity() {
         }
     }
 
-    // --- Consider removing or adjusting markDatesWithExpenses ---
-    // This function marks dates based on *all* expenses in the month by default.
-    // It does not respect the category filter. You might want to remove it,
-    // disable it when a filter is active, or modify it significantly.
+
+
+
+
     private fun markDatesWithExpenses() {
-        // If you keep this, it needs modification to respect the selectedCategory filter
+
         lifecycleScope.launch {
             try {
                 val calendar = Calendar.getInstance()
@@ -427,15 +432,10 @@ class CalendarActivity : AppCompatActivity() {
                 // --- How to mark dates on Android's CalendarView is non-trivial ---
                 // The standard CalendarView doesn't have a simple API to highlight specific dates.
                 // You often need a custom CalendarView library for this feature.
-                // The existing code only sets the *initial* displayed date.
-                // For now, just logging the dates found.
+
                 if (expenseDates.isNotEmpty()) {
                     Log.d("CalendarActivity", "Dates with expenses in this view/filter: $expenseDates")
-                    // The following line just sets the *currently selected* date, it doesn't mark multiple dates.
-                    // val earliestExpenseDate = expenseDates.minOrNull()
-                    // earliestExpenseDate?.let {
-                    //     calendarView.date = it.time
-                    // }
+
                 } else {
                     Log.d("CalendarActivity", "No expenses found for marking in this view/filter.")
                 }
@@ -446,6 +446,12 @@ class CalendarActivity : AppCompatActivity() {
         }
     }
 
+    /*
+    *
+    * THE BELOW CODE IS USED TO DISPLAY RECPTS WHICH WERE UPLOADED BY THE USER IN THE CREATE EXPENSE SCREEN.
+    * INFORMATION IS RETRIVED FROM THE DATABASE AND THEN DISPLAYED BASED ON URI
+    *
+    * */
 
     private fun showReceipt(receiptUriString: String) {
         try {
@@ -463,7 +469,7 @@ class CalendarActivity : AppCompatActivity() {
         }
     }
 
-    // --- ExpenseAdapter (Inner Class) - No changes needed here ---
+
     inner class ExpenseAdapter(
         private val expenses: List<Expense>,
         private val onExpenseClick: (Expense) -> Unit
@@ -471,7 +477,7 @@ class CalendarActivity : AppCompatActivity() {
 
         inner class ExpenseViewHolder(itemView: View) :
             RecyclerView.ViewHolder(itemView) {
-            // Ensure these IDs match your item_expense.xml layout
+
             val typeText: TextView = itemView.findViewById(R.id.expenseTypeText)
             val amountText: TextView =
                 itemView.findViewById(R.id.expenseAmountText)
