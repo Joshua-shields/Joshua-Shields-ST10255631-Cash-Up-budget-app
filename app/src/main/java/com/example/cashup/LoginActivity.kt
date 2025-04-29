@@ -1,10 +1,12 @@
+
+//--------------------------------------- START OF FILE ------------------------------//
 package com.example.cashup
 
 //************************* Start of imports ************************//
 
 import android.content.Intent
 
-import android.os.Bundle
+import android.os.Bundle // STORES DATA
 
 import android.widget.Button // added to allow button actions
 
@@ -18,27 +20,23 @@ import android.text.method.PasswordTransformationMethod // added to allow for sw
 
 import android.widget.ImageButton // added to allow for "hidden eye" icon to be used
 
+import com.example.cashup.Database.AppDatabase // ACCESS TO APP DATABASE
 
-///////////////////////////////////////////////////////////////////////
-
-
-import com.example.cashup.Database.AppDatabase
-
-import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineScope // COROUTINE
 
 import kotlinx.coroutines.Dispatchers
 
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.launch // COROUTINE LAUNCH FUNCTION
 
 import kotlinx.coroutines.withContext
 
-//////////////////////////////////////////////////////////////////////
+
 
 
 //************************* End of imports ***************************//
 
 
-//------------------------- Start of Code ----------------------------//
+
 
 //**************************************************** START OF CLASS *********************************//
 class LoginActivity : AppCompatActivity() {
@@ -88,7 +86,13 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initializeViews() {
 
-        //--------------- DECLARATION --------------//
+
+        /*
+        * THE BELOW CODE IS SETTING UP THE VIEWS
+        * I AM SETTING UP BY USING THE ID AS IT IS UNIQUE TO EACH FIELD
+        * WILL REQUIRE INDEXING IN PART 3
+        *
+        * */
 
         usernameInput = findViewById(R.id.username_input)
 
@@ -168,19 +172,23 @@ class LoginActivity : AppCompatActivity() {
             return false
         }
         if (password.isEmpty()) {
-            showMessage("Enter a Password")
+            showMessage("Enter a Password") // ERROR IF PASSWORD IS EMPTY
             passwordInput.requestFocus()
             return false
         }
         if (password.length < 4) {
-            showMessage("Password must be at least 4 characters long")
+            showMessage("Password must be at least 4 characters long") // ERROR IS PASSWORD OS TO SHORT
             passwordInput.requestFocus()
             return false
         }
         return true
     }
 
-
+/*
+* BELOW IS THE LOGIC FOR THE LOGIN ACTION
+* VERIFICATION IS TESTED AGINDT DATA CAPTURED THROUGH THE REGISTER ACTION STORED IN THE DATABASE
+*
+* */
     private fun performLogin(username: String, password: String) {
 
         CoroutineScope(Dispatchers.Main).launch {
@@ -196,13 +204,13 @@ class LoginActivity : AppCompatActivity() {
 
                 val homeIntent = Intent(this@LoginActivity, HomepageActivity::class.java)
 
-                startActivity(homeIntent)
+                startActivity(homeIntent) // REDIRECT TO HOME PAGE
 
                 finish()
 
             }
             else {
-                showMessage("Invalid email or password")
+                showMessage("Invalid email or password") // IF LOGIN IS A FAIL, THE ERROR MESSAGE WILL DISPLAY
             }
         }
     }
