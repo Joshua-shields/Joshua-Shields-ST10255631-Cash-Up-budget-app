@@ -2,22 +2,30 @@ package com.example.cashup
 
 //---------------------------------------- START OF IMPORTS -------------------------------------//
 import android.net.Uri
-import android.os.Bundle
-import android.util.Log
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.Toast
+
+import android.os.Bundle // STORES DATA
+
+import android.util.Log // SENDS MESSAGES TO LOGCAT
+
+import android.widget.ImageButton // ALLOWS IMAGES TO BE USED FOR BUTTON FUNCTIONALITY
+
+import android.widget.ImageView // GRANTS ACCESS TO IMAGE VIEWS
+
+import android.widget.Toast // DISPLAYS MESSAGES
+
 import androidx.appcompat.app.AppCompatActivity
+
+
 //---------------------------------------- END OF IMPORTS -------------------------------------//
 
 //***************************************************** START OF CODE ***********************************************************//
 
 class ImageViewerActivity : AppCompatActivity() {
 
-    // Companion object to hold constants like Intent extras
+
     companion object {
         const val EXTRA_IMAGE_URI = "IMAGE_URI" // Key for the image URI passed in the Intent
-        private const val TAG = "ImageViewerActivity" // Tag for logging
+        private const val TAG = "ImageViewerActivity" //  logging
     }
 
     //--------------------------- START OF CLASS BODY -------------------------//
@@ -27,17 +35,21 @@ class ImageViewerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_image_viewer)
 
         //------------------- UI ELEMENT INITIALIZATION ----------------------//
+
         val imageView = findViewById<ImageView>(R.id.fullscreen_image)
         val backButton = findViewById<ImageButton>(R.id.back_button_poe)
+
         //--------------------------------------------------------------------//
 
         //------------------- BACK BUTTON LISTENER ---------------------------//
+
         backButton.setOnClickListener {
             finish() // Close this activity when the back button is pressed
         }
         //--------------------------------------------------------------------//
 
         //------------------- INTENT DATA HANDLING ---------------------------//
+
         // Get the image URI string from the intent using the constant key
         val imageUriString = intent.getStringExtra(EXTRA_IMAGE_URI)
 
