@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <!-- label and setup -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +13,6 @@
         android:theme="@style/Theme.CashUp"
         tools:targetApi="31">
 
-
         <!-- Login Activity (Launcher) -->
         <activity
             android:name=".LoginActivity"
@@ -23,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
         <!-- Homepage Activity -->
         <activity
@@ -41,23 +39,20 @@
             android:exported="false" />
 
         <!-- Expense Creation Activity -->
-        <!-- Make sure this name matches your actual Kotlin class -->
+
         <activity
             android:name=".ExpenseCreationActivity"
             android:exported="false" />
 
         <!-- Edit Categories View Activity -->
-        <!-- Edit Categories View Activity -->
-<activity
-    android:name=".EditCategoriesView"
-    android:exported="false" />
+        <activity
+            android:name=".EditCategoriesView"
+            android:exported="false" />
 
         <!-- ADDED: Income Activity -->
         <activity
             android:name=".AddIncomeActivity"
             android:exported="false" />
-
-
 
         <!-- ADDED: Calendar Activity -->
         <activity
@@ -73,7 +68,6 @@
             android:name=".PoePart3Activity"
             android:exported="false" />
 
-
         <!-- ADDED: Add Expense -->
         <activity
             android:name=".AddExpenseActivity"
@@ -83,7 +77,7 @@
         <activity
             android:name=".GamifyActivity"
             android:exported="false" />
-
+        <!-- Create Goal Activity -->
         <activity
             android:name=".GoalsActivity"
             android:exported="false" />
@@ -95,9 +89,6 @@
             android:name=".ImageViewerActivity"
             android:exported="false" />
 
-
-
     </application>
-
 
 </manifest>
