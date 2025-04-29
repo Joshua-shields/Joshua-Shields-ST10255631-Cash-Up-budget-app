@@ -69,6 +69,9 @@ A video demonstrating the app's features and functionality is available here:
 * https://www.youtube.com/watch?v=fis26HvvDII
 * https://source.android.com/docs
 * https://www.geeksforgeeks.org/android-studio-tutorial/
+* AI
+* https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 how to use room db in android studio
+* https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 how to allow scroll view
 
 * Darren Stander (st10209886)
 * https://www.youtube.com/watch?v=X7Xz5ixKVhs&t=110s
