@@ -1,9 +1,28 @@
+
+//-------------------------------- START OF FILE -------------------------------//
 package com.example.cashup
 
-import android.os.Bundle
-import android.widget.ImageButton
+//******************** START OF IMPORTS *****************//
+
+import android.os.Bundle // STORES DATA
+
+import android.widget.ImageButton // ALLOWS FOR IMAGES TO BE USED AS A BUTTON AS PER TEXT
+
 import androidx.appcompat.app.AppCompatActivity
 
+//********************* END OF IMPORTS ****************//
+
+
+/*
+*
+*
+* THIS FILE AND COD WILL BE IMPLEMENTED IN PART 3
+*
+* BASIC OVERRIDE FUNCTION FOR NOW TO PREVENT CRASHES IN THE CODE
+*
+*
+*
+* */
 class AddIncomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,3 +40,4 @@ class AddIncomeActivity : AppCompatActivity() {
         }
     }
 }
+//------------------------------- END OF FILE ---------------------------------------//
