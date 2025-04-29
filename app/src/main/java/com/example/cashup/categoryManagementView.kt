@@ -18,7 +18,13 @@ class categoryManagementView : AppCompatActivity() {
     private lateinit var crownButton: ImageButton
     private lateinit var statsButton: ImageButton
 
-
+/*
+*
+* THE FUNCTIONALITY OF THIS CODE WILL BE IMPLEMENTED IN PART 3
+*
+*
+*
+* */
     //**************** START OF OVERRIDE FUNCTION ***************//
 
     override fun onCreate(savedInstanceState: Bundle?) {
