@@ -81,3 +81,7 @@ A video demonstrating the app's features and functionality is available here:
 * https://www.geeksforgeeks.org/a-complete-guide-to-learn-xml-for-android-app-development/
 * ChatGPT 04-mini-high
 * https://chatgpt.com/share/68108327-5f60-800c-8d94-c548a9af8e38
+* https://chatgpt.com/share/6811430a-9314-800e-a4db-573f9e7c79a8
+* https://chatgpt.com/share/68113ed2-09d8-800e-81aa-27bcbbce8fa4
+* https://chatgpt.com/share/68114126-5864-800e-9ab1-dcec0fa02f62
+* https://chatgpt.com/share/681143cb-bfc4-800e-b6c4-688d4ed2b253
