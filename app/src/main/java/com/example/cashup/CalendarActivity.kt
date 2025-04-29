@@ -1,35 +1,65 @@
 package com.example.cashup.com.example.cashup
 
 //---------------------------------------- START OF IMPORTS -------------------------------------//
-import android.app.DatePickerDialog
-import android.content.Intent
-import android.os.Bundle
+
+import android.app.DatePickerDialog // ALLOWS USER TO SELECT DATE
+
+import android.content.Intent // ALLOWS DATA TO BE SENT BETWEEN COMPONENTS
+
+import android.os.Bundle // STORES DATA
+
 import android.util.Log
+
 import android.view.LayoutInflater
+
 import android.view.View
+
 import android.view.ViewGroup
+
 import android.widget.Button
+
 import android.widget.CalendarView
+
 import android.widget.ImageButton
+
 import android.widget.TextView
+
 import android.widget.Toast
+
 import androidx.appcompat.app.AlertDialog
+
 import androidx.appcompat.app.AppCompatActivity
+
 import androidx.lifecycle.lifecycleScope
+
 import androidx.recyclerview.widget.LinearLayoutManager
+
 import androidx.recyclerview.widget.RecyclerView
+
 import com.example.cashup.Database.Expense
+
 import com.example.cashup.R
+
 import com.google.android.material.button.MaterialButton
+
 import kotlinx.coroutines.Dispatchers
+
 import kotlinx.coroutines.launch
+
 import kotlinx.coroutines.withContext
+
 import java.text.SimpleDateFormat
+
 import java.util.Calendar
+
 import java.util.Date
+
 import java.util.Locale
+
 import com.example.cashup.Database.ExpenseDatabase
+
 import com.example.cashup.ImageViewerActivity
+
 //---------------------------------------- END OF IMPORTS -------------------------------------//
 
 class CalendarActivity : AppCompatActivity() {
