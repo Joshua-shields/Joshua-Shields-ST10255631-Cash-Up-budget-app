@@ -34,9 +34,8 @@ class EditCategoriesView : AppCompatActivity() {
     private lateinit var expenseDatabase: ExpenseDatabase
     //----------------------------------------------------------------//
 
-    // Companion object for the result key
-    companion object {
-        const val EXTRA_SELECTED_CATEGORY = "SELECTED_CATEGORY"
+    companion object { //creates a static member that can associate with a class without needing to create an instance of that class
+        const val EXTRA_SELECTED_CATEGORY = "SELECTED_CATEGORY"//declares a constant variable that passes the chosen category name to different views
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,7 +70,7 @@ class EditCategoriesView : AppCompatActivity() {
 //----------------------On click listener for back button---------------------------//
 /*
 *when the back button is clicked:
-*set the result to RESULT_CANCELED, this informs the calling Activity that the user canceled the operation
+*set the result to RESULT_CANCELED, this informs the activity/view that the user canceled the operation
 */
 //on click listener method for the back button to return the user to the previous view when the user clicks the back button
         backButton.setOnClickListener {
@@ -84,7 +83,6 @@ class EditCategoriesView : AppCompatActivity() {
         /*
              *when the save button is clicked:
              *get the new category name from the EditText
-             *trim any leading/trailing whitespace
              *if the name is not empty, call addNewCategory() to insert it in the database
              *if the name is empty, show a Toast prompting the user to enter a name
              */
@@ -101,23 +99,27 @@ class EditCategoriesView : AppCompatActivity() {
     //---------------------------------------------------------//
 
     //----------------------setupCategoryButton method-------------------------------//
-    /*
-         *this method is used to set up the behavior of each category button
+    /*Declaration of AI usage
+    * Nature: modifying code to work with a database
+    * AI used: Claude
+    * Link to chat: https://claude.ai/share/770ac710-c2f7-407b-aa38-8bd9a9786b83
+    * */
+
+    /*this method is used to set up the behavior of each category button
          *when a category button is clicked, this method will:
          *get the category name from the button's text
          *check if the category exists in the database
          *if it doesn't exist, insert it as a default category
-         *return the selected category name to the calling activity
-         *handle any errors during the process
-         */
+         *return the selected category name to the view
+         *handle any errors during the process*/
     private fun setupCategoryButton(button: Button) {
         button.setOnClickListener {
             val categoryName = button.text.toString()
-            lifecycleScope.launch { /*This launches a new coroutine within the activity's lifecycle scope.
-                                   Coroutines are used here to perform database operations
+            lifecycleScope.launch { /*This launches a new coroutine within the view's lifecycle scope
+                                   * Coroutines are used here to perform database operations
                                    without blocking the main thread
-                                   the lifecycle scope ensures that this coroutine is automatically cancelled when
-                                   the Activity is destroyed, preventing potential memory leaks or crashes*/
+                                   * the lifecycle scope ensures that this coroutine is automatically cancelled when
+                                   the view is closed, preventing potential memory leaks or crashes*/
                 try {
                     val exists = withContext(Dispatchers.IO) {
                         expenseDatabase.categoryDao().categoryExists(categoryName)
@@ -136,19 +138,15 @@ class EditCategoriesView : AppCompatActivity() {
                             )
                         }
                     }
-                    val resultIntent = Intent() //returns the selected category name to the activity
+                    val resultIntent = Intent() //returns the selected category name to the view
 
                     resultIntent.putExtra(EXTRA_SELECTED_CATEGORY, categoryName)
                     setResult(RESULT_OK, resultIntent)
-                    finish() //closes this activity and returns to the previous view
+                    finish() //closes this view and returns to the previous view
 
                 } catch (e: Exception) {//error handling if there is an error retrieving from the database
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(
-                            this@EditCategoriesView,
-                            "Error selecting category: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(this@EditCategoriesView, "Error selecting category: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -157,16 +155,21 @@ class EditCategoriesView : AppCompatActivity() {
 //---------------------------------------------------------------------------------------------//
 
     //---------------------------addNewCategory method----------------------//
-    /*
- *this method adds a new category to the database
+
+    /*Declaration of AI usage
+    * Nature: modifying code to work with a database
+    * AI used: Claude
+    * Link to chat: https://claude.ai/share/770ac710-c2f7-407b-aa38-8bd9a9786b83
+    * */
+
+    /*this method adds a new category to the database
  *it is called when the user clicks the save button
- *the method will:
+ *this method will:
  *check if the category already exists in the database
  *if it exists, show a Toast message
  *if it doesn't exist, add it to the database
- *return the new category to the calling Activity
- *handle any errors that occur during the process
- */
+ *return the new category to the view
+ *handle any errors that occur during the process*/
     private fun addNewCategory(categoryName: String) {
         lifecycleScope.launch {
             try {
@@ -175,11 +178,7 @@ class EditCategoriesView : AppCompatActivity() {
                 }
                 if (exists > 0) {
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(
-                            this@EditCategoriesView,
-                            "Category '$categoryName' already exists",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(this@EditCategoriesView, "Category '$categoryName' already exists", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     withContext(Dispatchers.IO) {
@@ -190,27 +189,20 @@ class EditCategoriesView : AppCompatActivity() {
                             )
                         )
                     }
-                    // Return result and show success message on Main thread
+
                     withContext(Dispatchers.Main) {
                         val resultIntent = Intent()
                         resultIntent.putExtra(EXTRA_SELECTED_CATEGORY, categoryName)
                         setResult(RESULT_OK, resultIntent)
 
                         Toast.makeText(
-                            this@EditCategoriesView,
-                            "Category '$categoryName' added successfully",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                            this@EditCategoriesView, "Category '$categoryName' added successfully", Toast.LENGTH_SHORT).show()
                         finish()
                     }
                 }
-            } catch (e: Exception) {
+            } catch (e: Exception) {//error handling if there is an error with the database
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                        this@EditCategoriesView,
-                        "Error adding category: ${e.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this@EditCategoriesView, "Error adding category: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
             }
         }
