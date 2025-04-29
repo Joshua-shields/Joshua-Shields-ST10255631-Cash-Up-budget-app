@@ -54,8 +54,7 @@ class CalendarActivity : AppCompatActivity() {
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     private var selectedCategory: String? = null // Stores the selected category name
 
-    // --- Hardcoded User ID (Replace with actual login mechanism later) --- //
-    private val currentUserId = 1 // Make sure this is the correct way you get the user ID
+    private val currentUserId = 1
     //------------------- END OF GLOBAL VARIABLES ----------------------//
 
     override fun onCreate(savedInstanceState: Bundle?) {
