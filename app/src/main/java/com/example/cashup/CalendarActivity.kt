@@ -30,15 +30,15 @@ import androidx.appcompat.app.AlertDialog // USED TO SEND ERROR MESSAGES TO USER
 
 import androidx.appcompat.app.AppCompatActivity
 
-import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.lifecycleScope // launches coroutine
 
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager // SETS LAYOUT BETWEEN VERICAL AND HORIZONTAL
 
 import androidx.recyclerview.widget.RecyclerView
 
-import com.example.cashup.Database.Expense
+import com.example.cashup.Database.Expense // EXPENSE DATABASE
 
-import com.example.cashup.R
+import com.example.cashup.R // GRANTS ACCESS TO THE APP DATABASE RESOURCES
 
 import com.google.android.material.button.MaterialButton
 
@@ -50,42 +50,56 @@ import kotlinx.coroutines.withContext
 
 import java.text.SimpleDateFormat
 
-import java.util.Calendar
+import java.util.Calendar // MANAGES THE DATE AND TIME
 
-import java.util.Date
+import java.util.Date // SPECIFIC  DATE
 
-import java.util.Locale
+import java.util.Locale // LOCATION
 
-import com.example.cashup.Database.ExpenseDatabase
+import com.example.cashup.Database.ExpenseDatabase // EXPENSE DATABASE
 
-import com.example.cashup.ImageViewerActivity
+import com.example.cashup.ImageViewerActivity // ALLOW FOR VIEWING OF IMAGES
 
 //---------------------------------------- END OF IMPORTS -------------------------------------//
 
 class CalendarActivity : AppCompatActivity() {
 
     //------------------- START OF GLOBAL VARIABLES ----------------------//
+
     //***************** UI VARIABLES ***********//
+
     private lateinit var calendarView: CalendarView
+
     private lateinit var startDateButton: Button
+
     private lateinit var endDateButton: Button
+
     private lateinit var searchButton: MaterialButton
+
     private lateinit var expensesRecyclerView: RecyclerView
+
     private lateinit var noExpensesText: TextView
+
     private lateinit var backButton: ImageButton
-    private lateinit var categorySearchButton: MaterialButton
+
+    private lateinit var categorySearchButton: MaterialButton // BUTTON VARIABLE TO SEARCH BY CATEGORY
 
     //////////////////////////// DATABASE VARIABLES ///////////////////////////
+
     private lateinit var database: ExpenseDatabase
 
     //---------------------- DATE & FILTER VARIABLES -------------------------//
+
     private var startDate: Date = Calendar.getInstance().time
     private var endDate: Date = Calendar.getInstance().time
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+
     private var selectedCategory: String? = null // Stores the selected category name
 
-    // --- Hardcoded User ID (Replace with actual login mechanism later) --- //
-    private val currentUserId = 1 // Make sure this is the correct way you get the user ID
+    // --- Hardcoded User ID , WILL IMPLEMENT ICREMENTAL INDEXING IN PART 3  --- //
+
+    private val currentUserId = 1
+
     //------------------- END OF GLOBAL VARIABLES ----------------------//
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,14 +108,22 @@ class CalendarActivity : AppCompatActivity() {
 
         database = ExpenseDatabase.getDatabase(this)
 
-        initializeViews()
-        setupListeners()
+        initializeViews() // SET UP OF VIEW
+        setupListeners() // ' ' LISTENERS
         setDefaultDateRange()
+
         updateDateButtonsText()
         loadExpensesForSelectedPeriod() // Load initial expenses
-        // markDatesWithExpenses() // Consider removing/disabling this when filters are active
+
     }
 
+
+    /*
+    * THE BELOW CODE IS SETTING UP THE VIEWS
+    * I AM SETTING UP BY USING THE ID AS IT IS UNIQUE TO EACH FIELD
+    * WILL REQUIRE INDEXING IN PART 3
+    *
+    * */
     private fun initializeViews() {
         calendarView = findViewById(R.id.calendarView)
         startDateButton = findViewById(R.id.startDateButton)
@@ -119,7 +141,7 @@ class CalendarActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
-
+    // DATE
         startDateButton.setOnClickListener {
             showDatePickerDialog(true)
         }
@@ -127,11 +149,13 @@ class CalendarActivity : AppCompatActivity() {
         endDateButton.setOnClickListener {
             showDatePickerDialog(false)
         }
-    // Category button listener
+
+        // Category button listener
         categorySearchButton.setOnClickListener {
             showCategorySelectionDialog()
         }
 
+        // SEARCH BUTTON
         searchButton.setOnClickListener {
             // Reload expenses based on current date range and category filter
             loadExpensesForSelectedPeriod()
@@ -139,7 +163,7 @@ class CalendarActivity : AppCompatActivity() {
 
         calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val calendar = Calendar.getInstance()
-            // Set start date to the beginning of the selected day
+            // Set start date to the beginning
             calendar.set(year, month, dayOfMonth, 0, 0, 0)
             calendar.set(Calendar.MILLISECOND, 0)
             startDate = calendar.time
@@ -154,6 +178,18 @@ class CalendarActivity : AppCompatActivity() {
         }
     }
 
+
+
+    /*
+    *
+    *
+    * DECLERATION OF AI USAGE
+    * NATURE : DEBUGGING
+    * AI USED : CHATGPT
+    * LINK TO CHAT :  https://chatgpt.com/c/6810f7fd-1634-8010-ae5e-46556bc0125d
+    *
+    *
+    * */
     private fun setDefaultDateRange() {
         val calendar = Calendar.getInstance()
 
