@@ -1,9 +1,20 @@
 package com.example.cashup.Database
 
+//---------------------------------- START OF IMPORTS ---------------------------------------//
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-//--------------------------------START OF FILE---------------------------//
+/**Decleration for AI usage
+ * Nature : how to call data from a room db to display in android studio kotlin class
+ * AI used: ChatGPT
+ * Link for chat: https://chatgpt.com/share/681143cb-bfc4-800e-b6c4-688d4ed2b253
+ * */
+
+//---------------------------------- END OF IMPORTS ---------------------------------------//
+
+//***************************************************** START OF CODE ***********************************************************//
+
 @Entity(tableName = "goals_table") //setting the name of the table responsible for holding data about goals
 data class Goal(
     @PrimaryKey(autoGenerate = true) //auto-generative primary key to keep them unique
@@ -18,4 +29,5 @@ data class Goal(
     val endDate: Long,     //storage of the end date
     val isCompleted: Boolean = false //used to hold the condition of a goal depending on its status
 )
-//------------------------------END OF FILE------------------------//
+
+//***************************************************** END OF CODE ***********************************************************//

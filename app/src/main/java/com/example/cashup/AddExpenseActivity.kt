@@ -24,6 +24,14 @@ import kotlinx.coroutines.withContext
 
 //---------------------------------- END OF IMPORTS ---------------------------------------//
 
+
+/**Decleration for AI usage
+ * Nature : How does contentResolver.takePersistableUriPermission() work in Android?
+ * AI used: ChatGPT
+ * Link for chat: https://chatgpt.com/share/6811430a-9314-800e-a4db-573f9e7c79a8
+ * */
+
+
 //***************************************************** START OF CODE ***********************************************************//
 
 class AddExpenseActivity : AppCompatActivity() {

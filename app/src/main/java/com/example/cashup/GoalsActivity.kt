@@ -1,5 +1,6 @@
-// Start of file: GoalsActivity.kt
 package com.example.cashup
+
+//---------------------------------- START OF IMPORTS ---------------------------------------//
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,10 +16,21 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+//---------------------------------- END OF IMPORTS ---------------------------------------//
+
+/**Decleration for AI usage
+ * Nature : what would be more user friendly
+ * AI used: ChatGPT
+ * Link for chat: https://chatgpt.com/share/68113ed2-09d8-800e-81aa-27bcbbce8fa4
+ * */
+
 /**
  * Displays the user’s goals in three dropdowns (weekly, monthly, yearly)
  * and provides a button to add a new goal.
  */
+
+//***************************************************** START OF CODE ***********************************************************//
+
 class GoalsActivity : AppCompatActivity() {
 
     // UI elements
@@ -138,4 +150,5 @@ class GoalsActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
+
 //***************************************************** END OF CODE ***********************************************************//

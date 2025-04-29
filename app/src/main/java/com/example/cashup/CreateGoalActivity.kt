@@ -1,6 +1,8 @@
 // Start of file: CreateGoalActivity.kt
 package com.example.cashup
 
+//---------------------------------- START OF IMPORTS ---------------------------------------//
+
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -9,18 +11,30 @@ import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.cashup.Database.AppDatabase
+import com.example.cashup.Database.AppDatabase  // Import your Room database and entity
 import com.example.cashup.Database.Goal
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.Calendar
+import java.util.Calendar// Import Calendar
+//---------------------------------- END OF IMPORTS ---------------------------------------//
+
+
+
+/**Decleration for AI usage
+ * Nature : benefits of combing CoroutineScope.launch, Dispatchers.Main and withContext(Dispatchers.IO)
+ * AI used: ChatGPT
+ * Link for chat: https://chatgpt.com/share/68114126-5864-800e-9ab1-dcec0fa02f62
+ * */
 
 /**
  * Captures title, category/description, min/max spend, duration, and notes.
  * Inserts the new Goal into the Room database.
  */
+
+//***************************************************** START OF CODE ***********************************************************//
+
 class CreateGoalActivity : AppCompatActivity() {
 
     // UI elements
@@ -43,7 +57,7 @@ class CreateGoalActivity : AppCompatActivity() {
         // Initialize Room database
         database = AppDatabase.getDatabase(this)
 
-        // Bind views
+        // Initialize Views using findViewById
         backButton = findViewById(R.id.back_button)
         nameInput = findViewById(R.id.goal_name_input)
         categoryInput = findViewById(R.id.goal_category_input)
