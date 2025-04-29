@@ -70,3 +70,9 @@ A video demonstrating the app's features and functionality is available here:
 * https://source.android.com/docs
 * https://www.geeksforgeeks.org/android-studio-tutorial/
 
+* Darren Stander (st10209886)
+* https://www.youtube.com/watch?v=X7Xz5ixKVhs&t=110s
+* https://www.youtube.com/watch?v=73Cs_UbCmqk
+* https://stackoverflow.com/questions/49799757/implementing-the-room-database-android
+* ChatGPT 04-mini-high
+* https://chatgpt.com/share/68108327-5f60-800c-8d94-c548a9af8e38
