@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+
 //-----------------------------------------START OF FILE--------------------------------//
 class EditCategoriesView : AppCompatActivity() {
     //declarations
@@ -40,7 +41,7 @@ class EditCategoriesView : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_categories_view) // Ensure this layout name is correct
+        setContentView(R.layout.activity_edit_categories_view)
 
         expenseDatabase = ExpenseDatabase.getDatabase(this)
 
