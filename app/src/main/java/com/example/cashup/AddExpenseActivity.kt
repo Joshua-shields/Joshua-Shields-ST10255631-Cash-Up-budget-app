@@ -106,12 +106,13 @@ class AddExpenseActivity : AppCompatActivity() {
             }
         }
     }
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_expense) // Ensure this layout name is correct
 
-        expenseDatabase = ExpenseDatabase.getDatabase(this)
+        expenseDatabase = ExpenseDatabase.getDatabase(this) // Initialisation of the database
 
         // --- Initialize Activity Result Launcher ---
         categoryLauncher = registerForActivityResult(
@@ -157,7 +158,7 @@ class AddExpenseActivity : AppCompatActivity() {
         amountInput.inputType =
             InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
 
-        val today = Calendar.getInstance()
+        val today = Calendar.getInstance() // sets default date to current date
         updateDateInView(today)
         dateInput.isFocusable = false // Prevent keyboard, allow click
         dateInput.isClickable = true
@@ -186,7 +187,7 @@ class AddExpenseActivity : AppCompatActivity() {
             }
         }
 
-        createExpenseButton.setOnClickListener {
+        createExpenseButton.setOnClickListener {  //Create expense on click if input is valid
             if (validateInputs()) {
                 saveExpense()
             }
@@ -385,7 +386,7 @@ class AddExpenseActivity : AppCompatActivity() {
         }
     }
 
-    private fun getCurrentUserId(): Int {
+    private fun getCurrentUserId(): Int { //returns a userID
         return 1
     }
 }
