@@ -1,15 +1,26 @@
+
+//--------------------------------- START OF FILE --------------------------//
 package com.example.cashup
 
 
-import android.os.Bundle
-import android.widget.ImageButton
+import android.os.Bundle // STORES DATA
+
+import android.widget.ImageButton // ALLOWS FOR IMAGES TO BE USED AS CLICKABLE BUTTONS
+
 import androidx.appcompat.app.AppCompatActivity
 
 class ProfileActivity : AppCompatActivity() {
 
+    /*
+    * BELOW IS A BASIC OVERIDE FUNCTION TO PREVENT CRASHES
+    *
+    * FURTHER CODE AND LOGIC WILL BE IMPLEMENTED IN PART 3
+    *
+    *
+    * */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Set the content view to the XML layout you created
+
         setContentView(R.layout.add_income_section)
 
         // Find the back button by its ID
@@ -22,4 +33,4 @@ class ProfileActivity : AppCompatActivity() {
         }
     }
 }
-//***************************************************** END OF CODE ***********************************************************//
+//---------------------------------- END OF FILE -------------------------------//
