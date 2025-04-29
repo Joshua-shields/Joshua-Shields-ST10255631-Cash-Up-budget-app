@@ -1,4 +1,4 @@
-package com.example.cashup // Make sure this matches your project's package
+package com.example.cashup
 
 import android.os.Bundle
 import android.widget.ImageButton

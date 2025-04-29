@@ -79,12 +79,12 @@ class CalendarActivity : AppCompatActivity() {
         searchButton = findViewById(R.id.searchButton)
         expensesRecyclerView = findViewById(R.id.expensesRecyclerView)
         noExpensesText = findViewById(R.id.noExpensesText)
-        backButton = findViewById(R.id.back_button_poe) // Ensure this ID is correct in activity_calendar.xml
+        backButton = findViewById(R.id.back_button_poe)
         categorySearchButton = findViewById(R.id.categorySearchButton)
 
         expensesRecyclerView.layoutManager = LinearLayoutManager(this)
     }
-
+    // Button click listener
     private fun setupListeners() {
         backButton.setOnClickListener {
             finish()
@@ -97,7 +97,7 @@ class CalendarActivity : AppCompatActivity() {
         endDateButton.setOnClickListener {
             showDatePickerDialog(false)
         }
-
+    // Category button listener
         categorySearchButton.setOnClickListener {
             showCategorySelectionDialog()
         }
@@ -308,10 +308,6 @@ class CalendarActivity : AppCompatActivity() {
                             ExpenseAdapter(emptyList()) {}
                     }
                 }
-
-                // Optional: Update marked dates if needed.
-                // Consider the implications of filtering.
-                // markDatesWithExpenses()
 
             } catch (e: Exception) {
                 Log.e("CalendarActivity", "Error loading expenses", e)
