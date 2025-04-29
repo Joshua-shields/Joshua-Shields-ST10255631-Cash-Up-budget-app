@@ -7,6 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 import java.util.Date
 
+//-------------------------------------------START OF FILE---------------------------------------//
 @Dao
 interface ExpenseDao {
     @Insert
@@ -21,7 +22,7 @@ interface ExpenseDao {
     suspend fun getExpenses(): List<Expense>
 
 
-    // Get expenses by category within a specified date-range (using BETWEEN for startDate)
+    //get expenses by category within a specified date-range (using BETWEEN for startDate)
     @Query("SELECT * FROM expense_table WHERE userId = :userId AND category = :category AND startDate BETWEEN :startDate AND :endDate ORDER BY startDate DESC") // <-- FIXED: Changed 'type' to 'category'
     suspend fun getExpensesByCategoryAndDateRange(userId: Int, category: String, startDate: Date, endDate: Date): List<Expense>
 
@@ -58,8 +59,7 @@ interface ExpenseDao {
     @Query("SELECT SUM(amount) FROM expense_table WHERE userId = :userId")
     suspend fun getTotalExpenseAmount(userId: Int): Double?
 
-    // --- MODIFIED QUERY --- (Optional but recommended for consistency)
-    // Get total expense amount within a date range (using BETWEEN for startDate)
+    //get total expense amount within a date range (using BETWEEN for startDate)
     @Query("SELECT SUM(amount) FROM expense_table WHERE userId = :userId AND startDate BETWEEN :startDate AND :endDate")
     suspend fun getTotalExpenseAmountInRange(userId: Int, startDate: Date, endDate: Date): Double? // Renamed params
 
@@ -79,3 +79,5 @@ interface ExpenseDao {
     @Query("DELETE FROM expense_table WHERE userId = :userId")
     suspend fun deleteExpensesForUser(userId: Int)
 }
+
+//--------------------------END OF FILE---------------------------------------------------//
