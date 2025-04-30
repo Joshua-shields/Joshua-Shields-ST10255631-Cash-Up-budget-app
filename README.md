@@ -69,7 +69,7 @@ https://youtu.be/HcIch05Vn-0
 * Android Open Source Project. (2025). Android OS Source Documentation. [online] Available at: https://source.android.com/docs. [Accessed 5 Apr. 2025]
 * GeeksforGeeks (2021). Android Studio Tutorial. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/android-studio-tutorial/. [Accessed 10 Apr. 2025]
 * Declare AI
-* Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 (Accessed: 30 Apr. 2025).
+* Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 (Accessed: 12 Apr. 2025).
 * ChatGPT (2025) 'How to Allow Scroll View', ChatGPT [online]. Available at: https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 [Accessed: 17 Apr. 2025].
 
 * Darren Stander (st10209886)
@@ -79,11 +79,11 @@ https://youtu.be/HcIch05Vn-0
 * Hungphieu (2017). Redirect to activity after clicking a button (Android). [online] Stack Overflow. Available at: https://stackoverflow.com/questions/42666987/redirect-to-activity-after-clicking-a-button-android. [Accessed 13 Apr. 2025]
 * GeeksforGeeks. (2021). A Complete Guide to Learn XML For Android App Development. [online] Available at: https://www.geeksforgeeks.org/a-complete-guide-to-learn-xml-for-android-app-development/. [Accessed 6 Apr. 2025]
 * Declare AI
-* ChatGPT. (2015). ChatGPT - Spinner text color change. [online] Available at: https://chatgpt.com/share/68108327-5f60-800c-8d94-c548a9af8e38 [Accessed 30 Apr. 2025].
+* ChatGPT. (2015). ChatGPT - Spinner text color change. [online] Available at: https://chatgpt.com/share/68108327-5f60-800c-8d94-c548a9af8e38 [Accessed 14 Apr. 2025].
 * Chatgpt.com. (2025). Available at: https://chatgpt.com/share/6811430a-9314-800e-a4db-573f9e7c79a8 [Accessed 30 Apr. 2025]. 
-* ChatGPT. (2025). ChatGPT - LifecycleScope vs Coroutines. [online] Available at: https://chatgpt.com/share/68113ed2-09d8-800e-81aa-27bcbbce8fa4 [Accessed 30 Apr. 2025].
-* ChatGPT. (2025). ChatGPT - CoroutineScope Dispatchers Explanation. [online] Available at: https://chatgpt.com/share/68114126-5864-800e-9ab1-dcec0fa02f62 [Accessed 30 Apr. 2025].
-* ChatGPT (2025) 'Conversation about Android Development', ChatGPT [online]. Available at: https://chatgpt.com/share/681143cb-bfc4-800e-b6c4-688d4ed2b253 [Accessed: 30 Apr. 2025]. 
+* ChatGPT. (2025). ChatGPT - LifecycleScope vs Coroutines. [online] Available at: https://chatgpt.com/share/68113ed2-09d8-800e-81aa-27bcbbce8fa4 [Accessed 21 Apr. 2025].
+* ChatGPT. (2025). ChatGPT - CoroutineScope Dispatchers Explanation. [online] Available at: https://chatgpt.com/share/68114126-5864-800e-9ab1-dcec0fa02f62 [Accessed 22 Apr. 2025].
+* ChatGPT (2025) 'Conversation about Android Development', ChatGPT [online]. Available at: https://chatgpt.com/share/681143cb-bfc4-800e-b6c4-688d4ed2b253 [Accessed: 25 Apr. 2025]. 
 
 * Luke Carolus (ST10254164)
 * Android Developers, 2025. Use Kotlin coroutines with lifecycle-aware components. [online] Available at: https://developer.android.com/topic/libraries/architecture/coroutines [Accessed 27 Apr. 2025].
