@@ -1,20 +1,37 @@
+
+//------------------------------------- START OF FILE ----------------------------------//
 package com.example.cashup
 
 //***************** Start of imports *****************************//
+
 import android.content.Intent
-import android.os.Bundle
+
+import android.os.Bundle // ALLOWS FOR DATA STORAGE
+
 import android.text.TextUtils
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+
+import android.widget.Button // ALLOWS FOR CLICKABLE BUTTONS
+
+import android.widget.EditText // ALLOWS FOR EDITING OF TEXT
+
+import android.widget.Toast // ALLOWS FOR ERROR MESSAGES TO BE DISPLAYED
+
 import androidx.appcompat.app.AppCompatActivity
+
 import com.example.cashup.Database.AppDatabase
-import com.example.cashup.Database.User
+
+import com.example.cashup.Database.User // ACCESS TO THE DATABASE
+
 import kotlinx.coroutines.CoroutineScope
+
 import kotlinx.coroutines.Dispatchers
+
 import kotlinx.coroutines.launch
+
 import kotlinx.coroutines.withContext
+
 import android.widget.ImageButton
+
 import android.text.method.PasswordTransformationMethod // Added for password toggle
 //******************* End of imports ****************************//
 
@@ -197,4 +214,4 @@ class RegisterActivity : AppCompatActivity() {
         finish()
     }
 }
-//***************************************************** END OF CODE ***********************************************************//
+//------------------------------------------- END OF FILE --------------------------------------//
