@@ -95,26 +95,50 @@ https://youtu.be/HcIch05Vn-0
 *   ---------------------------- I am declaring the use of artificial intelligence (AI) in the making of this project. Primarily for improving User Interface (UI) screens and debugging ----------------------
 * ----------------------------- Links to specific chats can be found above affected methods --------------------------
 * 
-* Youtube video used to develop a login page, found via the link : https://www.youtube.com/watch?v=H2potb8pGDQ
+* Youtube video used to develop a login page, found via the link : www.youtube.com. . Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ.
+
+‌
 * 
-* Youtube video used to develop Register page, found via the link : https://www.youtube.com/watch?v=0QqAkopW31M
+* Youtube video used to develop Register page, found via the link : Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M [Accessed 30 Apr. 2025].
+
+‌
 * 
-* Youtube login and register page development, found via the link : https://www.youtube.com/watch?v=rxcCds4_Pzw
+* Youtube login and register page development, found via the link : Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 30 Apr. 2025].
+
+‌
 * 
-* Youtube tut on using android studio, found via the link :  https://www.youtube.com/watch?v=saKrGCWlJDs
+* Youtube tut on using android studio, found via the link :  DJ Malone (2024). Android Studio Tutorial (2024 Edition) - Part 1. [online] YouTube. Available at: https://www.youtube.com/watch?v=saKrGCWlJDs.
+
+‌
 * 
-* AI used in debbuging code found via the link : https://chatgpt.com/ Additionally where ai has been used has been declared int the code 
+* AI used in debbuging code found via the link :OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
+
+‌ Additionally where ai has been used has been declared int the code 
 * 
-* Youtube tut on working with databases, found via the link : https://www.youtube.com/watch?v=4k1ZMpO9Zn0
+* Youtube tut on working with databases, found via the link : www.youtube.com. (n.d.). SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0.
+
+‌
 * 
-* Youtube tut on how to intergrate a database, found via the link : https://www.youtube.com/watch?v=aQAIMY-HzL8
+* Youtube tut on how to intergrate a database, found via the link : CodingWithMitch (2017). Save data into SQLite database [Beginner Android Studio Example]. [online] YouTube. Available at: https://www.youtube.com/watch?v=aQAIMY-HzL8 [Accessed 30 Apr. 2025].
+
+‌
 * 
-* Youtube tut on expense tracker, found via the link : https://www.youtube.com/watch?v=JCV0gPIDPtA
+* Youtube tut on expense tracker, found via the link : Lemon Soft (2025). How to Build an Expense Tracker App in Android Studio with SQLite ( Part1 )". [online] YouTube. Available at: https://www.youtube.com/watch?v=JCV0gPIDPtA [Accessed 30 Apr. 2025].
+
+‌
 * 
-* Youtube tut on xml (Front end development), found via the link : https://www.youtube.com/watch?v=bB036vfcTkw
+* Youtube tut on xml (Front end development), found via the link : Reza's Coding Monologue (2017). Android Tutorial: Learning XML for Layout. [online] YouTube. Available at: https://www.youtube.com/watch?v=bB036vfcTkw [Accessed 30 Apr. 2025].
+
+‌
 * 
-* Youtube tut on how to create  custom buttons, found via the link : https://www.youtube.com/watch?v=nlPtfncjOWA
+* Youtube tut on how to create  custom buttons, found via the link : www.youtube.com. (n.d.). Custom Buttons Design - Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=nlPtfncjOWA.
+
+‌
 * 
-* Youtube tut on developing and intergating a functioning calendar, found via the link : https://www.youtube.com/watch?v=Ba0Q-cK1fJo
+* Youtube tut on developing and intergating a functioning calendar, found via the link : www.youtube.com. (n.d.). Calendar App Example Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=Ba0Q-cK1fJo.
+
+‌
 * 
-* Youtube tut on developing a functioning search system, found via the link : https://www.youtube.com/watch?v=PPXiZDWPOcI
+* Youtube tut on developing a functioning search system, found via the link : Bamidele Oguntuga (2017). SEARCH FILTER IN ANDROID SQLITE DATABASE AND RECYCLERVIEW. [online] YouTube. Available at: https://www.youtube.com/watch?v=PPXiZDWPOcI [Accessed 30 Apr. 2025].
+
+‌
