@@ -92,17 +92,17 @@ https://youtu.be/HcIch05Vn-0
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
 * Kashvir Sewpersad ST10257503
-* AI used in debbuging code found via the link :OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
-* Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ [Accessed 11 Apr. 2025].
+* OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
+* Easy Tuto (2024). Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ [Accessed 11 Apr. 2025].
 * Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M [Accessed 13 Apr. 2025].
 * Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 29 March. 2025].
 * DJ Malone (2024). Android Studio Tutorial (2024 Edition) - Part 1. [online] YouTube. Available at: https://www.youtube.com/watch?v=saKrGCWlJDs [Accessed 28 Apr. 2025].
 * OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/ [Accessed 30 Apr. 2025].
-* SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0 [Accessed 9 Apr. 2025].
+* Code With Cal (2021).SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0 [Accessed 9 Apr. 2025].
 * CodingWithMitch (2017). Save data into SQLite database [Beginner Android Studio Example]. [online] YouTube. Available at: https://www.youtube.com/watch?v=aQAIMY-HzL8 [Accessed 11 Apr. 2025].
 * Lemon Soft (2025). How to Build an Expense Tracker App in Android Studio with SQLite (Part1). [online] YouTube. Available at: https://www.youtube.com/watch?v=JCV0gPIDPtA [Accessed 15 Apr. 2025].
-* Custom Buttons Design - Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=nlPtfncjOWA [Accessed 16 Apr. 2025]
-* Calendar App Example Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=Ba0Q-cK1fJo [Accessed 25 Apr. 2025].
-* Bamidele Oguntuga (2017). SEARCH FILTER IN ANDROID SQLITE DATABASE AND RECYCLERVIEW. [online] YouTube. Available at: https://www.youtube.com/watch?v=PPXiZDWPOcI [Accessed 22 Apr. 2025].
+* Stevdza-San (2019). Custom Buttons Design - Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=nlPtfncjOWA [Accessed 16 Apr. 2025]
+* Code With Cal (2021).Calendar App Example Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=Ba0Q-cK1fJo [Accessed 25 Apr. 2025].
+* Bamidele Oguntuga (2017). SEARCH FILTER IN ANDROID SQLITE DATABASE AND RECYCLERVIEW. [online] Available at: https://www.youtube.com/watch?v=PPXiZDWPOcI [Accessed 22 Apr. 2025].
 
 
