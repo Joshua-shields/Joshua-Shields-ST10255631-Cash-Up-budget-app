@@ -65,12 +65,12 @@ https://youtu.be/HcIch05Vn-0
 
 ## References
 * Joshua (st10255631) 
-* https://www.youtube.com/watch?v=fis26HvvDII
-* https://source.android.com/docs
-* https://www.geeksforgeeks.org/android-studio-tutorial/
-* AI
-* https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 how to use room db in android studio
-* https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 how to allow scroll view
+* freeCodeCamp.org (2020). Android Development for Beginners - Full Course. YouTube. Available at: https://www.youtube.com/watch?v=fis26HvvDII. [Accesed 7 April. 2025]
+* Android Open Source Project. (2025). Android OS Source Documentation. [online] Available at: https://source.android.com/docs. [Accessed 5 Apr. 2025]
+* GeeksforGeeks (2021). Android Studio Tutorial. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/android-studio-tutorial/. [Accessed 10 Apr. 2025]
+* Declare AI
+* Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 (Accessed: 30 Apr. 2025).
+* ChatGPT (2025) 'How to Allow Scroll View', ChatGPT [online]. Available at: https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 [Accessed: 30 Apr. 2025].
 
 * Darren Stander (st10209886)
 * https://www.youtube.com/watch?v=X7Xz5ixKVhs&t=110s
