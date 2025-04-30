@@ -18,16 +18,16 @@ import kotlinx.coroutines.launch // Import launch
 
 class HomepageActivity : AppCompatActivity() {
 
-    // Declare View variables
+    //Declare view variables
     private lateinit var menuButton: ImageButton
     private lateinit var monthTitle: TextView
     private lateinit var balanceLabel: TextView
     private lateinit var balanceAmount: TextView
     private lateinit var statsButton: ImageButton
     private lateinit var premiumButton: ImageButton
-    private lateinit var incomeButton: MaterialCardView // The clickable item is the CardView
+    private lateinit var incomeButton: MaterialCardView //The clickable item is the CardView
     private lateinit var searchButton: ImageButton
-    private lateinit var expenseButton: MaterialCardView // The clickable item is the CardView
+    private lateinit var expenseButton: MaterialCardView //The clickable item is the CardView
     private lateinit var monthlyFilterButton: MaterialButton
     private lateinit var goalsButton: ImageButton
     private lateinit var calendarButton: ImageButton
@@ -38,7 +38,7 @@ class HomepageActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_homepage)
 
-        // Initialize Views using findViewById
+        //Initialise the views using findViewById
         menuButton = findViewById(R.id.menuButton)
         monthTitle = findViewById(R.id.monthTitle)
         balanceLabel = findViewById(R.id.balanceLabel)
@@ -53,7 +53,7 @@ class HomepageActivity : AppCompatActivity() {
         calendarButton = findViewById(R.id.calendarButton)
         profileButton = findViewById(R.id.profileButton)
 
-        // --- Initialize Database Here ---
+        //database initialisation
         val db = AppDatabase.getDatabase(applicationContext)
         Log.d("DB_INIT", "Database instance requested from HomepageActivity.")
 
@@ -74,18 +74,18 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
         // --- End Database Initialization ---
-
+//**********************************************************************************************//
         // --- Setup Click Listeners ---
-
+//************************************menu button**********************************************//
         // Top Bar Buttons
-        menuButton.setOnClickListener {
+        menuButton.setOnClickListener { //on click listener that displays a prompt
             showToast("Menu button clicked")
         }
-
-        statsButton.setOnClickListener {
+//************************************stats button**********************************************//
+        statsButton.setOnClickListener { //on click listener that displays a prompt
             showToast("Stats button clicked")
         }
-
+//************************************premium button**********************************************//
         // PREMIUM / CROWN Button Listener
         premiumButton.setOnClickListener {
             // Navigate to GamifyActivity
@@ -126,7 +126,7 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
 
-        searchButton.setOnClickListener {
+        searchButton.setOnClickListener { //on click listener that displays a prompt for when the user clicks the search button
             showToast("Search button clicked")
 
         }
@@ -138,8 +138,8 @@ class HomepageActivity : AppCompatActivity() {
                 // Use the AddExpenseActivity class name
                 val intent = Intent(this, AddExpenseActivity::class.java)
                 startActivity(intent)
-            } catch (e: ActivityNotFoundException) {
-                showToast("AddExpenseActivity not found!")
+            } catch (e: ActivityNotFoundException) { //handle try-catch statement where if the view is missing from the manifest or is not implemented
+                showToast("AddExpenseActivity not found!") //a message is displayed if the activity/view is not found
                 Log.e(
                     "HomepageActivity",
                     "Ensure AddExpenseActivity exists and is in AndroidManifest.xml",
@@ -152,7 +152,7 @@ class HomepageActivity : AppCompatActivity() {
         }
 
         // Monthly Filter Button
-        monthlyFilterButton.setOnClickListener {
+        monthlyFilterButton.setOnClickListener { //on click listener that displays a prompt
             showToast("Monthly filter clicked")
 
         }
@@ -176,23 +176,25 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
 
-        calendarButton.setOnClickListener {
-            // Navigate to CalendarActivity
+        calendarButton.setOnClickListener { //on click listener for the calendar button
+            //navigates to the CalendarActivity
             try {
                 val intent = Intent(this, CalendarActivity::class.java)
-                startActivity(intent)
-            } catch (e: ActivityNotFoundException) {
+                startActivity(intent) //intent used to call the activity and direct the user to that view
+            } catch (e: ActivityNotFoundException) { //catch statmen  in the event that the activity can not be found
                 showToast("CalendarActivity not found!")
                 Log.e(
                     "HomepageActivity",
-                    "Ensure CalendarActivity exists and is in AndroidManifest.xml",
+                    "Ensure CalendarActivity exists and is in AndroidManifest.xml", //clearly indicates that the problem is likely to be in this file
                     e
                 )
-            } catch (e: Exception) {
+            } catch (e: Exception) { //a catch statement for when the view fails to open when the user clicks it
                 showToast("Error opening calendar screen: ${e.localizedMessage}")
                 Log.e("HomepageActivity", "Error starting CalendarActivity", e)
             }
         }
+
+        //code follows a similar logic as both the previous and next methods ↨
         statsButton.setOnClickListener {
             // Navigate to PoePart3Activity (Statistics screen)
             try {
@@ -211,20 +213,20 @@ class HomepageActivity : AppCompatActivity() {
             }
         }
 
-
+//on click listener button for the user profile button
         profileButton.setOnClickListener {
             // Navigate to ProfileActivity
-            try {
+            try { //a try-catch statement that redirects the view to the profile activity
                 val intent = Intent(this, ProfileActivity::class.java)
                 startActivity(intent)
-            } catch (e: ActivityNotFoundException) {
+            } catch (e: ActivityNotFoundException) { //if the activity is not found or missing then a prompt is displayed to the user
                 showToast("ProfileActivity not found!")
                 Log.e(
                     "HomepageActivity",
                     "Ensure ProfileActivity exists and is in AndroidManifest.xml",
                     e
                 )
-            } catch (e: Exception) {
+            } catch (e: Exception) { //the error prompt if there is a failure to open the profile activity
                 showToast("Error opening profile screen: ${e.localizedMessage}")
                 Log.e("HomepageActivity", "Error starting ProfileActivity", e)
             }
