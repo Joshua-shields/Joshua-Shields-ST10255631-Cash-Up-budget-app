@@ -239,7 +239,6 @@ class AddExpenseActivity : AppCompatActivity() {
         return ok
     }
 
-
     private fun showDatePicker(calendar: Calendar) {
         DatePickerDialog(
             this,
