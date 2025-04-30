@@ -61,8 +61,7 @@ This project includes automated tests to ensure core functionality works as expe
 ## Video Demonstration
 
 A video demonstrating the app's features and functionality is available here:
-
-[]
+https://youtu.be/kYuGFhhK2Rc
 
 ## References
 * Joshua (st10255631) 
