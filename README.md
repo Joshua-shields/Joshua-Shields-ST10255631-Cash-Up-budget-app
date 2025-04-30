@@ -85,3 +85,9 @@ A video demonstrating the app's features and functionality is available here:
 * https://chatgpt.com/share/68113ed2-09d8-800e-81aa-27bcbbce8fa4
 * https://chatgpt.com/share/68114126-5864-800e-9ab1-dcec0fa02f62
 * https://chatgpt.com/share/681143cb-bfc4-800e-b6c4-688d4ed2b253
+
+* Luke Carolus (ST10254164)
+* Android Developers, 2025. Use Kotlin coroutines with lifecycle-aware components. [online] Available at: https://developer.android.com/topic/libraries/architecture/coroutines [Accessed 27 Apr. 2025].
+* (IIE) The Independent Institute of Education, 2020. PROGRAMMING 3C/Open Source Coding (Introduction) PROG7313;OPSC6311; OPSC7311 MODULE MANUAL/GUIDE 2025 (First Edition: 2020). [Online] Available at: https://advtechonline.sharepoint.com/:w:/r/sites/TertiaryStudents/_layouts/15/Doc.aspx?sourcedoc=%7BCD4184FB-DB29-43FB-8B04-0A6EE4B7987E%7D&file=PROG7313MM.docx&action=default&mobileredirect=true [Accessed 17 Feb 2025]. 
+* https://www.youtube.com/watch?v=r1P7slDbtd4
+* Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
