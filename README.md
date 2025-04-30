@@ -90,3 +90,31 @@ https://youtu.be/HcIch05Vn-0
 * (IIE) The Independent Institute of Education, 2020. PROGRAMMING 3C/Open Source Coding (Introduction) PROG7313;OPSC6311; OPSC7311 MODULE MANUAL/GUIDE 2025 (First Edition: 2020). [Online] Available at: https://advtechonline.sharepoint.com/:w:/r/sites/TertiaryStudents/_layouts/15/Doc.aspx?sourcedoc=%7BCD4184FB-DB29-43FB-8B04-0A6EE4B7987E%7D&file=PROG7313MM.docx&action=default&mobileredirect=true [Accessed 17 Feb 2025]. 
 * https://www.youtube.com/watch?v=r1P7slDbtd4
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
+
+* ----------------- Kashvir Sewpersad ST10257503 ---------------------
+*   ---------------------------- I am declaring the use of artificial intelligence (AI) in the making of this project. Primarily for improving User Interface (UI) screens and debugging ----------------------
+* ----------------------------- Links to specific chats can be found above affected methods --------------------------
+* 
+* Youtube video used to develop a login page, found via the link : https://www.youtube.com/watch?v=H2potb8pGDQ
+* 
+* Youtube video used to develop Register page, found via the link : https://www.youtube.com/watch?v=0QqAkopW31M
+* 
+* Youtube login and register page development, found via the link : https://www.youtube.com/watch?v=rxcCds4_Pzw
+* 
+* Youtube tut on using android studio, found via the link :  https://www.youtube.com/watch?v=saKrGCWlJDs
+* 
+* AI used in debbuging code found via the link : https://chatgpt.com/ Additionally where ai has been used has been declared int the code 
+* 
+* Youtube tut on working with databases, found via the link : https://www.youtube.com/watch?v=4k1ZMpO9Zn0
+* 
+* Youtube tut on how to intergrate a database, found via the link : https://www.youtube.com/watch?v=aQAIMY-HzL8
+* 
+* Youtube tut on expense tracker, found via the link : https://www.youtube.com/watch?v=JCV0gPIDPtA
+* 
+* Youtube tut on xml (Front end development), found via the link : https://www.youtube.com/watch?v=bB036vfcTkw
+* 
+* Youtube tut on how to create  custom buttons, found via the link : https://www.youtube.com/watch?v=nlPtfncjOWA
+* 
+* Youtube tut on developing and intergating a functioning calendar, found via the link : https://www.youtube.com/watch?v=Ba0Q-cK1fJo
+* 
+* Youtube tut on developing a functioning search system, found via the link : https://www.youtube.com/watch?v=PPXiZDWPOcI
