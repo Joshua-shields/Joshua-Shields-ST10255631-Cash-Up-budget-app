@@ -69,7 +69,7 @@ https://youtu.be/HcIch05Vn-0
 * Android Open Source Project. (2025). Android OS Source Documentation. [online] Available at: https://source.android.com/docs. [Accessed 5 Apr. 2025]
 * GeeksforGeeks (2021). Android Studio Tutorial. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/android-studio-tutorial/. [Accessed 10 Apr. 2025]
 * Declare AI
-* Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 (Accessed: 12 Apr. 2025).
+* Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 [Accessed: 12 Apr. 2025].
 * ChatGPT (2025) 'How to Allow Scroll View', ChatGPT [online]. Available at: https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 [Accessed: 17 Apr. 2025].
 
 * Darren Stander (st10209886)
@@ -92,12 +92,8 @@ https://youtu.be/HcIch05Vn-0
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
 * Kashvir Sewpersad ST10257503 
-* Youtube video used to develop a login page, found via the link:
-  www.youtube.com. (2024). Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ. [Accessed 11 Apr. 2025]
-
-* Youtube video used to develop Register page, found via the link:
-  Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M.
-
+* Easy Tuto (2024). Simple Login App in Android Studio | 2024. Available at: https://www.youtube.com/watch?v=H2potb8pGDQ. [Accessed 11 Apr. 2025]
+* Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M.
 * Youtube login and register page development, found via the link : Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 30 Apr. 2025].
 
 * Youtube tut on using android studio, found via the link :
