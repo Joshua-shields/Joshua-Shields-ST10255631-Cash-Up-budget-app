@@ -70,52 +70,42 @@ https://youtu.be/HcIch05Vn-0
 * GeeksforGeeks (2021). Android Studio Tutorial. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/android-studio-tutorial/. [Accessed 10 Apr. 2025]
 * Declare AI
 * Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 (Accessed: 30 Apr. 2025).
-* ChatGPT (2025) 'How to Allow Scroll View', ChatGPT [online]. Available at: https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 [Accessed: 30 Apr. 2025].
+* ChatGPT (2025) 'How to Allow Scroll View', ChatGPT [online]. Available at: https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 [Accessed: 17 Apr. 2025].
 
 * Darren Stander (st10209886)
-* https://www.youtube.com/watch?v=X7Xz5ixKVhs&t=110s
-* https://www.youtube.com/watch?v=73Cs_UbCmqk
-* https://stackoverflow.com/questions/49799757/implementing-the-room-database-android
-* https://stackoverflow.com/questions/42666987/redirect-to-activity-after-clicking-a-button-android
-* https://www.geeksforgeeks.org/a-complete-guide-to-learn-xml-for-android-app-development/
-* ChatGPT 04-mini-high
-* https://chatgpt.com/share/68108327-5f60-800c-8d94-c548a9af8e38
-* https://chatgpt.com/share/6811430a-9314-800e-a4db-573f9e7c79a8
-* https://chatgpt.com/share/68113ed2-09d8-800e-81aa-27bcbbce8fa4
-* https://chatgpt.com/share/68114126-5864-800e-9ab1-dcec0fa02f62
-* https://chatgpt.com/share/681143cb-bfc4-800e-b6c4-688d4ed2b253
+* Coding in Flow (2022) 'Android MVVM To Do List App with Flow and Room - Part 1 - SETTING UP THE PROJECT', YouTube [online]. Available at: https://www.youtube.com/watch?v=X7Xz5ixKVhs [Accessed: 10 April 2025].
+* Charfaoui Younes (2022). Room Database - Data Access Object or DAO. [online] YouTube. Available at: https://www.youtube.com/watch?v=73Cs_UbCmqk [Accessed 9 Apr. 2025].
+* ShaidK (2018). Implementing the Room Database (Android). [online] Stack Overflow. Available at: https://stackoverflow.com/questions/49799757/implementing-the-room-database-android. [Accessed 12 Apr. 2025]
+* Hungphieu (2017). Redirect to activity after clicking a button (Android). [online] Stack Overflow. Available at: https://stackoverflow.com/questions/42666987/redirect-to-activity-after-clicking-a-button-android. [Accessed 13 Apr. 2025]
+* GeeksforGeeks. (2021). A Complete Guide to Learn XML For Android App Development. [online] Available at: https://www.geeksforgeeks.org/a-complete-guide-to-learn-xml-for-android-app-development/. [Accessed 6 Apr. 2025]
+* Declare AI
+* ChatGPT. (2015). ChatGPT - Spinner text color change. [online] Available at: https://chatgpt.com/share/68108327-5f60-800c-8d94-c548a9af8e38 [Accessed 30 Apr. 2025].
+* Chatgpt.com. (2025). Available at: https://chatgpt.com/share/6811430a-9314-800e-a4db-573f9e7c79a8 [Accessed 30 Apr. 2025]. 
+* ChatGPT. (2025). ChatGPT - LifecycleScope vs Coroutines. [online] Available at: https://chatgpt.com/share/68113ed2-09d8-800e-81aa-27bcbbce8fa4 [Accessed 30 Apr. 2025].
+* ChatGPT. (2025). ChatGPT - CoroutineScope Dispatchers Explanation. [online] Available at: https://chatgpt.com/share/68114126-5864-800e-9ab1-dcec0fa02f62 [Accessed 30 Apr. 2025].
+* ChatGPT (2025) 'Conversation about Android Development', ChatGPT [online]. Available at: https://chatgpt.com/share/681143cb-bfc4-800e-b6c4-688d4ed2b253 [Accessed: 30 Apr. 2025]. 
 
 * Luke Carolus (ST10254164)
 * Android Developers, 2025. Use Kotlin coroutines with lifecycle-aware components. [online] Available at: https://developer.android.com/topic/libraries/architecture/coroutines [Accessed 27 Apr. 2025].
 * (IIE) The Independent Institute of Education, 2020. PROGRAMMING 3C/Open Source Coding (Introduction) PROG7313;OPSC6311; OPSC7311 MODULE MANUAL/GUIDE 2025 (First Edition: 2020). [Online] Available at: https://advtechonline.sharepoint.com/:w:/r/sites/TertiaryStudents/_layouts/15/Doc.aspx?sourcedoc=%7BCD4184FB-DB29-43FB-8B04-0A6EE4B7987E%7D&file=PROG7313MM.docx&action=default&mobileredirect=true [Accessed 17 Feb 2025]. 
-* https://www.youtube.com/watch?v=r1P7slDbtd4
+* Random code (2022). Kotlin - How to create a Button and set up onClick. [online] YouTube. Available at: https://www.youtube.com/watch?v=r1P7slDbtd4.
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
-* ----------------- Kashvir Sewpersad ST10257503 ---------------------
-*   ---------------------------- I am declaring the use of artificial intelligence (AI) in the making of this project. Primarily for improving User Interface (UI) screens and debugging ----------------------
-* ----------------------------- Links to specific chats can be found above affected methods --------------------------
-* 
-* Youtube video used to develop a login page, found via the link : www.youtube.com. . Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ.
+* Kashvir Sewpersad ST10257503 
+* Youtube video used to develop a login page, found via the link:
+  www.youtube.com. (2024). Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ. [Accessed 11 Apr. 2025]
 
-‌
-* 
-* Youtube video used to develop Register page, found via the link : Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M [Accessed 30 Apr. 2025].
+* Youtube video used to develop Register page, found via the link:
+  Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M.
 
-‌
-* 
 * Youtube login and register page development, found via the link : Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 30 Apr. 2025].
 
-‌
-* 
-* Youtube tut on using android studio, found via the link :  DJ Malone (2024). Android Studio Tutorial (2024 Edition) - Part 1. [online] YouTube. Available at: https://www.youtube.com/watch?v=saKrGCWlJDs.
+* Youtube tut on using android studio, found via the link :
+  DJ Malone (2024). Android Studio Tutorial (2024 Edition) - Part 1. [online] YouTube. Available at: https://www.youtube.com/watch?v=saKrGCWlJDs.
 
-‌
-* 
 * AI used in debbuging code found via the link :OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
-
-‌ Additionally where ai has been used has been declared int the code 
 * 
-* Youtube tut on working with databases, found via the link : www.youtube.com. (n.d.). SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0.
+* Youtube tut on working with databases, found via the link : www.youtube.com. (). SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0.
 
 ‌
 * 
