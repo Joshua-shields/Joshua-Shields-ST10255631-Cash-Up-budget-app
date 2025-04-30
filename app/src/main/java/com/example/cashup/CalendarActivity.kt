@@ -313,7 +313,7 @@ class CalendarActivity : AppCompatActivity() {
                     calendar.set(Calendar.MILLISECOND, 999)
                     endDate = calendar.time
 
-                    // Ensure end date is not before start date
+                    // Ensures end date is not before start date
                     if (endDate.before(startDate)) {
                         startDate = endDate // Adjust start date if needed (or show error)
                     }

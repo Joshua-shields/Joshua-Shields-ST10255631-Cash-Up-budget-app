@@ -118,7 +118,7 @@ class AddExpenseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_expense) // Ensure this layout name is correct
+        setContentView(R.layout.activity_add_expense)
 
         expenseDatabase = ExpenseDatabase.getDatabase(this) // Initialisation of the database
 
@@ -283,7 +283,7 @@ class AddExpenseActivity : AppCompatActivity() {
             if (expenseTypeInput.text.isBlank()) {
                 Toast.makeText(
                     this,
-                    "Cannot save without expense description", // Adjusted message
+                    "Cannot save without expense description",
                     Toast.LENGTH_SHORT
                 ).show()
                 return
@@ -294,7 +294,7 @@ class AddExpenseActivity : AppCompatActivity() {
         if (expenseTypeInput.text.isBlank()) {
             Toast.makeText(
                 this,
-                "Cannot save without expense description", // Adjusted message
+                "Cannot save without expense description",
                 Toast.LENGTH_SHORT
             ).show()
             return
