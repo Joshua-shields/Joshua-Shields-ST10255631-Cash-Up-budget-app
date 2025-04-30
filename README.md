@@ -69,7 +69,7 @@ https://youtu.be/HcIch05Vn-0
 * Android Open Source Project. (2025). Android OS Source Documentation. [online] Available at: https://source.android.com/docs. [Accessed 5 Apr. 2025]
 * GeeksforGeeks (2021). Android Studio Tutorial. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/android-studio-tutorial/. [Accessed 10 Apr. 2025]
 * Declare AI
-* Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 [Accessed: 12 Apr. 2025].
+* Claude (2025) 'How to Use Room DB in Android Studio', Claude.ai [online]. Available at: https://claude.ai/share/ee6ac313-729d-4943-a277-9362b746ccd3 (Accessed: 12 Apr. 2025).
 * ChatGPT (2025) 'How to Allow Scroll View', ChatGPT [online]. Available at: https://chatgpt.com/share/6810a79f-fa9c-8000-af13-2ba33dee0970 [Accessed: 17 Apr. 2025].
 
 * Darren Stander (st10209886)
@@ -91,40 +91,17 @@ https://youtu.be/HcIch05Vn-0
 * Random code (2022). Kotlin - How to create a Button and set up onClick. [online] YouTube. Available at: https://www.youtube.com/watch?v=r1P7slDbtd4.
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
-* Kashvir Sewpersad ST10257503 
-* Easy Tuto (2024). Simple Login App in Android Studio | 2024. Available at: https://www.youtube.com/watch?v=H2potb8pGDQ. [Accessed 11 Apr. 2025]
-* Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M.
-* Youtube login and register page development, found via the link : Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 30 Apr. 2025].
-
-* Youtube tut on using android studio, found via the link :
-  DJ Malone (2024). Android Studio Tutorial (2024 Edition) - Part 1. [online] YouTube. Available at: https://www.youtube.com/watch?v=saKrGCWlJDs.
-
+* Kashvir Sewpersad ST10257503
 * AI used in debbuging code found via the link :OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
-* 
-* Youtube tut on working with databases, found via the link : www.youtube.com. (). SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0.
+* Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ [Accessed 11 Apr. 2025].
+* Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M [Accessed 13 Apr. 2025].
+* Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 29 March. 2025].
+* DJ Malone (2024). Android Studio Tutorial (2024 Edition) - Part 1. [online] YouTube. Available at: https://www.youtube.com/watch?v=saKrGCWlJDs [Accessed 28 Apr. 2025].
+* OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/ [Accessed 30 Apr. 2025].
+* SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0 [Accessed 9 Apr. 2025].
+* CodingWithMitch (2017). Save data into SQLite database [Beginner Android Studio Example]. [online] YouTube. Available at: https://www.youtube.com/watch?v=aQAIMY-HzL8 [Accessed 11 Apr. 2025].
+* Lemon Soft (2025). How to Build an Expense Tracker App in Android Studio with SQLite (Part1). [online] YouTube. Available at: https://www.youtube.com/watch?v=JCV0gPIDPtA [Accessed 15 Apr. 2025].
+* Custom Buttons Design - Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=nlPtfncjOWA [Accessed 16 Apr. 2025]
+* Calendar App Example Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=Ba0Q-cK1fJo [Accessed 25 Apr. 2025].
+* Bamidele Oguntuga (2017). SEARCH FILTER IN ANDROID SQLITE DATABASE AND RECYCLERVIEW. [online] YouTube. Available at: https://www.youtube.com/watch?v=PPXiZDWPOcI [Accessed 22 Apr. 2025].
 
-‌
-* 
-* Youtube tut on how to intergrate a database, found via the link : CodingWithMitch (2017). Save data into SQLite database [Beginner Android Studio Example]. [online] YouTube. Available at: https://www.youtube.com/watch?v=aQAIMY-HzL8 [Accessed 30 Apr. 2025].
-
-‌
-* 
-* Youtube tut on expense tracker, found via the link : Lemon Soft (2025). How to Build an Expense Tracker App in Android Studio with SQLite ( Part1 )". [online] YouTube. Available at: https://www.youtube.com/watch?v=JCV0gPIDPtA [Accessed 30 Apr. 2025].
-
-‌
-* 
-* Youtube tut on xml (Front end development), found via the link : Reza's Coding Monologue (2017). Android Tutorial: Learning XML for Layout. [online] YouTube. Available at: https://www.youtube.com/watch?v=bB036vfcTkw [Accessed 30 Apr. 2025].
-
-‌
-* 
-* Youtube tut on how to create  custom buttons, found via the link : www.youtube.com. (n.d.). Custom Buttons Design - Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=nlPtfncjOWA.
-
-‌
-* 
-* Youtube tut on developing and intergating a functioning calendar, found via the link : www.youtube.com. (n.d.). Calendar App Example Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=Ba0Q-cK1fJo.
-
-‌
-* 
-* Youtube tut on developing a functioning search system, found via the link : Bamidele Oguntuga (2017). SEARCH FILTER IN ANDROID SQLITE DATABASE AND RECYCLERVIEW. [online] YouTube. Available at: https://www.youtube.com/watch?v=PPXiZDWPOcI [Accessed 30 Apr. 2025].
-
-‌
