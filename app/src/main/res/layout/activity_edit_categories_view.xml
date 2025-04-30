@@ -20,7 +20,7 @@
         android:padding="8dp"
         android:src="@drawable/ic_arrow_back" />
 
-    <!-- Category Buttons - Static Layout -->
+    <!-- Category Buttons -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="396dp"
