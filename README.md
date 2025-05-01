@@ -90,6 +90,8 @@ https://youtu.be/HcIch05Vn-0
 * (IIE) The Independent Institute of Education, 2020. PROGRAMMING 3C/Open Source Coding (Introduction) PROG7313;OPSC6311; OPSC7311 MODULE MANUAL/GUIDE 2025 (First Edition: 2020). [Online] Available at: https://advtechonline.sharepoint.com/:w:/r/sites/TertiaryStudents/_layouts/15/Doc.aspx?sourcedoc=%7BCD4184FB-DB29-43FB-8B04-0A6EE4B7987E%7D&file=PROG7313MM.docx&action=default&mobileredirect=true [Accessed 17 Feb 2025]. 
 * Random code (2022). Kotlin - How to create a Button and set up onClick. [online] YouTube. Available at: https://www.youtube.com/watch?v=r1P7slDbtd4.
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
+* Declare AI
+* Claude (2025). modifying code to work with a database, Claude.ai [online]. Available at: https://claude.ai/share/770ac710-c2f7-407b-aa38-8bd9a9786b83 [Accessed 27 Apr. 2025].
 
 * Kashvir Sewpersad ST10257503
 * OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
