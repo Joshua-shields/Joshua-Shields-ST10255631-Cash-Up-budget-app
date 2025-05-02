@@ -92,12 +92,14 @@ https://youtu.be/HcIch05Vn-0
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
 * Kashvir Sewpersad ST10257503
-* AI used in debbuging code found via the link :OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
+* Chatgpt.com (2025) ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/c/6810f7fd-1634-8010-ae5e-46556bc0125d. [Accessed 29 Apr. 2025].
+* Chatgpt.com. (2025). ChatGPT. UI improvement. [online] Available at: https://chatgpt.com/c/6814712f-b7e4-8010-8f90-1c2e729d4657 [Accessed  19 Apr. 2025].
+* Chatgpt.com. (2025). ChatGPT.Register UI improvement. [online] Available at: https://chatgpt.com/c/681471ba-f8d4-8010-ba15-6904c69c4131 [Accessed  25Apr. 2025].
 * Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ [Accessed 11 Apr. 2025].
+* Gemini. (2024). Gemini. Debugging UI error. [online] Available at: https://gemini.google.com/app/6711f48dd768d5f0 [Accessed  30 Apr. 2025].
 * Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M [Accessed 13 Apr. 2025].
 * Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 29 March. 2025].
 * DJ Malone (2024). Android Studio Tutorial (2024 Edition) - Part 1. [online] YouTube. Available at: https://www.youtube.com/watch?v=saKrGCWlJDs [Accessed 28 Apr. 2025].
-* OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/ [Accessed 30 Apr. 2025].
 * SQLite Database Tutorial Android Studio | Note List View App with Persistent Data. [online] Available at: https://www.youtube.com/watch?v=4k1ZMpO9Zn0 [Accessed 9 Apr. 2025].
 * CodingWithMitch (2017). Save data into SQLite database [Beginner Android Studio Example]. [online] YouTube. Available at: https://www.youtube.com/watch?v=aQAIMY-HzL8 [Accessed 11 Apr. 2025].
 * Lemon Soft (2025). How to Build an Expense Tracker App in Android Studio with SQLite (Part1). [online] YouTube. Available at: https://www.youtube.com/watch?v=JCV0gPIDPtA [Accessed 15 Apr. 2025].
