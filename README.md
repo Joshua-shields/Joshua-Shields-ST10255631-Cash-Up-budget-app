@@ -92,10 +92,10 @@ https://youtu.be/HcIch05Vn-0
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
 * Kashvir Sewpersad ST10257503
-*  ChatGPT. (2019). ChatGPT - UI improvement request. [online] Available at: https://chatgpt.com/share/68147a6d-c204-8010-84a0-b0763124e7bb. [Accessed 26 Apr 2025].
-* Gemini. (2024). Gemini. UI debugging error  [online] Available at: https://g.co/gemini/share/6f40c6a5b778 [Accessed 30 Apr 2025].
-* Chatgpt.com. (2020). ChatGPT. Begguiging login error  [online] Available at: https://chatgpt.com/share/68147ab5-013c-8010-8137-20dceed1d9cd. [Accessed 30 Apr 2025].
-* Chatgpt.com. (2025). ChatGPT. Debugging manifest error [online] Available at: https://chatgpt.com/c/68147563-da78-8010-aa14-daf2cf65d6e8 [Accessed 1 May 2025]. // sharing chats with images is not supported 
+*  ChatGPT. (2025). ChatGPT - UI improvement request. [online] Available at: https://chatgpt.com/share/68147a6d-c204-8010-84a0-b0763124e7bb. [Accessed 26 Apr. 2025].
+* Gemini. (2025). Gemini. UI debugging error  [online] Available at: https://g.co/gemini/share/6f40c6a5b778 [Accessed 30 Apr. 2025].
+* Chatgpt.com. (2025). ChatGPT. Degguiging login error  [online] Available at: https://chatgpt.com/share/68147ab5-013c-8010-8137-20dceed1d9cd. [Accessed 30 Apr. 2025].
+* Chatgpt.com. (2025). ChatGPT. Debugging manifest error [online] Available at: https://chatgpt.com/c/68147563-da78-8010-aa14-daf2cf65d6e8 [Accessed 1 May. 2025]. // sharing chats with images is not supported 
 * Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ [Accessed 11 Apr. 2025].
 * Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M [Accessed 13 Apr. 2025].
 * Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 29 March. 2025].
