@@ -92,7 +92,10 @@ https://youtu.be/HcIch05Vn-0
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
 * Kashvir Sewpersad ST10257503
-* AI used in debbuging code found via the link :OpenAI (2025). ChatGPT. [online] ChatGPT. Available at: https://chatgpt.com/.
+* ChatGPT (2025). ChatGPT.Improving layout [online]  Available at: https://chatgpt.com/c/6814712f-b7e4-8010-8f90-1c2e729d4657. [Accessed 26 Apr 2025].
+* Gemini. (2024). Gemini. UI debugging error  [online] Available at: https://gemini.google.com/app/6711f48dd768d5f0 [Accessed 30 Apr 2025].
+* Chatgpt.com. (2020). ChatGPT. Begguiging login error [online] Available at: https://chatgpt.com/c/681471ba-f8d4-8010-ba15-6904c69c4131. [Accessed 30 Apr 2025].
+* Chatgpt.com. (2025). ChatGPT. Debugging manifest error [online] Available at: https://chatgpt.com/c/68147563-da78-8010-aa14-daf2cf65d6e8 [Accessed 1 May 2025].
 * Simple Login App in Android Studio | 2024. [online] Available at: https://www.youtube.com/watch?v=H2potb8pGDQ [Accessed 11 Apr. 2025].
 * Easy Tuto (2021). Simple Registration | SignUp App design Android Studio 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=0QqAkopW31M [Accessed 13 Apr. 2025].
 * Ideal Expert (2022). How To Create Login and Register Page in android studio | Login Page in android studio | Part 1/3. [online] YouTube. Available at: https://www.youtube.com/watch?v=rxcCds4_Pzw [Accessed 29 March. 2025].
