@@ -92,6 +92,7 @@ https://youtu.be/HcIch05Vn-0
 * Android Developers, 2023. Improve app performance with Kotlin coroutines. [online] Available at: https://developer.android.com/kotlin/coroutines/coroutines-adv [Accessed 28 Apr. 2025].
 
 * Kashvir Sewpersad ST10257503
+* Declare AI
 *  ChatGPT. (2025). ChatGPT - UI improvement request. [online] Available at: https://chatgpt.com/share/68147a6d-c204-8010-84a0-b0763124e7bb. [Accessed 26 Apr. 2025].
 * Gemini. (2025). Gemini. UI debugging error  [online] Available at: https://g.co/gemini/share/6f40c6a5b778 [Accessed 30 Apr. 2025].
 * Chatgpt.com. (2025). ChatGPT. Degguiging login error  [online] Available at: https://chatgpt.com/share/68147ab5-013c-8010-8137-20dceed1d9cd. [Accessed 30 Apr. 2025].
